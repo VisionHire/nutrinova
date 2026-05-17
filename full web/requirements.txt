@@ -8,7 +8,7 @@ python-dotenv==1.0.1
 click==8.1.7
 gunicorn==22.0.0
 gevent==24.2.1
-redis==5.0.7
 razorpay==1.4.2
 mysqlclient==2.2.4
 Pillow==10.4.0
+setuptools==75.1.0
