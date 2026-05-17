@@ -1,0 +1,92 @@
+{
+  "soya_chunks": {
+    "macronutrients": {
+      "calories": 336,
+      "protein": 52.0,
+      "carbohydrate": 33.0,
+      "total_fats": 0.5,
+      "saturated_fats": 0.1,
+      "omega_3": 0.05,
+      "omega_6": 0.4,
+      "fiber": 13.0,
+      "water": 5.0
+    },
+    "vitamins": {
+      "vitamin_a": 0,
+      "vitamin_b1": 0.18,
+      "vitamin_b2": 0.29,
+      "vitamin_b3": 0.93,
+      "vitamin_b5": 0.21,
+      "vitamin_b6": 0.45,
+      "vitamin_b7": 0,
+      "vitamin_b9": 200,
+      "vitamin_b12": 0,
+      "vitamin_c": 0,
+      "vitamin_d": 0,
+      "vitamin_e": 0.3,
+      "vitamin_k": 25.0,
+      "choline": 60.0
+    },
+    "minerals_and_trace": {
+      "calcium": 350,
+      "iron": 20.0,
+      "magnesium": 230,
+      "phosphorus": 700,
+      "potassium": 1500,
+      "sodium": 15,
+      "zinc": 2.5,
+      "iodine": 1,
+      "selenium": 14.0,
+      "copper": 1.0,
+      "manganese": 2.0,
+      "chromium": 0,
+      "molybdenum": 0,
+      "fluoride": 2.1
+    }
+  },
+  "dosa": {
+    "macronutrients": {
+      "calories": 168.0,
+      "protein": 2.7,
+      "carbohydrate": 25.0,
+      "total_fats": 5.0,
+      "saturated_fats": 1.2,
+      "omega_3": 0.02,
+      "omega_6": 0.7,
+      "fiber": 1.0,
+      "water": 64.0
+    },
+    "vitamins": {
+      "vitamin_a": 0,
+      "vitamin_b1": 0.05,
+      "vitamin_b2": 0.04,
+      "vitamin_b3": 0.7,
+      "vitamin_b5": 0.3,
+      "vitamin_b6": 0.07,
+      "vitamin_b7": 0,
+      "vitamin_b9": 20,
+      "vitamin_b12": 0,
+      "vitamin_c": 0,
+      "vitamin_d": 0,
+      "vitamin_e": 0.08,
+      "vitamin_k": 0.3,
+      "choline": 5.0
+    },
+    "minerals_and_trace": {
+      "calcium": 20,
+      "iron": 1.2,
+      "magnesium": 12,
+      "phosphorus": 40,
+      "potassium": 75,
+      "sodium": 250,
+      "zinc": 0.4,
+      "iodine": 2,
+      "selenium": 8.0,
+      "copper": 0.1,
+      "manganese": 0.3,
+      "chromium": 0,
+      "molybdenum": 0,
+      "fluoride": 0.5
+    }
+  }
+}

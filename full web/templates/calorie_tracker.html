@@ -1,0 +1,90 @@
+{% extends "base.html" %} {% block title %}Calorie Tracker Dashboard |
+NutriNova{% endblock %} {% block meta_description %} Track your daily calorie
+intake with NutriNova's Calorie Tracker. Set calorie goals, log foods, monitor
+nutrition intake, and visualize progress with charts and reports. {% endblock %}
+{% block meta_keywords %} calorie tracker, daily calorie tracker, food calorie
+calculator, nutrition tracking dashboard, calorie monitoring tool, NutriNova
+calorie tracker {% endblock %} {% block extra_css %}
+
+<link
+  rel="stylesheet"
+  href="{{ url_for('static', filename='css/calorie-tracker.css') }}"
+/>
+{% endblock %} {% block content %}
+
+<section class="calorie-tracker-container">
+  <div class="tracker-header">
+    <h1>Calorie Tracker Dashboard</h1>
+    <p>All nutrition values shown are based on 100g of the selected food.</p>
+
+    <div class="goal-input">
+      <label>Goal:</label>
+      <input type="number" id="dailyGoal" placeholder="2000" min="100" />
+      <button id="setGoal" class="button-blue">Set</button>
+    </div>
+  </div>
+
+  <div class="tracker-form">
+    <div class="input-wrapper">
+      <input
+        id="food"
+        placeholder="Food item (e.g., Apple)"
+        autocomplete="off"
+      />
+      <div id="foodSuggestionsBox" class="suggestions-box"></div>
+    </div>
+
+    <input
+      id="foodCalories"
+      placeholder="Calories (kcal)"
+      type="number"
+      min="0"
+    />
+
+    <button id="addFood" class="button-blue">Add</button>
+  </div>
+
+  <ul id="foodList"></ul>
+
+  <div class="progress-container">
+    <div class="progress-ring">
+      <svg width="120" height="120">
+        <circle class="bg" cx="60" cy="60" r="50"></circle>
+        <circle class="progress" cx="60" cy="60" r="50"></circle>
+      </svg>
+      <div class="progress-text" id="progressText">0%</div>
+    </div>
+
+    <p>
+      Total Intake:
+      <span id="calorieIntake">0</span> /
+      <span id="goalDisplay">2000</span> kcal
+    </p>
+  </div>
+
+  <div class="charts">
+    <div class="chart-card">
+      <h3>Today's Meal Breakdown</h3>
+      <canvas id="mealBreakdownChart"></canvas>
+    </div>
+
+    <div class="chart-card">
+      <h3>Weekly Calorie Trend</h3>
+      <canvas id="weeklyTrendChart"></canvas>
+    </div>
+  </div>
+</section>
+{% endblock %} {% block extra_js %}
+
+<script
+  src="https://cdn.jsdelivr.net/npm/chart.js/dist/chart.umd.min.js"
+  defer
+></script>
+
+<script src="{{ url_for('static', filename='js/calorie-tracker.js') }}"></script>
+
+<script src="{{ url_for('static', filename='js/dashboard.js') }}"></script>
+
+<script src="{{ url_for('static', filename='js/chart.js') }}"></script>
+
+{% endblock %}

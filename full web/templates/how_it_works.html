@@ -1,0 +1,199 @@
+{% extends 'base.html' %} {% block title %}NutriNova - How It Works{% endblock
+%} {% block meta_description %} Learn how NutriNova works. Track meals, analyze
+nutrition, plan meals, generate reports, and monitor calorie intake with smart
+tools. {% endblock %} {% block meta_keywords %} nutrinova guide, meal planner,
+calorie tracker, nutrition analyzer, diet tracking {% endblock %} {% block
+extra_css %}
+<link
+  rel="stylesheet"
+  href="{{ url_for('static', filename='css/style.css') }}"
+/>
+
+<style>
+  .how-header {
+    text-align: center;
+    padding: 60px 24px 30px;
+    max-width: 900px;
+    margin: auto;
+  }
+
+  .how-header h1 {
+    font-size: 46px;
+    font-weight: 700;
+    margin-bottom: 15px;
+  }
+
+  .how-header p {
+    font-size: 18px;
+    color: #4a5568;
+  }
+
+  .steps-container {
+    max-width: 1100px;
+    margin: 60px auto;
+    padding: 0 24px;
+  }
+
+  .step {
+    display: flex;
+    align-items: center;
+    gap: 60px;
+    margin-bottom: 80px;
+    flex-wrap: wrap;
+  }
+
+  .step.reverse {
+    flex-direction: row-reverse;
+  }
+
+  .step-content {
+    flex: 1;
+    min-width: 280px;
+  }
+
+  .step-number {
+    color: #4caf50;
+    font-weight: 600;
+    margin-bottom: 10px;
+    display: block;
+  }
+
+  .step-content h2 {
+    font-size: 32px;
+    margin-bottom: 15px;
+  }
+
+  .step-content p {
+    font-size: 17px;
+    color: #4a5568;
+    line-height: 1.6;
+    max-width: 520px;
+  }
+
+  .step-visual {
+    flex: 1;
+    text-align: center;
+    background: #f9fafc;
+    padding: 40px;
+    border-radius: 20px;
+  }
+
+  .step-visual i {
+    font-size: 70px;
+    color: #4caf50;
+  }
+
+  @media (max-width: 768px) {
+    .step {
+      flex-direction: column;
+      gap: 30px;
+    }
+  }
+</style>
+{% endblock %} {% block content %}
+
+<section class="how-header">
+  <h1>How NutriNova Works</h1>
+  <p>
+    From personalized nutrition to smart tracking—manage your health in simple,
+    powerful steps.
+  </p>
+</section>
+
+<div class="steps-container">
+  <div class="step">
+    <div class="step-content">
+      <span class="step-number">STEP 01</span>
+      <h2>Personalized Dashboard</h2>
+      <p>
+        Start by creating your profile with basic details like age, weight,
+        height, and goals. NutriNova analyzes your data and generates a
+        personalized dashboard with daily targets for calories, protein, carbs,
+        fats, and water—designed specifically for your body.
+      </p>
+    </div>
+    <div class="step-visual">
+      <i class="fas fa-chart-line"></i>
+    </div>
+  </div>
+
+  <div class="step reverse">
+    <div class="step-content">
+      <span class="step-number">STEP 02</span>
+      <h2>Meal Planner</h2>
+      <p>
+        Plan your daily meals in advance and view them directly on your
+        dashboard. Each meal includes an <strong>Eat</strong> or
+        <strong>Deny</strong> option. Only meals marked as "Eat" are added to
+        your nutrition data, ensuring accurate tracking across your dashboard,
+        meal tracker, and calorie tracker.
+      </p>
+    </div>
+    <div class="step-visual">
+      <i class="fas fa-calendar-alt"></i>
+    </div>
+  </div>
+
+  <div class="step">
+    <div class="step-content">
+      <span class="step-number">STEP 03</span>
+      <h2>Meal Entry</h2>
+      <p>
+        Log the food you actually eat by entering food name and quantity. Your
+        entries are securely stored for 30 days and synced with your nutrition
+        system to generate accurate reports and track your daily intake.
+      </p>
+    </div>
+    <div class="step-visual">
+      <i class="fas fa-utensils"></i>
+    </div>
+  </div>
+
+  <div class="step reverse">
+    <div class="step-content">
+      <span class="step-number">STEP 04</span>
+      <h2>Nutrition Report</h2>
+      <p>
+        Generate and download detailed nutrition reports instantly based on your
+        meal entries. Select a custom date range to analyze your eating patterns
+        and track your progress over time.
+      </p>
+    </div>
+    <div class="step-visual">
+      <i class="fas fa-file-alt"></i>
+    </div>
+  </div>
+
+  <div class="step">
+    <div class="step-content">
+      <span class="step-number">STEP 05</span>
+      <h2>Nutrition Analyzer</h2>
+      <p>
+        Explore detailed nutritional values of foods from our database. View
+        macronutrients, micronutrients, and trace minerals per 100g to make
+        smarter food choices or use it for research and comparison.
+      </p>
+    </div>
+    <div class="step-visual">
+      <i class="fas fa-search"></i>
+    </div>
+  </div>
+
+  <div class="step reverse">
+    <div class="step-content">
+      <span class="step-number">STEP 06</span>
+      <h2>Calorie Tracker</h2>
+      <p>
+        Set your daily calorie goal and monitor your intake in real time.
+        Calories are updated only when meals are marked as "Eat" or logged
+        manually. Visual charts and a 7-day progress view help you stay
+        consistent and achieve your fitness goals.
+      </p>
+    </div>
+    <div class="step-visual">
+      <i class="fas fa-fire"></i>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

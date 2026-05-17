@@ -1,0 +1,205 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="csrf-token" content="{{ csrf_token() }}" />
+
+  <!-- Primary SEO -->
+  <title>
+    {% block title %}NutriNova | Personalized Nutrition Tracker, Meal
+    Planner & Calorie Analyzer{% endblock %}
+  </title>
+
+  <meta name="description"
+    content="{% block meta_description %}NutriNova is a personalized nutrition tracking web app that helps you plan meals, track calories, analyze food nutrients, and generate detailed nutrition reports for healthier living.{% endblock %}" />
+
+  <meta name="keywords"
+    content="{% block meta_keywords %}personalized nutrition tracker, calorie tracker app, meal planner online, food nutrition analyzer, macro and micronutrient tracker, diet tracking app India, nutrition report generator{% endblock %}" />
+
+  <meta name="author" content="NutriNova" />
+  <meta name="robots" content="index, follow, max-image-preview:large" />
+  <meta name="theme-color" content="#4caf50" />
+
+  <meta property="og:title"
+    content="NutriNova | Smart Personalized Nutrition Dashboard, Meal Planning & Detail Reports" />
+  <meta property="og:description"
+    content="NutriNova helps you understand your nutrition with a personalized dashboard, smart meal planning, detailed nutrition reports, and powerful food analysis tools—all in one platform." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://nutrinova.in/" />
+  <meta property="og:site_name" content="NutriNova" />
+  <meta property="og:image" content="{{ url_for('static', filename='data/favicon2.webp') }}" />
+  <meta property="og:image:alt" content="NutriNova Nutrition Tracking Dashboard" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="NutriNova | Nutrition Tracker & Meal Planner" />
+  <meta name="twitter:description"
+    content="Track calories, analyze food nutrients, and plan your diet with NutriNova." />
+  <meta name="twitter:image" content="{{ url_for('static', filename='data/favicon2.webp') }}" />
+
+  <link rel="canonical" href="{{ request.base_url }}" />
+
+  <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "NutriNova",
+        "url": "https://nutrinova.in/",
+        "applicationCategory": "HealthApplication",
+        "operatingSystem": "Web",
+        "description": "NutriNova is a personalized nutrition platform that offers a smart dashboard, meal planning, nutrition analysis, and detailed reports to help users understand and improve their diet.",
+        "image": "https://nutrinova.in/static/data/favicon2.png",
+        "creator": {
+          "@type": "Organization",
+          "name": "NutriNova"
+        },
+        "featureList": [
+          "Personalized Nutrition Dashboard",
+          "Meal Planner with Eat/Deny Tracking",
+          "Manual Meal Entry",
+          "Nutrition Report Download",
+          "Nutrition Analyzer (Macro, Micro, Minerals)",
+          "Calorie Tracking with 7-Day Progress"
+        ]
+      }
+      </script>
+
+  <link rel="icon" type="image/webp" href="{{ url_for('static', filename='data/favicon2.webp') }}" />
+  <link rel="alternate icon" href="{{ url_for('static', filename='data/favicon2.png') }}" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" />
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet" media="print" onload="this.media = 'all'" />
+  <noscript>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet" />
+  </noscript>
+
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" />
+  <link rel="preload" href="{{ url_for('static', filename='css/style.css') }}" as="style" onload="
+          this.onload = null;
+          this.rel = 'stylesheet';
+        " />
+
+  {% block extra_css %}{% endblock %}
+</head>
+
+<body class="{% block body_class %}{% endblock %}">
+  <button id="themeToggle" class="theme-toggle">
+    <i class="bi bi-moon-fill"></i>
+  </button>
+
+  <nav class="navbar">
+    <a class="navbar-brand d-flex align-items-center brand-logo" href="{{ url_for('profile') }}">
+      <picture>
+        <source srcset="{{ url_for('static', filename='data/favicon.webp') }}" type="image/webp" />
+        <img src="{{ url_for('static', filename='data/favicon.png') }}" alt="Logo" class="nav-logo" width="40"
+          height="40" loading="eager" />
+      </picture>
+      <span class="brand-text">NutriNova</span>
+    </a>
+
+    <div class="menu-toggle" id="menu-toggle">&#9776;</div>
+
+    <ul class="nav-links" id="nav-links">
+      <li><a href="{{ url_for('nutrition_info') }}">Nutrition Guide</a></li>
+
+      <li><a href="{{ url_for('profile') }}">Home</a></li>
+
+      <li class="dropdown" id="features-dropdown">
+        <div class="dropdown-toggle">Features</div>
+        <ul class="dropdown-menu">
+          <li>
+            <a href="{{ url_for('nutrition.dashboard') }}">Nutrition Dashboard</a>
+          </li>
+          <li><a href="{{ url_for('meal_planner') }}">Meal Planner</a></li>
+
+          <li><a href="{{ url_for('meal_entry') }}">Meal Entry</a></li>
+          <li>
+            <a href="{{ url_for('nutrition_report') }}">Nutrition Report</a>
+          </li>
+          <li>
+            <a href="{{ url_for('nutrition_analyzer') }}">Nutrition Analyzer</a>
+          </li>
+          <li>
+            <a href="{{ url_for('calorie_tracker') }}">Calorie Tracker</a>
+          </li>
+        </ul>
+      </li>
+
+      <li><a href="{{ url_for('about') }}">About</a></li>
+      <li><a href="{{ url_for('contact') }}">Contact</a></li>
+
+      {% if current_user.is_authenticated %} {% if current_user.is_admin %}
+      <li><a href="{{ url_for('admin') }}">Admin</a></li>
+      {% endif %}
+      <li>
+        <a href="{{ url_for('logout') }}" class="login-btn">Logout</a>
+      </li>
+      {% else %}
+      <li><a href="{{ url_for('login') }}" class="login-btn">Login</a></li>
+      {% endif %}
+    </ul>
+  </nav>
+
+  <main>{% block content %}{% endblock %}</main>
+
+  <footer class="footer">
+    <div class="footer-section">
+      <h4>About NutriNova</h4>
+      <p>
+        Your trusted partner in achieving better nutrition and healthier
+        living.
+      </p>
+    </div>
+    <div class="footer-section">
+      <h4>Quick Links</h4>
+      <a href="{{ url_for('index') }}">Home</a><br />
+      <a href="{{ url_for('plans') }}">Membership</a><br />
+      <a href="{{ url_for('how_it_works') }}">How NutriNova Works</a><br />
+      <a href="{{ url_for('legal') }}">Terms & Policies</a><br />
+
+      <a href="{{ url_for('about') }}">About</a>
+    </div>
+    <div class="footer-section">
+      <h4>Follow Us</h4>
+      <p><a href="https://www.instagram.com/arkveilstudios?utm_source=qr&igsh=bjVvdG0waTh1YWs2" target="_blank">
+          Instagram</a></p>
+      <p><a href="https://www.linkedin.com/company/arkveil-studios/" target="_blank"> LinkedIn</a></p>
+      <p><a href="https://x.com/arkveilstuidos" target="_blank"> Twitter</a></p>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js" defer></script>
+  <script src="{{ url_for('static', filename='js/script.js') }}" defer></script>
+  {% block extra_js %}{% endblock %}
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const toggleBtn = document.getElementById("themeToggle");
+      const body = document.body;
+
+      if (localStorage.getItem("theme") === "dark") {
+        body.classList.add("dark-mode");
+        toggleBtn.innerHTML = '<i class="bi bi-sun-fill"></i>';
+      }
+
+      toggleBtn.addEventListener("click", () => {
+        body.classList.toggle("dark-mode");
+        const isDark = body.classList.contains("dark-mode");
+        localStorage.setItem("theme", isDark ? "dark" : "light");
+        toggleBtn.innerHTML = isDark
+          ? '<i class="bi bi-sun-fill"></i>'
+          : '<i class="bi bi-moon-fill"></i>';
+      });
+    });
+  </script>
+</body>
+
+</html>
+
+</html>

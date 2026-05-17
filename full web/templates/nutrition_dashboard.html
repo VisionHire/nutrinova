@@ -1,0 +1,184 @@
+{% extends "base.html" %} {% block title %}Nutrition Dashboard | NutriNova{%
+endblock %} {% block body_class %}nutrition-dashboard-page{% endblock %} {%
+block extra_css %}
+<link
+  rel="stylesheet"
+  href="{{ url_for('static', filename='css/nutrition_dashboard.css') }}"
+/>
+{% endblock %} {% block content %}
+<div class="nutrition-dashboard-wrapper">
+  <div class="dashboard-container">
+    <h1>Your Nutrition Dashboard</h1>
+
+    <div class="profile-card">
+      <div>
+        <strong>{{ profile.age }} years</strong> | {{ profile.weight_kg }} kg |
+        {{ profile.height_cm }} cm | {{ profile.gender|capitalize }}<br />
+        Activity: {{ profile.activity_level|replace('_', ' ')|title }} | Diet:
+        {{ profile.diet_type|title }} | Goal: {{ profile.goal|title }}
+      </div>
+      <a href="{{ url_for('nutrition.profile') }}">Edit Profile</a>
+    </div>
+
+    <p class="date">{{ today.strftime('%B %d, %Y') }}</p>
+
+    <h2>Today's Progress</h2>
+    <div class="progress-grid">
+      <div class="progress-item">
+        <h3>Calories</h3>
+        <div class="progress-bar-bg">
+          <div
+            class="progress-bar-fill"
+            id="progress-calories"
+            style="width: {{ (targets.calories and (today_intake.total_calories / targets.calories * 100)|round|int) if today_intake.total_calories else 0 }}%;"
+          ></div>
+        </div>
+        <div class="progress-value">
+          {{ today_intake.total_calories|int }} / {{ targets.calories }} kcal
+        </div>
+      </div>
+      <div class="progress-item">
+        <h3>Protein</h3>
+        <div class="progress-bar-bg">
+          <div
+            class="progress-bar-fill"
+            id="progress-protein"
+            style="width: {{ (targets.protein_grams and (today_intake.total_protein / targets.protein_grams * 100)|round|int) if today_intake.total_protein else 0 }}%;"
+          ></div>
+        </div>
+        <div class="progress-value">
+          {{ today_intake.total_protein|round(1) }} / {{ targets.protein_grams
+          }} g
+        </div>
+      </div>
+      <div class="progress-item">
+        <h3>Carbs</h3>
+        <div class="progress-bar-bg">
+          <div
+            class="progress-bar-fill"
+            id="progress-carbs"
+            style="width: {{ (targets.carbs_grams and (today_intake.total_carbs / targets.carbs_grams * 100)|round|int) if today_intake.total_carbs else 0 }}%;"
+          ></div>
+        </div>
+        <div class="progress-value">
+          {{ today_intake.total_carbs|round(1) }} / {{ targets.carbs_grams }} g
+        </div>
+      </div>
+      <div class="progress-item">
+        <h3>Fats</h3>
+        <div class="progress-bar-bg">
+          <div
+            class="progress-bar-fill"
+            id="progress-fats"
+            style="width: {{ (targets.fat_grams and (today_intake.total_fat / targets.fat_grams * 100)|round|int) if today_intake.total_fat else 0 }}%;"
+          ></div>
+        </div>
+        <div class="progress-value">
+          {{ today_intake.total_fat|round(1) }} / {{ targets.fat_grams }} g
+        </div>
+      </div>
+    </div>
+
+    <h2>Daily Targets & Intake</h2>
+    <div class="responsive-table">
+      <table class="nutrient-table">
+        <thead>
+          <tr>
+            <th>Category</th>
+            <th>Nutrient</th>
+            <th>Target</th>
+            <th>Consumed</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for category, nutrients in data.items() %} {% for nutrient in
+          nutrients %}
+          <tr>
+            <td data-label="Category">{{ category }}</td>
+            <td data-label="Nutrient">{{ nutrient.name }}</td>
+            <td data-label="Target">
+              {{ nutrient.required }} {{ nutrient.unit }}
+            </td>
+            <td data-label="Consumed">
+              {{ nutrient.consumed }} {{ nutrient.unit }}
+            </td>
+            <td
+              data-label="Status"
+              class="{% if nutrient.percentage >= 80 %}status-good{% else %}status-low{% endif %}"
+            >
+              {{ nutrient.percentage }}%
+            </td>
+          </tr>
+          {% endfor %} {% endfor %}
+        </tbody>
+      </table>
+    </div>
+
+    <h2>7-Day Insights (Calories)</h2>
+    <div class="chart-container">
+      <canvas id="weekChart"></canvas>
+    </div>
+
+    <h2>Improvement (Protein)</h2>
+    <div class="improvement-container">
+      <p>
+        Your average protein intake over the last 3 days is
+        <strong>{{ improvement }}%</strong> {% if improvement > 0 %}higher{%
+        else %}lower{% endif %} than the previous 3 days.
+      </p>
+      <div class="improvement-bar-bg">
+        {% set bar_width = (improvement + 100) / 2 %} {% if bar_width < 0 %}{%
+        set bar_width = 0 %}{% elif bar_width > 100 %}{% set bar_width = 100
+        %}{% endif %}
+        <div
+          class="improvement-bar-fill"
+          style="width: {{ bar_width }}%; background-color: {% if improvement >= 0 %}#27ae60{% else %}#e67e22{% endif %};"
+        >
+          {% if improvement > 0 %}+{% endif %}{{ improvement }}%
+        </div>
+      </div>
+    </div>
+
+    <h2>Today's Planned Meals</h2>
+    <div id="planned-meals-list" class="planned-list">
+      <div class="empty-message">Loading...</div>
+    </div>
+
+    <h2>Today's Eaten Foods</h2>
+    <div id="today-foods-list" class="foods-list">
+      <div class="empty-message">Loading...</div>
+    </div>
+
+    <h2>Suggestions to Improve Today</h2>
+    <div class="suggestions">
+      {% if suggestions_data %} {% for item in suggestions_data %}
+      <div class="suggestion-card">
+        <div class="suggestion-header">
+          <span class="nutrient-name"
+            >{{ item.nutrient.replace('_', ' ').title() }}</span
+          >
+          <span class="nutrient-percentage"
+            >{{ item.percentage|round(0) }}%</span
+          >
+        </div>
+        <div class="progress-bar-bg suggestion-bar">
+          <div
+            class="progress-bar-fill"
+            style="width: {{ item.percentage }}%; background-color: {% if item.percentage < 30 %}#e74c3c{% elif item.percentage < 50 %}#e67e22{% else %}#f1c40f{% endif %};"
+          ></div>
+        </div>
+        <p class="suggestion-message">{{ item.message|safe }}</p>
+      </div>
+      {% endfor %} {% else %}
+      <p>Great job! You're on track to meet all your daily targets.</p>
+      {% endif %}
+    </div>
+  </div>
+</div>
+{% endblock %} {% block extra_js %}
+<script>
+  window.weekData = {{ week_data|tojson }};
+</script>
+<script src="{{ url_for('static', filename='js/nutrition_dashboard.js') }}"></script>
+{% endblock %}

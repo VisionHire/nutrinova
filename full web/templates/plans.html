@@ -1,0 +1,120 @@
+{% extends "base.html" %} {% block title %}Membership Plans | NutriNova{%
+endblock %} {% block body_class %}plans-page{% endblock %} {% block extra_css %}
+<link
+  rel="stylesheet"
+  href="{{ url_for('static', filename='css/plans.css') }}"
+/>
+{% endblock %} {% block content %}
+<div id="loadingOverlay" class="loading-overlay">
+  <div class="loading-spinner"></div>
+  <p>Processing payment...</p>
+  <p class="loading-message">Please do not close this window</p>
+</div>
+
+<section class="plans-hero">
+  <div class="plans-hero-content">
+    <h1>Choose Your Membership</h1>
+    <p>
+      Unlock health tracking, detailed nutrition reports, and smart meal
+      planning with NutriNova Premium.
+    </p>
+  </div>
+</section>
+
+<section class="plans-container">
+  <div class="plan-card basic">
+    <h3>Free Plan</h3>
+    <p class="price">₹0 / month</p>
+    <ul class="plan-features">
+      <li>Basic access</li>
+      <li>No advanced features</li>
+    </ul>
+    {% if user_plan == 'free' %}
+    <button disabled class="btn-disabled current-plan">✓ Current Plan</button>
+    {% else %}
+    <button disabled class="btn-disabled">Current Plan</button>
+    {% endif %}
+  </div>
+
+  <div class="plan-card premium highlight">
+    <div class="plan-badge popular">🔥 Most Popular</div>
+    <h3>Monthly Plan</h3>
+    <p class="price">₹199 <span>/ month</span></p>
+    <ul class="plan-features">
+      <li>Full macro & micro nutrient analysis</li>
+      <li>Custom meal planning</li>
+      <li>Vitamin & mineral breakdown</li>
+      <li>Trace element details</li>
+      <li>Priority support</li>
+    </ul>
+    <input type="hidden" id="plan-type-monthly" value="monthly" />
+    {% if user_plan == 'monthly' %}
+    <button type="button" class="btn-primary current-plan" disabled>
+      ✓ Current Plan
+    </button>
+    {% else %}
+    <button
+      type="button"
+      class="btn-primary"
+      onclick="initiatePayment('monthly')"
+    >
+      Buy Monthly Plan →
+    </button>
+    {% endif %}
+  </div>
+
+  <div class="plan-card annual">
+    <div class="plan-badge best-value">💎 Best Value</div>
+    <h3>Annual Plan</h3>
+    <p class="price">₹1699 <span>/ year</span></p>
+    <div class="savings">Save 29% compared to monthly</div>
+    <ul class="plan-features">
+      <li>Everything in Monthly Plan</li>
+      <li>Priority support</li>
+      <li>Custom meal tools</li>
+      <li>Advanced analytics</li>
+      <li>Save 29% with annual</li>
+    </ul>
+    <input type="hidden" id="plan-type-annual" value="yearly" />
+    {% if user_plan == 'yearly' %}
+    <button type="button" class="btn-primary current-plan" disabled>
+      ✓ Current Plan
+    </button>
+    {% else %}
+    <button
+      type="button"
+      class="btn-primary"
+      onclick="initiatePayment('yearly')"
+    >
+      Buy Annual Plan →
+    </button>
+    {% endif %}
+  </div>
+</section>
+
+<div id="phoneModal" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal()">&times;</span>
+    <h3>Enter Phone Number</h3>
+    <p>We need your phone number for payment verification</p>
+    <input type="hidden" id="selectedPlan" value="" />
+    <input
+      type="tel"
+      id="phoneNumber"
+      placeholder="Enter 10-digit mobile number"
+      pattern="[0-9]{10}"
+      maxlength="10"
+    />
+    <button onclick="submitPhoneNumber()" class="modal-btn" id="modalSubmitBtn">
+      Proceed to Payment
+    </button>
+  </div>
+</div>
+{% endblock %} {% block extra_js %}
+<script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+<script src="{{ url_for('static', filename='js/plans.js') }}"></script>
+<script>
+  window.csrfToken = "{{ csrf_token() }}";
+  window.currentUserPlan = "{{ user_plan|default('free') }}";
+</script>
+{% endblock %}

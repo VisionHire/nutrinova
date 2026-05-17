@@ -1,0 +1,293 @@
+/* 💎 Modern Calorie Tracker Page */
+.calorie-tracker-container {
+  max-width: 900px;
+  margin: 60px auto;
+  padding: 35px 40px;
+  background: linear-gradient(145deg, #ffffff, #f6f9ff);
+  border-radius: 18px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+  font-family: "Poppins", sans-serif;
+  transition: all 0.3s ease-in-out;
+}
+
+.calorie-tracker-container:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+/* Header Section */
+.tracker-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-bottom: 30px;
+}
+
+.tracker-header h2 {
+  color: #1565c0;
+  font-weight: 700;
+  font-size: 2rem;
+}
+
+.goal-input {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(33, 150, 243, 0.05);
+  padding: 8px 14px;
+  border-radius: 10px;
+}
+
+.goal-input input {
+  width: 100px;
+  padding: 8px 10px;
+  border-radius: 8px;
+  border: 1.5px solid #90caf9;
+  font-size: 15px;
+  text-align: center;
+  transition: 0.3s;
+}
+
+.goal-input input:focus {
+  border-color: #2196f3;
+  box-shadow: 0 0 6px rgba(33, 150, 243, 0.25);
+  outline: none;
+}
+
+.goal-input button {
+  background: linear-gradient(135deg, #2196f3, #1565c0);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 14px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.goal-input button:hover {
+  background: linear-gradient(135deg, #1976d2, #0d47a1);
+}
+
+/* Form Section */
+.tracker-form {
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.input-wrapper {
+  position: relative; /* 🟢 Important: anchors suggestions dropdown */
+}
+
+#food, #foodCalories {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1.6px solid #ccc;
+  border-radius: 8px;
+  font-size: 15px;
+  box-sizing: border-box;
+  transition: all 0.3s ease;
+  background: #ffffff;
+}
+
+#food:focus, #foodCalories:focus {
+  border-color: #42a5f5;
+  box-shadow: 0 0 6px rgba(66,165,245,0.25);
+  outline: none;
+}
+
+/* 🟩 Suggestion Dropdown */
+.suggestions-box {
+  position: absolute;
+  top: calc(100% + 6px);
+  left: 0;
+  width: 100%;
+  background: #fff;
+  border: 1px solid #c8e6c9;
+  border-radius: 8px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+  z-index: 9999;
+  display: none;
+  max-height: 220px;
+  overflow-y: auto;
+  padding: 4px 0;
+  animation: fadeIn 0.25s ease;
+}
+
+.suggestions-box div {
+  padding: 10px 14px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.suggestions-box div:hover {
+  background: #e3f2fd;
+}
+
+/* Add Button */
+.button-blue {
+  width: 100%;
+  background: linear-gradient(135deg, #42a5f5, #1565c0);
+  color: white;
+  padding: 12px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  transition: 0.3s ease;
+  box-shadow: 0 4px 12px rgba(21, 101, 192, 0.25);
+}
+
+.button-blue:hover {
+  background: linear-gradient(135deg, #1e88e5, #0d47a1);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(21, 101, 192, 0.3);
+}
+
+/* Food List */
+#foodList {
+  list-style: none;
+  margin-top: 20px;
+  padding: 0;
+}
+
+#foodList li {
+  background: linear-gradient(90deg, #f0f7ff, #e8f5e9);
+  padding: 12px 16px;
+  border-radius: 10px;
+  margin: 8px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #333;
+  font-weight: 500;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  transition: all 0.2s ease-in-out;
+}
+
+#foodList li:hover {
+  transform: scale(1.02);
+  background: linear-gradient(90deg, #e3f2fd, #e8f5e9);
+}
+
+/* Progress Section */
+.progress-container {
+  text-align: center;
+  margin-top: 40px;
+}
+
+.progress-container h3 {
+  font-weight: 600;
+  color: #1565c0;
+  margin-bottom: 15px;
+}
+
+/* 🔥 Progress Ring (3D Style) */
+.progress-ring {
+  width: 140px;
+  height: 140px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.progress-ring svg {
+  transform: rotate(-90deg);
+}
+
+.progress-ring circle {
+  fill: none;
+  stroke-width: 10;
+  stroke-linecap: round;
+}
+
+.progress-ring .bg {
+  stroke: #e0e0e0;
+}
+
+.progress-ring .progress {
+  stroke: url(#grad);
+  transition: stroke-dashoffset 0.5s ease;
+  filter: drop-shadow(0 0 6px rgba(33,150,243,0.4));
+}
+
+/* Text inside progress ring */
+.progress-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-weight: 700;
+  font-size: 20px;
+  color: #1565c0;
+}
+
+/* Charts Section */
+.charts {
+  margin-top: 50px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 25px;
+}
+
+.chart-card {
+  background: rgba(255, 255, 255, 0.8);
+  padding: 25px;
+  border-radius: 16px;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.07);
+  backdrop-filter: blur(6px);
+  transition: all 0.3s ease-in-out;
+}
+
+.chart-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.12);
+}
+
+.chart-card h3 {
+  text-align: center;
+  margin-bottom: 12px;
+  color: #2e7d32;
+  font-weight: 600;
+}
+
+canvas {
+  max-width: 100%;
+  height: 280px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .charts {
+    grid-template-columns: 1fr;
+  }
+
+  .goal-input {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 8px;
+  }
+
+  .button-blue {
+    font-size: 15px;
+  }
+
+  .calorie-tracker-container {
+    padding: 25px;
+    margin: 30px 15px;
+  }
+}
+
+/* Smooth Animations */
+.fade-in {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}

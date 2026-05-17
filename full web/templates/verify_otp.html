@@ -1,0 +1,201 @@
+{% extends "base.html" %} {% block title %}Verify OTP | NutriNova{% endblock %}
+{% block extra_css %}
+<link
+  rel="stylesheet"
+  href="{{ url_for('static', filename='css/verify_otp.css') }}"
+/>
+{% endblock %} {% block content %}
+<div class="otp-wrapper">
+  <div class="container">
+    <h2>Enter OTP</h2>
+    <p>OTP sent to {{ session.get('reset_email', 'your email') }}</p>
+
+    {% with messages = get_flashed_messages(with_categories=true) %} {% if
+    messages %} {% for category, message in messages %}
+    <div class="message {{ category }}">{{ message }}</div>
+    {% endfor %} {% endif %} {% endwith %}
+
+    <form method="POST" id="otpForm">
+      <input type="hidden" name="csrf_token" value="{{ csrf_token() }}" />
+      <input
+        id="otp"
+        type="text"
+        name="otp"
+        maxlength="6"
+        placeholder="Enter 6-digit OTP"
+        pattern="\d{6}"
+        title="Please enter exactly 6 digits"
+        required
+        autocomplete="off"
+        autofocus
+      />
+      <button type="submit" id="verifyBtn">Verify OTP</button>
+    </form>
+
+    <div class="timer">
+      <span id="minutes">05</span>:<span id="seconds">00</span> remaining
+    </div>
+
+    <div class="resend-section">
+      <p>Didn't receive the OTP?</p>
+      <form
+        action="{{ url_for('passforget.resend_otp') }}"
+        method="POST"
+        id="resendForm"
+      >
+        <input type="hidden" name="csrf_token" value="{{ csrf_token() }}" />
+        <button type="submit" class="resend-btn" id="resendBtn">
+          Resend OTP
+        </button>
+      </form>
+      <div id="resendTimer"></div>
+    </div>
+
+    <div class="back-link">
+      <a href="{{ url_for('passforget.forgot_password') }}">
+        ← Use different email
+      </a>
+    </div>
+  </div>
+</div>
+{% endblock %} {% block extra_js %}
+<script>
+  (function () {
+    const OTP_EXPIRY_SECONDS = 300; // 5 minutes = 300 seconds
+    const RESEND_COOLDOWN_SECONDS = 60; // 1 minute = 60 seconds
+
+    const minutesElement = document.getElementById("minutes");
+    const secondsElement = document.getElementById("seconds");
+    const resendBtn = document.getElementById("resendBtn");
+    const verifyBtn = document.getElementById("verifyBtn");
+    const otpInput = document.getElementById("otp");
+    const resendTimerElement = document.getElementById("resendTimer");
+
+    const urlParams = new URLSearchParams(window.location.search);
+    const isNewOTP = urlParams.get("new") === "1";
+
+    let endTime = localStorage.getItem("otpEndTime");
+    let cooldownEndTime = localStorage.getItem("resendCooldownEnd");
+    const now = Date.now();
+
+    if (isNewOTP || !endTime) {
+      endTime = now + OTP_EXPIRY_SECONDS * 1000;
+      localStorage.setItem("otpEndTime", endTime);
+
+      cooldownEndTime = now + RESEND_COOLDOWN_SECONDS * 1000;
+      localStorage.setItem("resendCooldownEnd", cooldownEndTime);
+
+      const url = new URL(window.location.href);
+      url.searchParams.delete("new");
+      window.history.replaceState({}, document.title, url.toString());
+
+      console.log("New OTP detected - timers reset");
+    } else {
+      endTime = parseInt(endTime);
+      cooldownEndTime = parseInt(cooldownEndTime);
+    }
+
+    function updateTimer() {
+      const now = Date.now();
+      const timeLeft = Math.max(0, Math.floor((endTime - now) / 1000));
+
+      if (timeLeft <= 0) {
+        minutesElement.textContent = "00";
+        secondsElement.textContent = "00";
+
+        verifyBtn.disabled = true;
+        otpInput.disabled = true;
+
+        const resendParagraph = document.querySelector(".resend-section p");
+        if (resendParagraph) {
+          resendParagraph.innerHTML =
+            "⏰ OTP expired! <br>Click below to get a new one.";
+        }
+
+        localStorage.removeItem("otpEndTime");
+        localStorage.removeItem("resendCooldownEnd");
+
+        clearInterval(timerInterval);
+        clearInterval(cooldownInterval);
+        return;
+      }
+
+      const minutes = Math.floor(timeLeft / 60);
+      const seconds = timeLeft % 60;
+
+      minutesElement.textContent = minutes.toString().padStart(2, "0");
+      secondsElement.textContent = seconds.toString().padStart(2, "0");
+    }
+
+    function updateResendCooldown() {
+      const now = Date.now();
+      const cooldownLeft = Math.max(
+        0,
+        Math.floor((cooldownEndTime - now) / 1000),
+      );
+
+      if (cooldownLeft <= 0) {
+        resendBtn.disabled = false;
+        resendTimerElement.textContent = "";
+        resendBtn.style.opacity = "1";
+        resendBtn.style.cursor = "pointer";
+        return;
+      }
+
+      resendBtn.disabled = true;
+      resendBtn.style.opacity = "0.5";
+      resendBtn.style.cursor = "not-allowed";
+      resendTimerElement.textContent = `Wait ${cooldownLeft}s to resend`;
+    }
+
+    updateTimer();
+    updateResendCooldown();
+
+    const timerInterval = setInterval(updateTimer, 1000);
+    const cooldownInterval = setInterval(updateResendCooldown, 1000);
+
+    document
+      .getElementById("resendForm")
+      .addEventListener("submit", function (e) {
+        const now = Date.now();
+
+        if (now < cooldownEndTime) {
+          e.preventDefault();
+          const waitSeconds = Math.ceil((cooldownEndTime - now) / 1000);
+          alert(
+            `Please wait ${waitSeconds} seconds before requesting a new OTP`,
+          );
+          return false;
+        }
+
+        resendBtn.disabled = true;
+        resendBtn.textContent = "Sending...";
+
+        localStorage.removeItem("otpEndTime");
+        localStorage.removeItem("resendCooldownEnd");
+
+        return true;
+      });
+
+    document.getElementById("otpForm").addEventListener("submit", function () {
+      verifyBtn.disabled = true;
+      verifyBtn.textContent = "Verifying...";
+    });
+
+    otpInput.addEventListener("input", function (e) {
+      this.value = this.value.replace(/[^0-9]/g, "");
+      if (this.value.length === 6) {
+      }
+    });
+
+    if (window.history.replaceState) {
+      window.history.replaceState(null, null, window.location.href);
+    }
+
+    window.addEventListener("beforeunload", function () {
+      clearInterval(timerInterval);
+      clearInterval(cooldownInterval);
+    });
+  })();
+</script>
+{% endblock %}

@@ -1,0 +1,195 @@
+/* 🍎 Nutrition Analyzer — Modern Glass UI */
+:root {
+  --orange: #e65100;
+  --orange-dark: #bf4900;
+  --cream-bg: #fffaf3;
+  --border-light: #ffe0b2;
+  --radius: 14px;
+  --shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  --transition: all 0.3s ease;
+  --white: #ffffff;
+}
+
+body {
+  background: linear-gradient(135deg, white, #4caf50);
+  font-family: "Poppins", sans-serif;
+  color: #333;
+  min-height: 100vh;
+}
+
+/* 🌿 Main Container */
+.tools-page {
+  max-width: 700px;
+  margin: 60px auto;
+  padding: 40px 35px;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(10px);
+  transition: var(--transition);
+  animation: fadeIn 0.4s ease;
+}
+
+.tools-page:hover {
+  transform: translateY(-3px);
+}
+
+.tools-page h2 {
+  text-align: center;
+  color: var(--orange-dark);
+  font-weight: 700;
+  font-size: 30px;
+  margin-bottom: 25px;
+}
+
+/* 🌿 Input Styles */
+.input-wrapper {
+  position: relative;
+}
+
+#foodName,
+#categorySelect {
+  width: 100%;
+  padding: 14px 16px;
+  border: 1.5px solid #ccc;
+  border-radius: 10px;
+  margin-bottom: 16px;
+  font-size: 15px;
+  background: #fff;
+  transition: var(--transition);
+  box-sizing: border-box;
+}
+
+#foodName:focus,
+#categorySelect:focus {
+  border-color: var(--orange);
+  box-shadow: 0 0 8px rgba(230, 81, 0, 0.25);
+  outline: none;
+}
+
+/* 🍊 Analyze Button */
+.button-orange {
+  width: 100%;
+  padding: 14px;
+  background: linear-gradient(135deg, var(--orange), var(--orange-dark));
+  border-radius: 10px;
+  color: white;
+  cursor: pointer;
+  border: none;
+  transition: var(--transition);
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  box-shadow: 0 4px 14px rgba(230, 81, 0, 0.25);
+}
+
+.button-orange:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(230, 81, 0, 0.3);
+}
+
+/* 🍯 Nutrition Results */
+#nutrientResults {
+  background: none;
+  border: 1px solid #1e293b;
+  border-radius: 10px;
+  padding: 16px 18px;
+  margin-top: 20px;
+  font-size: 15px;
+  line-height: 1.7;
+  box-shadow: inset 0 0 10px rgba(255, 183, 77, 0.15);
+  animation: fadeIn 0.4s ease;
+}
+
+/* 🍩 Donut Chart — Larger, Centered, Perfect Circle */
+#macroChart {
+  display: block;
+  margin: 40px auto 10px auto;
+  background: transparent;
+  width: 420px !important;
+  height: 420px !important;
+  aspect-ratio: 1 / 1;
+}
+
+/* Prevent Chart.js Stretching */
+canvas#macroChart {
+  width: 420px !important;
+  height: 420px !important;
+  max-width: none !important;
+  max-height: none !important;
+  aspect-ratio: 1 / 1;
+  display: block;
+  margin: 40px auto 10px auto;
+}
+
+/* 🧡 Suggestions Dropdown */
+.suggestions-box {
+  position: absolute;
+  top: calc(100% + 6px);
+  left: 0;
+  width: 100%;
+  background: #fff;
+  border: 1px solid #ffc78f;
+  border-radius: 8px;
+  max-height: 230px;
+  overflow-y: auto;
+  display: none;
+  z-index: 9999;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+  animation: fadeIn 0.3s ease;
+}
+
+.suggestions-box div {
+  padding: 12px 16px;
+  cursor: pointer;
+  transition:
+    background 0.2s ease,
+    transform 0.1s ease;
+  font-size: 14px;
+}
+
+.suggestions-box div:hover {
+  background: #fff3e0;
+  transform: translateX(2px);
+}
+
+/* ✨ Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 📱 Responsive */
+@media (max-width: 700px) {
+  .tools-page {
+    padding: 25px 20px;
+    margin: 40px 15px;
+  }
+
+  #foodName,
+  #categorySelect {
+    font-size: 14px;
+    padding: 10px;
+  }
+
+  .button-orange {
+    font-size: 15px;
+    padding: 12px;
+  }
+
+  #nutrientResults {
+    font-size: 13px;
+  }
+
+  #macroChart,
+  canvas#macroChart {
+    width: 280px !important;
+    height: 280px !important;
+    aspect-ratio: 1 / 1;
+  }
+}

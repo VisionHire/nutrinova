@@ -1,0 +1,13 @@
+{% extends "base.html" %} {% block content %}
+<section class="auth-container">
+  <h2>Create account</h2>
+  <form method="post">
+    <input type="hidden" name="csrf_token" value="{{ csrf_token() }}" />
+    <input required name="name" placeholder="Full name" />
+    <input required name="email" placeholder="Email" type="email" />
+    <input required name="password" placeholder="Password" type="password" />
+    <button class="btn">Sign up</button>
+    <p>Note : You are responsible for remembering the password you create.</p>
+  </form>
+</section>
+{% endblock %}

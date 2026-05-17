@@ -1,0 +1,45 @@
+{% extends "base.html" %} {% block title %}Nutrition Analyzer | NutriNova{%
+endblock %} {% block meta_description %} Analyze the nutritional value of foods
+with NutriNova Nutrition Analyzer. Instantly view calories, macronutrients,
+vitamins, and minerals for foods based on 100g values. {% endblock %} {% block
+meta_keywords %} nutrition analyzer tool, food nutrition analyzer, calorie and
+nutrient analyzer, macronutrients vitamins minerals checker, nutrinova nutrition
+analyzer {% endblock %} {% block extra_css %}
+
+<link
+  rel="stylesheet"
+  href="{{ url_for('static', filename='css/nutrition-analyzer.css') }}"
+/>
+{% endblock %} {% block content %}
+
+<section class="nutrition-analyzer-container">
+  <h2>Nutrition Analyzer</h2>
+  <p>All nutrition values shown are based on 100g of the selected food.</p>
+
+  <div class="analyzer-form">
+    <div class="input-wrapper">
+      <input
+        id="foodName"
+        placeholder="Enter food name..."
+        autocomplete="off"
+      />
+      <div id="analyzerSuggestionsBox" class="suggestions-box"></div>
+    </div>
+
+    <select id="categorySelect">
+      <option value="macronutrients">Macronutrients</option>
+      <option value="vitamins">Vitamins</option>
+      <option value="minerals_and_trace">Minerals & Trace</option>
+    </select>
+
+    <button id="analyzeBtn" class="button-orange">Analyze</button>
+  </div>
+
+  <div id="nutrientResults" class="results-box"></div>
+  <canvas id="macroChart" style="display: none; margin-top: 20px"></canvas>
+</section>
+{% endblock %} {% block extra_js %}
+
+<script src="{{ url_for('static', filename='js/nutrition-analyzer.js') }}"></script>
+
+{% endblock %}

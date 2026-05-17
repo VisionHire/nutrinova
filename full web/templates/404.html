@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>404 - Page Not Found | NutriNova</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0;
+        padding: 20px;
+      }
+      .error-container {
+        max-width: 600px;
+        width: 100%;
+        background: white;
+        border-radius: 20px;
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        padding: 50px 40px;
+        text-align: center;
+        transition: transform 0.3s ease;
+      }
+      .error-container:hover {
+        transform: translateY(-5px);
+      }
+      .error-code {
+        font-size: 120px;
+        font-weight: 800;
+        color: #4caf50;
+        line-height: 1;
+        margin-bottom: 10px;
+        text-shadow: 2px 2px 0 rgba(76, 175, 80, 0.2);
+      }
+      .error-title {
+        font-size: 28px;
+        font-weight: 600;
+        color: #333;
+        margin-bottom: 15px;
+      }
+      .error-message {
+        font-size: 18px;
+        color: #666;
+        margin-bottom: 30px;
+        line-height: 1.6;
+      }
+      .search-suggestion {
+        background: #f9f9f9;
+        border-radius: 12px;
+        padding: 20px;
+        margin-bottom: 30px;
+        text-align: left;
+      }
+      .search-suggestion p {
+        font-weight: 600;
+        color: #444;
+        margin-bottom: 10px;
+      }
+      .search-suggestion ul {
+        list-style: none;
+        padding: 0;
+      }
+      .search-suggestion li {
+        margin-bottom: 8px;
+      }
+      .search-suggestion a {
+        color: #4caf50;
+        text-decoration: none;
+        font-weight: 500;
+        transition: color 0.2s;
+      }
+      .search-suggestion a:hover {
+        color: #2e7d32;
+        text-decoration: underline;
+      }
+      .action-buttons {
+        display: flex;
+        gap: 15px;
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+      .btn {
+        display: inline-block;
+        padding: 14px 30px;
+        border-radius: 50px;
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 16px;
+        transition: all 0.3s ease;
+        border: 2px solid transparent;
+      }
+      .btn-primary {
+        background: #4caf50;
+        color: white;
+        box-shadow: 0 4px 10px rgba(76, 175, 80, 0.3);
+      }
+      .btn-primary:hover {
+        background: #2e7d32;
+        transform: translateY(-2px);
+        box-shadow: 0 6px 15px rgba(76, 175, 80, 0.4);
+      }
+      .btn-secondary {
+        background: transparent;
+        color: #4caf50;
+        border-color: #4caf50;
+      }
+      .btn-secondary:hover {
+        background: #4caf50;
+        color: white;
+        transform: translateY(-2px);
+      }
+      .support-contact {
+        margin-top: 40px;
+        font-size: 14px;
+        color: #888;
+        border-top: 1px solid #eee;
+        padding-top: 25px;
+      }
+      .support-contact a {
+        color: #4caf50;
+        text-decoration: none;
+        font-weight: 500;
+      }
+      .support-contact a:hover {
+        text-decoration: underline;
+      }
+      @media (max-width: 480px) {
+        .error-container {
+          padding: 30px 20px;
+        }
+        .error-code {
+          font-size: 90px;
+        }
+        .error-title {
+          font-size: 24px;
+        }
+        .btn {
+          padding: 12px 25px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="error-container">
+      <div class="error-code">404</div>
+      <div class="error-title">Page Not Found</div>
+      <div class="error-message">
+        Sorry, the page you're looking for doesn't exist or has been moved.
+      </div>
+
+      <!-- Helpful suggestions for lost visitors -->
+      <div class="search-suggestion">
+        <p>🌟 Popular destinations:</p>
+        <ul>
+          <li><a href="/">🏠 Home</a></li>
+          <li><a href="/plans">💎 Premium Plans</a></li>
+          <li><a href="/meal-planner">📅 Meal Planner</a></li>
+          <li><a href="/nutrition-analyzer">🔬 Nutrition Analyzer</a></li>
+          <li><a href="/contact">📞 Contact Support</a></li>
+        </ul>
+      </div>
+
+      <div class="action-buttons">
+        <a href="/" class="btn btn-primary">Go to Homepage</a>
+        <a href="/contact" class="btn btn-secondary">Report a Problem</a>
+      </div>
+
+      <div class="support-contact">
+        If you believe this is an error, please
+        <a href="/contact">contact our support team</a>.
+      </div>
+    </div>
+  </body>
+</html>

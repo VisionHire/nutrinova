@@ -1,0 +1,84 @@
+{% extends "base.html" %} {% block title %}Nutrition Report | NutriNova{%
+endblock %} {% block meta_description %} Generate detailed nutrition reports
+with NutriNova. Analyze food items, calculate calories and nutrients, review
+saved meals, and download comprehensive nutrition reports as PDF. {% endblock %}
+{% block meta_keywords %} nutrition report generator, food nutrition report,
+calorie nutrition report tool, nutrinova nutrition report, nutrient analysis
+report {% endblock %} {% block extra_css %}
+
+<link
+  href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+  rel="stylesheet"
+/>
+<link
+  rel="stylesheet"
+  href="{{ url_for('static', filename='css/nutrition_report.css') }}"
+/>
+{% endblock %} {% block content %}
+
+<div class="page">
+  <div class="card">
+    <div class="card-head">
+      <div class="title">Food Nutrition Report</div>
+
+      <div class="meta">
+        <div>
+          <label>Date Range</label>
+          <div class="range">
+            <input type="date" id="startDate" />
+            <span>—</span>
+            <input type="date" id="endDate" />
+          </div>
+        </div>
+
+        <div>
+          <label>Saved Meals</label>
+          <div class="row gap">
+            <select id="savedMealsSelect">
+              <option value="">Load from Saved Meals (Last 30 Days)</option>
+            </select>
+            <button class="btn subtle" id="loadSaved">Load</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="builder">
+      <div class="builder-head">
+        <div class="builder-title">Food Items</div>
+
+        <div class="builder-actions">
+          <button class="btn" id="addRow">Add Item</button>
+          <button class="btn outline" id="generate">Generate Report</button>
+          <button class="btn success" id="downloadPdf" disabled>
+            Download PDF
+          </button>
+        </div>
+      </div>
+
+      <div id="rows" class="rows"></div>
+
+      <div class="hint">
+        Tip: You can also load items from “Saved Meals” (saved on the server for
+        approximately the last 30 days).
+      </div>
+    </div>
+
+    <div
+      id="reportWrap"
+      class="report-wrap"
+      data-current-user="{{ current_user_name|e }}"
+    ></div>
+  </div>
+</div>
+{% endblock %} {% block extra_js %}
+
+<script src="https://cdn.jsdelivr.net/npm/jspdf@2.5.1/dist/jspdf.umd.min.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/jspdf-autotable@3.8.2/dist/jspdf.plugin.autotable.min.js"></script>
+
+<script src="{{ url_for('static', filename='js/nutrition_report.js') }}"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/html2pdf.js@0.10.1/dist/html2pdf.bundle.min.js"></script>
+
+{% endblock %}

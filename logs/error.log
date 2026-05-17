@@ -1,0 +1,375 @@
+2026-03-07 20:56:26,933 ERROR [app] app:245 - Easebuzz credentials missing in production!
+2026-03-07 21:01:19,294 ERROR [tempCodeRunnerFile] tempCodeRunnerFile:245 - Easebuzz credentials missing in production!
+2026-03-07 21:04:25,131 ERROR [app] app:245 - Easebuzz credentials missing in production!
+2026-03-07 21:29:07,180 ERROR [app] app:835 - Database initialization error: (1045, "Access denied for user 'root'@'localhost' (using password: NO)")
+2026-03-07 21:29:07,180 ERROR [app] app:843 - Failed to initialize database: (1045, "Access denied for user 'root'@'localhost' (using password: NO)")
+2026-03-07 21:29:07,854 ERROR [app] app:835 - Database initialization error: (1045, "Access denied for user 'root'@'localhost' (using password: NO)")
+2026-03-07 21:29:07,854 ERROR [app] app:843 - Failed to initialize database: (1045, "Access denied for user 'root'@'localhost' (using password: NO)")
+2026-03-07 22:01:25,805 ERROR [app] app:835 - Database initialization error: (1045, "Access denied for user 'root'@'localhost' (using password: NO)")
+2026-03-07 22:01:25,806 ERROR [app] app:843 - Failed to initialize database: (1045, "Access denied for user 'root'@'localhost' (using password: NO)")
+2026-03-07 22:01:26,435 ERROR [app] app:835 - Database initialization error: (1045, "Access denied for user 'root'@'localhost' (using password: NO)")
+2026-03-07 22:01:26,435 ERROR [app] app:843 - Failed to initialize database: (1045, "Access denied for user 'root'@'localhost' (using password: NO)")
+2026-03-07 22:04:09,367 ERROR [app] app:835 - Database initialization error: (1045, "Access denied for user 'root'@'localhost' (using password: NO)")
+2026-03-07 22:04:09,367 ERROR [app] app:843 - Failed to initialize database: (1045, "Access denied for user 'root'@'localhost' (using password: NO)")
+2026-03-07 22:04:09,880 ERROR [app] app:835 - Database initialization error: (1045, "Access denied for user 'root'@'localhost' (using password: NO)")
+2026-03-07 22:04:09,880 ERROR [app] app:843 - Failed to initialize database: (1045, "Access denied for user 'root'@'localhost' (using password: NO)")
+2026-03-07 22:23:31,145 ERROR [app] app:835 - Database initialization error: (1045, "Access denied for user 'root'@'localhost' (using password: NO)")
+2026-03-07 22:23:31,145 ERROR [app] app:843 - Failed to initialize database: (1045, "Access denied for user 'root'@'localhost' (using password: NO)")
+2026-03-07 22:23:31,751 ERROR [app] app:835 - Database initialization error: (1045, "Access denied for user 'root'@'localhost' (using password: NO)")
+2026-03-07 22:23:31,751 ERROR [app] app:843 - Failed to initialize database: (1045, "Access denied for user 'root'@'localhost' (using password: NO)")
+2026-03-07 22:36:39,809 ERROR [app] app:835 - Database initialization error: (1045, "Access denied for user 'root'@'localhost' (using password: NO)")
+2026-03-07 22:36:39,809 ERROR [app] app:843 - Failed to initialize database: (1045, "Access denied for user 'root'@'localhost' (using password: NO)")
+2026-03-07 22:36:40,331 ERROR [app] app:835 - Database initialization error: (1045, "Access denied for user 'root'@'localhost' (using password: NO)")
+2026-03-07 22:36:40,332 ERROR [app] app:843 - Failed to initialize database: (1045, "Access denied for user 'root'@'localhost' (using password: NO)")
+2026-03-07 22:37:05,659 ERROR [app] app:1213 - Login query error: (1045, "Access denied for user 'root'@'localhost' (using password: NO)")
+2026-03-07 22:37:15,465 ERROR [app] app:1213 - Login query error: (1045, "Access denied for user 'root'@'localhost' (using password: NO)")
+2026-03-07 22:37:48,973 ERROR [app] app:1177 - Registration error: (1045, "Access denied for user 'root'@'localhost' (using password: NO)")
+2026-03-07 22:42:39,387 ERROR [app] app:1213 - Login query error: (1045, "Access denied for user 'root'@'localhost' (using password: NO)")
+2026-03-07 22:53:33,127 ERROR [app] app:842 - Database initialization error: (1045, "Access denied for user 'root'@'localhost' (using password: NO)")
+2026-03-07 22:53:33,127 ERROR [app] app:850 - Failed to initialize database: (1045, "Access denied for user 'root'@'localhost' (using password: NO)")
+2026-03-07 22:53:33,777 ERROR [app] app:842 - Database initialization error: (1045, "Access denied for user 'root'@'localhost' (using password: NO)")
+2026-03-07 22:53:33,777 ERROR [app] app:850 - Failed to initialize database: (1045, "Access denied for user 'root'@'localhost' (using password: NO)")
+2026-03-07 22:53:51,926 ERROR [app] app:1220 - Login query error: (1045, "Access denied for user 'root'@'localhost' (using password: NO)")
+2026-03-07 22:53:56,699 ERROR [app] app:1220 - Login query error: (1045, "Access denied for user 'root'@'localhost' (using password: NO)")
+2026-03-07 22:54:10,635 ERROR [app] app:1220 - Login query error: (1045, "Access denied for user 'root'@'localhost' (using password: NO)")
+2026-03-07 22:58:22,643 ERROR [app] app:1220 - Login query error: (1045, "Access denied for user 'root'@'localhost' (using password: NO)")
+2026-03-07 22:58:29,785 ERROR [app] app:1220 - Login query error: (1045, "Access denied for user 'root'@'localhost' (using password: NO)")
+2026-03-07 23:02:37,085 ERROR [app] app:842 - Database initialization error: (1045, "Access denied for user 'root'@'localhost' (using password: NO)")
+2026-03-07 23:02:37,088 ERROR [app] app:850 - Failed to initialize database: (1045, "Access denied for user 'root'@'localhost' (using password: NO)")
+2026-03-07 23:03:08,894 ERROR [app] app:842 - Database initialization error: (1045, "Access denied for user 'root'@'localhost' (using password: NO)")
+2026-03-07 23:03:08,894 ERROR [app] app:850 - Failed to initialize database: (1045, "Access denied for user 'root'@'localhost' (using password: NO)")
+2026-03-07 23:03:12,556 ERROR [app] app:842 - Database initialization error: (1045, "Access denied for user 'root'@'localhost' (using password: NO)")
+2026-03-07 23:03:12,556 ERROR [app] app:850 - Failed to initialize database: (1045, "Access denied for user 'root'@'localhost' (using password: NO)")
+2026-03-07 23:03:18,190 ERROR [app] app:842 - Database initialization error: (1045, "Access denied for user 'root'@'localhost' (using password: NO)")
+2026-03-07 23:03:18,196 ERROR [app] app:850 - Failed to initialize database: (1045, "Access denied for user 'root'@'localhost' (using password: NO)")
+2026-03-07 23:03:46,082 ERROR [app] app:842 - Database initialization error: (1045, "Access denied for user 'root'@'localhost' (using password: NO)")
+2026-03-07 23:03:46,082 ERROR [app] app:850 - Failed to initialize database: (1045, "Access denied for user 'root'@'localhost' (using password: NO)")
+2026-03-07 23:03:48,727 ERROR [app] app:842 - Database initialization error: (1045, "Access denied for user 'root'@'localhost' (using password: NO)")
+2026-03-07 23:03:48,727 ERROR [app] app:850 - Failed to initialize database: (1045, "Access denied for user 'root'@'localhost' (using password: NO)")
+2026-03-07 23:04:04,118 ERROR [app] app:842 - Database initialization error: (1045, "Access denied for user 'root'@'localhost' (using password: NO)")
+2026-03-07 23:04:04,118 ERROR [app] app:850 - Failed to initialize database: (1045, "Access denied for user 'root'@'localhost' (using password: NO)")
+2026-03-07 23:04:04,634 ERROR [app] app:842 - Database initialization error: (1045, "Access denied for user 'root'@'localhost' (using password: NO)")
+2026-03-07 23:04:04,635 ERROR [app] app:850 - Failed to initialize database: (1045, "Access denied for user 'root'@'localhost' (using password: NO)")
+2026-03-07 23:04:12,798 ERROR [app] app:1220 - Login query error: (1045, "Access denied for user 'root'@'localhost' (using password: NO)")
+2026-03-07 23:04:19,007 ERROR [app] app:1220 - Login query error: (1045, "Access denied for user 'root'@'localhost' (using password: NO)")
+2026-03-07 23:07:57,646 ERROR [app] app:842 - Database initialization error: (1045, "Access denied for user 'root'@'localhost' (using password: NO)")
+2026-03-07 23:07:57,646 ERROR [app] app:850 - Failed to initialize database: (1045, "Access denied for user 'root'@'localhost' (using password: NO)")
+2026-03-07 23:07:58,177 ERROR [app] app:842 - Database initialization error: (1045, "Access denied for user 'root'@'localhost' (using password: NO)")
+2026-03-07 23:07:58,177 ERROR [app] app:850 - Failed to initialize database: (1045, "Access denied for user 'root'@'localhost' (using password: NO)")
+2026-03-07 23:08:24,758 ERROR [app] app:1220 - Login query error: (1045, "Access denied for user 'root'@'localhost' (using password: NO)")
+2026-03-07 23:55:26,605 ERROR [app] app:852 - Database initialization error: (1045, "Access denied for user 'root'@'localhost' (using password: NO)")
+2026-03-07 23:55:26,606 ERROR [app] app:860 - Failed to initialize database: (1045, "Access denied for user 'root'@'localhost' (using password: NO)")
+2026-03-07 23:55:27,359 ERROR [app] app:852 - Database initialization error: (1045, "Access denied for user 'root'@'localhost' (using password: NO)")
+2026-03-07 23:55:27,359 ERROR [app] app:860 - Failed to initialize database: (1045, "Access denied for user 'root'@'localhost' (using password: NO)")
+2026-03-07 23:56:11,953 ERROR [app] app:1230 - Login query error: (1045, "Access denied for user 'root'@'localhost' (using password: NO)")
+2026-03-07 23:58:28,523 ERROR [app] app:852 - Database initialization error: (1045, "Access denied for user 'root'@'localhost' (using password: NO)")
+2026-03-07 23:58:28,523 ERROR [app] app:860 - Failed to initialize database: (1045, "Access denied for user 'root'@'localhost' (using password: NO)")
+2026-03-07 23:58:29,165 ERROR [app] app:852 - Database initialization error: (1045, "Access denied for user 'root'@'localhost' (using password: NO)")
+2026-03-07 23:58:29,165 ERROR [app] app:860 - Failed to initialize database: (1045, "Access denied for user 'root'@'localhost' (using password: NO)")
+2026-03-07 23:59:15,187 ERROR [app] app:1230 - Login query error: (1045, "Access denied for user 'root'@'localhost' (using password: NO)")
+2026-03-09 15:57:37,111 ERROR [app] app:852 - Database initialization error: (1045, "Access denied for user 'root'@'localhost' (using password: NO)")
+2026-03-09 15:57:37,111 ERROR [app] app:860 - Failed to initialize database: (1045, "Access denied for user 'root'@'localhost' (using password: NO)")
+2026-03-09 15:57:37,927 ERROR [app] app:852 - Database initialization error: (1045, "Access denied for user 'root'@'localhost' (using password: NO)")
+2026-03-09 15:57:37,927 ERROR [app] app:860 - Failed to initialize database: (1045, "Access denied for user 'root'@'localhost' (using password: NO)")
+2026-03-09 16:00:25,556 ERROR [app] app:1230 - Login query error: (1045, "Access denied for user 'root'@'localhost' (using password: NO)")
+2026-03-09 16:08:43,363 ERROR [app] app:852 - Database initialization error: (1045, "Access denied for user 'root'@'localhost' (using password: NO)")
+2026-03-09 16:08:43,363 ERROR [app] app:860 - Failed to initialize database: (1045, "Access denied for user 'root'@'localhost' (using password: NO)")
+2026-03-09 16:08:44,138 ERROR [app] app:852 - Database initialization error: (1045, "Access denied for user 'root'@'localhost' (using password: NO)")
+2026-03-09 16:08:44,139 ERROR [app] app:860 - Failed to initialize database: (1045, "Access denied for user 'root'@'localhost' (using password: NO)")
+2026-03-09 16:08:52,372 ERROR [app] app:1230 - Login query error: (1045, "Access denied for user 'root'@'localhost' (using password: NO)")
+2026-03-09 16:09:01,993 ERROR [app] app:1230 - Login query error: (1045, "Access denied for user 'root'@'localhost' (using password: NO)")
+2026-03-09 16:35:58,389 ERROR [app] app:873 - Database initialization error: (1045, "Access denied for user 'root'@'localhost' (using password: NO)")
+2026-03-09 16:35:58,389 ERROR [app] app:881 - Failed to initialize database: (1045, "Access denied for user 'root'@'localhost' (using password: NO)")
+2026-03-09 16:35:59,043 ERROR [app] app:873 - Database initialization error: (1045, "Access denied for user 'root'@'localhost' (using password: NO)")
+2026-03-09 16:35:59,044 ERROR [app] app:881 - Failed to initialize database: (1045, "Access denied for user 'root'@'localhost' (using password: NO)")
+2026-03-09 16:38:58,326 ERROR [app] app:1253 - Login query error: (1045, "Access denied for user 'root'@'localhost' (using password: NO)")
+2026-03-09 16:39:29,122 ERROR [app] app:1253 - Login query error: (1045, "Access denied for user 'root'@'localhost' (using password: NO)")
+2026-03-09 16:54:51,975 ERROR [app] app:873 - Database initialization error: (1045, "Access denied for user 'root'@'localhost' (using password: NO)")
+2026-03-09 16:54:51,975 ERROR [app] app:881 - Failed to initialize database: (1045, "Access denied for user 'root'@'localhost' (using password: NO)")
+2026-03-09 16:54:52,494 ERROR [app] app:873 - Database initialization error: (1045, "Access denied for user 'root'@'localhost' (using password: NO)")
+2026-03-09 16:54:52,494 ERROR [app] app:881 - Failed to initialize database: (1045, "Access denied for user 'root'@'localhost' (using password: NO)")
+2026-03-09 16:55:23,267 ERROR [app] app:873 - Database initialization error: (1045, "Access denied for user 'root'@'localhost' (using password: NO)")
+2026-03-09 16:55:23,272 ERROR [app] app:881 - Failed to initialize database: (1045, "Access denied for user 'root'@'localhost' (using password: NO)")
+2026-03-09 16:55:23,807 ERROR [app] app:873 - Database initialization error: (1045, "Access denied for user 'root'@'localhost' (using password: NO)")
+2026-03-09 16:55:23,807 ERROR [app] app:881 - Failed to initialize database: (1045, "Access denied for user 'root'@'localhost' (using password: NO)")
+2026-03-09 16:55:48,829 ERROR [app] app:1253 - Login query error: (1045, "Access denied for user 'root'@'localhost' (using password: NO)")
+2026-03-09 17:06:48,800 ERROR [app] app:873 - Database initialization error: (1045, "Access denied for user 'root'@'localhost' (using password: NO)")
+2026-03-09 17:06:48,800 ERROR [app] app:881 - Failed to initialize database: (1045, "Access denied for user 'root'@'localhost' (using password: NO)")
+2026-03-09 17:06:49,483 ERROR [app] app:873 - Database initialization error: (1045, "Access denied for user 'root'@'localhost' (using password: NO)")
+2026-03-09 17:06:49,483 ERROR [app] app:881 - Failed to initialize database: (1045, "Access denied for user 'root'@'localhost' (using password: NO)")
+2026-03-09 17:08:20,820 ERROR [app] app:1253 - Login query error: (1045, "Access denied for user 'root'@'localhost' (using password: NO)")
+2026-03-09 17:08:25,287 ERROR [app] app:1253 - Login query error: (1045, "Access denied for user 'root'@'localhost' (using password: NO)")
+2026-03-09 17:08:34,241 ERROR [app] app:1253 - Login query error: (1045, "Access denied for user 'root'@'localhost' (using password: NO)")
+2026-03-09 17:08:44,592 ERROR [app] app:1253 - Login query error: (1045, "Access denied for user 'root'@'localhost' (using password: NO)")
+2026-03-09 17:09:23,606 ERROR [app] app:1253 - Login query error: (1045, "Access denied for user 'root'@'localhost' (using password: NO)")
+2026-03-09 17:29:32,119 ERROR [app] app:736 - Database initialization error: (1045, "Access denied for user 'root'@'localhost' (using password: NO)")
+2026-03-09 17:29:32,119 ERROR [app] app:743 - Failed to initialize database: (1045, "Access denied for user 'root'@'localhost' (using password: NO)")
+2026-03-09 17:29:32,796 ERROR [app] app:736 - Database initialization error: (1045, "Access denied for user 'root'@'localhost' (using password: NO)")
+2026-03-09 17:29:32,796 ERROR [app] app:743 - Failed to initialize database: (1045, "Access denied for user 'root'@'localhost' (using password: NO)")
+2026-03-09 17:30:01,448 ERROR [app] app:1123 - Login query error: (1045, "Access denied for user 'root'@'localhost' (using password: NO)")
+2026-03-09 17:44:57,009 ERROR [app] app:744 - Database initialization error: (1045, "Access denied for user 'root'@'localhost' (using password: NO)")
+2026-03-09 17:44:57,665 ERROR [app] app:744 - Database initialization error: (1045, "Access denied for user 'root'@'localhost' (using password: NO)")
+2026-03-09 17:45:42,417 ERROR [app] app:1134 - Login query error: (1045, "Access denied for user 'root'@'localhost' (using password: NO)")
+2026-03-09 18:06:37,418 ERROR [app] app:873 - Database initialization error: (1045, "Access denied for user 'root'@'localhost' (using password: NO)")
+2026-03-09 18:06:37,419 ERROR [app] app:881 - Failed to initialize database: (1045, "Access denied for user 'root'@'localhost' (using password: NO)")
+2026-03-09 18:06:37,942 ERROR [app] app:873 - Database initialization error: (1045, "Access denied for user 'root'@'localhost' (using password: NO)")
+2026-03-09 18:06:37,942 ERROR [app] app:881 - Failed to initialize database: (1045, "Access denied for user 'root'@'localhost' (using password: NO)")
+2026-03-09 18:06:50,340 ERROR [app] app:1253 - Login query error: (1045, "Access denied for user 'root'@'localhost' (using password: NO)")
+2026-03-09 18:07:22,771 ERROR [app] app:873 - Database initialization error: (1045, "Access denied for user 'root'@'localhost' (using password: YES)")
+2026-03-09 18:07:22,772 ERROR [app] app:881 - Failed to initialize database: (1045, "Access denied for user 'root'@'localhost' (using password: YES)")
+2026-03-09 19:40:04,216 ERROR [app] app:1351 - Easebuzz not configured but initiate called
+2026-03-09 19:40:11,516 ERROR [app] app:1351 - Easebuzz not configured but initiate called
+2026-03-09 19:41:06,703 ERROR [app] app:1351 - Easebuzz not configured but initiate called
+2026-03-09 22:15:33,455 ERROR [tempCodeRunnerFile] tempCodeRunnerFile:245 - Easebuzz credentials missing in production!
+2026-03-09 22:36:41,012 ERROR [app] app:1351 - Easebuzz not configured but initiate called
+2026-03-09 23:22:58,415 ERROR [app] app:1357 - Razorpay not configured but create-order called
+2026-03-09 23:23:07,004 ERROR [app] app:1357 - Razorpay not configured but create-order called
+2026-03-09 23:38:25,127 ERROR [app] app:1357 - Razorpay not configured but create-order called
+2026-03-09 23:38:29,762 ERROR [app] app:1357 - Razorpay not configured but create-order called
+2026-03-09 23:38:33,849 ERROR [app] app:1357 - Razorpay not configured but create-order called
+2026-03-09 23:49:18,646 ERROR [app] app:1357 - Razorpay not configured but create-order called
+2026-03-09 23:49:35,126 ERROR [app] app:1357 - Razorpay not configured but create-order called
+2026-03-09 23:57:09,740 ERROR [app] app:1357 - Razorpay not configured but create-order called
+2026-03-09 23:57:14,217 ERROR [app] app:1357 - Razorpay not configured but create-order called
+2026-03-10 00:04:54,229 ERROR [app] app:1368 - Razorpay not configured but create-order called
+2026-03-10 00:04:59,060 ERROR [app] app:1368 - Razorpay not configured but create-order called
+2026-03-10 00:10:40,404 ERROR [app] app:1369 - Razorpay not configured but create-order called
+2026-03-10 00:10:49,536 ERROR [app] app:1369 - Razorpay not configured but create-order called
+2026-03-10 00:16:33,555 ERROR [app] app:364 - Transaction rolled back: (1054, "Unknown column 'razorpay_payment_id' in 'field list'")
+2026-03-10 00:16:33,555 ERROR [app] app:1541 - Razorpay success error: (1054, "Unknown column 'razorpay_payment_id' in 'field list'")
+2026-03-10 22:29:18,490 ERROR [app] app:365 - Transaction rolled back: (1054, "Unknown column 'razorpay_payment_id' in 'field list'")
+2026-03-10 22:29:18,490 ERROR [app] app:1542 - Razorpay success error: (1054, "Unknown column 'razorpay_payment_id' in 'field list'")
+2026-03-10 23:05:52,909 ERROR [app] app:370 - Transaction rolled back: (1062, "Duplicate entry 'piyu4935@gmail.com' for key 'users.email'")
+2026-03-11 00:38:48,489 ERROR [app] app:375 - Transaction rolled back: (1062, "Duplicate entry 'ruokcenzzo314@gmail.com' for key 'users.email'")
+2026-03-12 02:41:53,741 ERROR [app] app:375 - Transaction rolled back: (1054, "Unknown column 'razorpay_payment_id' in 'field list'")
+2026-03-12 02:41:53,741 ERROR [app] app:1578 - Razorpay success error: (1054, "Unknown column 'razorpay_payment_id' in 'field list'")
+2026-03-12 02:42:22,687 ERROR [app] app:375 - Transaction rolled back: (1054, "Unknown column 'razorpay_payment_id' in 'field list'")
+2026-03-12 02:42:22,687 ERROR [app] app:1578 - Razorpay success error: (1054, "Unknown column 'razorpay_payment_id' in 'field list'")
+2026-03-12 02:45:17,045 ERROR [app] app:375 - Transaction rolled back: (1054, "Unknown column 'razorpay_payment_id' in 'field list'")
+2026-03-12 02:45:17,045 ERROR [app] app:1578 - Razorpay success error: (1054, "Unknown column 'razorpay_payment_id' in 'field list'")
+2026-03-12 02:47:58,729 ERROR [app] app:375 - Transaction rolled back: (1054, "Unknown column 'razorpay_payment_id' in 'field list'")
+2026-03-12 02:47:58,729 ERROR [app] app:1578 - Razorpay success error: (1054, "Unknown column 'razorpay_payment_id' in 'field list'")
+2026-03-12 02:49:16,488 ERROR [app] app:375 - Transaction rolled back: (1054, "Unknown column 'razorpay_payment_id' in 'field list'")
+2026-03-12 02:49:16,488 ERROR [app] app:1578 - Razorpay success error: (1054, "Unknown column 'razorpay_payment_id' in 'field list'")
+2026-03-12 03:21:06,615 ERROR [app] app:375 - Transaction rolled back: (1054, "Unknown column 'razorpay_payment_id' in 'field list'")
+2026-03-12 03:21:06,615 ERROR [app] app:1578 - Razorpay success error: (1054, "Unknown column 'razorpay_payment_id' in 'field list'")
+2026-03-13 16:13:06,167 ERROR [app] app:375 - Transaction rolled back: (1062, "Duplicate entry 'Egg (Boiled)' for key 'foods.name'")
+2026-03-14 00:43:55,675 ERROR [app] passforget:187 - OTP verification error: can't compare offset-naive and offset-aware datetimes
+2026-03-14 00:43:55,675 ERROR [app] passforget:187 - OTP verification error: can't compare offset-naive and offset-aware datetimes
+2026-03-14 00:48:23,260 ERROR [app] passforget:206 - OTP verification error: can't compare offset-naive and offset-aware datetimes
+2026-03-14 00:48:23,260 ERROR [app] passforget:206 - OTP verification error: can't compare offset-naive and offset-aware datetimes
+2026-03-14 00:49:35,013 ERROR [app] passforget:206 - OTP verification error: can't compare offset-naive and offset-aware datetimes
+2026-03-14 00:49:35,013 ERROR [app] passforget:206 - OTP verification error: can't compare offset-naive and offset-aware datetimes
+2026-03-14 00:50:09,162 ERROR [app] passforget:206 - OTP verification error: can't compare offset-naive and offset-aware datetimes
+2026-03-14 00:50:09,162 ERROR [app] passforget:206 - OTP verification error: can't compare offset-naive and offset-aware datetimes
+2026-03-14 01:20:38,642 ERROR [app] app:379 - Transaction rolled back: (1054, "Unknown column 'updated_at' in 'field list'")
+2026-03-14 01:20:38,642 ERROR [app] app:379 - Transaction rolled back: (1054, "Unknown column 'updated_at' in 'field list'")
+2026-03-14 01:20:38,643 ERROR [app] passforget:458 - Password reset error: (1054, "Unknown column 'updated_at' in 'field list'")
+2026-03-14 01:20:38,643 ERROR [app] passforget:458 - Password reset error: (1054, "Unknown column 'updated_at' in 'field list'")
+2026-03-14 01:20:38,673 ERROR [app] passforget:459 - Traceback (most recent call last):
+  File "c:\Users\niklesh saroj\OneDrive\Desktop\full web host personal\full web\passforget.py", line 437, in reset_password
+    cur.execute("""
+  File "C:\Users\niklesh saroj\AppData\Local\Programs\Python\Python312\Lib\site-packages\MySQLdb\cursors.py", line 179, in execute
+    res = self._query(mogrified_query)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\niklesh saroj\AppData\Local\Programs\Python\Python312\Lib\site-packages\MySQLdb\cursors.py", line 330, in _query
+    db.query(q)
+  File "C:\Users\niklesh saroj\AppData\Local\Programs\Python\Python312\Lib\site-packages\MySQLdb\connections.py", line 280, in query
+    _mysql.connection.query(self, query)
+MySQLdb.OperationalError: (1054, "Unknown column 'updated_at' in 'field list'")
+
+2026-03-14 01:20:38,673 ERROR [app] passforget:459 - Traceback (most recent call last):
+  File "c:\Users\niklesh saroj\OneDrive\Desktop\full web host personal\full web\passforget.py", line 437, in reset_password
+    cur.execute("""
+  File "C:\Users\niklesh saroj\AppData\Local\Programs\Python\Python312\Lib\site-packages\MySQLdb\cursors.py", line 179, in execute
+    res = self._query(mogrified_query)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\niklesh saroj\AppData\Local\Programs\Python\Python312\Lib\site-packages\MySQLdb\cursors.py", line 330, in _query
+    db.query(q)
+  File "C:\Users\niklesh saroj\AppData\Local\Programs\Python\Python312\Lib\site-packages\MySQLdb\connections.py", line 280, in query
+    _mysql.connection.query(self, query)
+MySQLdb.OperationalError: (1054, "Unknown column 'updated_at' in 'field list'")
+
+2026-03-14 01:27:55,847 ERROR [app] app:379 - Transaction rolled back: (1054, "Unknown column 'updated_at' in 'field list'")
+2026-03-14 01:27:55,847 ERROR [app] app:379 - Transaction rolled back: (1054, "Unknown column 'updated_at' in 'field list'")
+2026-03-14 01:27:55,848 ERROR [app] passforget:458 - Password reset error: (1054, "Unknown column 'updated_at' in 'field list'")
+2026-03-14 01:27:55,848 ERROR [app] passforget:458 - Password reset error: (1054, "Unknown column 'updated_at' in 'field list'")
+2026-03-14 01:27:55,850 ERROR [app] passforget:459 - Traceback (most recent call last):
+  File "c:\Users\niklesh saroj\OneDrive\Desktop\full web host personal\full web\passforget.py", line 437, in reset_password
+    cur.execute("""
+  File "C:\Users\niklesh saroj\AppData\Local\Programs\Python\Python312\Lib\site-packages\MySQLdb\cursors.py", line 179, in execute
+    res = self._query(mogrified_query)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\niklesh saroj\AppData\Local\Programs\Python\Python312\Lib\site-packages\MySQLdb\cursors.py", line 330, in _query
+    db.query(q)
+  File "C:\Users\niklesh saroj\AppData\Local\Programs\Python\Python312\Lib\site-packages\MySQLdb\connections.py", line 280, in query
+    _mysql.connection.query(self, query)
+MySQLdb.OperationalError: (1054, "Unknown column 'updated_at' in 'field list'")
+
+2026-03-14 01:27:55,850 ERROR [app] passforget:459 - Traceback (most recent call last):
+  File "c:\Users\niklesh saroj\OneDrive\Desktop\full web host personal\full web\passforget.py", line 437, in reset_password
+    cur.execute("""
+  File "C:\Users\niklesh saroj\AppData\Local\Programs\Python\Python312\Lib\site-packages\MySQLdb\cursors.py", line 179, in execute
+    res = self._query(mogrified_query)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\niklesh saroj\AppData\Local\Programs\Python\Python312\Lib\site-packages\MySQLdb\cursors.py", line 330, in _query
+    db.query(q)
+  File "C:\Users\niklesh saroj\AppData\Local\Programs\Python\Python312\Lib\site-packages\MySQLdb\connections.py", line 280, in query
+    _mysql.connection.query(self, query)
+MySQLdb.OperationalError: (1054, "Unknown column 'updated_at' in 'field list'")
+
+2026-03-14 01:36:53,168 ERROR [app] app:379 - Transaction rolled back: (1054, "Unknown column 'updated_at' in 'field list'")
+2026-03-14 01:36:53,168 ERROR [app] app:379 - Transaction rolled back: (1054, "Unknown column 'updated_at' in 'field list'")
+2026-03-14 01:36:53,169 ERROR [app] passforget:465 - Password reset error: (1054, "Unknown column 'updated_at' in 'field list'")
+2026-03-14 01:36:53,169 ERROR [app] passforget:465 - Password reset error: (1054, "Unknown column 'updated_at' in 'field list'")
+2026-03-14 01:36:53,171 ERROR [app] passforget:466 - Traceback (most recent call last):
+  File "c:\Users\niklesh saroj\OneDrive\Desktop\full web host personal\full web\passforget.py", line 444, in reset_password
+    cur.execute("""
+  File "C:\Users\niklesh saroj\AppData\Local\Programs\Python\Python312\Lib\site-packages\MySQLdb\cursors.py", line 179, in execute
+    res = self._query(mogrified_query)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\niklesh saroj\AppData\Local\Programs\Python\Python312\Lib\site-packages\MySQLdb\cursors.py", line 330, in _query
+    db.query(q)
+  File "C:\Users\niklesh saroj\AppData\Local\Programs\Python\Python312\Lib\site-packages\MySQLdb\connections.py", line 280, in query
+    _mysql.connection.query(self, query)
+MySQLdb.OperationalError: (1054, "Unknown column 'updated_at' in 'field list'")
+
+2026-03-14 01:36:53,171 ERROR [app] passforget:466 - Traceback (most recent call last):
+  File "c:\Users\niklesh saroj\OneDrive\Desktop\full web host personal\full web\passforget.py", line 444, in reset_password
+    cur.execute("""
+  File "C:\Users\niklesh saroj\AppData\Local\Programs\Python\Python312\Lib\site-packages\MySQLdb\cursors.py", line 179, in execute
+    res = self._query(mogrified_query)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\niklesh saroj\AppData\Local\Programs\Python\Python312\Lib\site-packages\MySQLdb\cursors.py", line 330, in _query
+    db.query(q)
+  File "C:\Users\niklesh saroj\AppData\Local\Programs\Python\Python312\Lib\site-packages\MySQLdb\connections.py", line 280, in query
+    _mysql.connection.query(self, query)
+MySQLdb.OperationalError: (1054, "Unknown column 'updated_at' in 'field list'")
+
+2026-03-14 02:43:24,102 ERROR [app] app:437 - Email sending failed to cubeharry26@gmail.com: (535, b'5.7.8 Username and Password not accepted. For more information, go to\n5.7.8  https://support.google.com/mail/?p=BadCredentials d9443c01a7336-2aece62bc32sm31435965ad.36 - gsmtp')
+2026-03-14 02:43:24,102 ERROR [app] app:437 - Email sending failed to cubeharry26@gmail.com: (535, b'5.7.8 Username and Password not accepted. For more information, go to\n5.7.8  https://support.google.com/mail/?p=BadCredentials d9443c01a7336-2aece62bc32sm31435965ad.36 - gsmtp')
+2026-03-14 02:44:15,400 ERROR [app] app:437 - Email sending failed to cubeharry26@gmail.com: (535, b'5.7.8 Username and Password not accepted. For more information, go to\n5.7.8  https://support.google.com/mail/?p=BadCredentials d9443c01a7336-2aece56c2b9sm38130575ad.18 - gsmtp')
+2026-03-14 02:44:15,400 ERROR [app] app:437 - Email sending failed to cubeharry26@gmail.com: (535, b'5.7.8 Username and Password not accepted. For more information, go to\n5.7.8  https://support.google.com/mail/?p=BadCredentials d9443c01a7336-2aece56c2b9sm38130575ad.18 - gsmtp')
+2026-03-14 02:45:46,672 ERROR [app] app:437 - Email sending failed to cubeharry26@gmail.com: (535, b'5.7.8 Username and Password not accepted. For more information, go to\n5.7.8  https://support.google.com/mail/?p=BadCredentials 41be03b00d2f7-c73eb97b41dsm2622867a12.5 - gsmtp')
+2026-03-14 02:45:46,672 ERROR [app] app:437 - Email sending failed to cubeharry26@gmail.com: (535, b'5.7.8 Username and Password not accepted. For more information, go to\n5.7.8  https://support.google.com/mail/?p=BadCredentials 41be03b00d2f7-c73eb97b41dsm2622867a12.5 - gsmtp')
+2026-03-14 02:49:07,301 ERROR [app] app:437 - Email sending failed to cubeharry26@gmail.com: (535, b'5.7.8 Username and Password not accepted. For more information, go to\n5.7.8  https://support.google.com/mail/?p=BadCredentials 98e67ed59e1d1-35a02fc9454sm9849845a91.12 - gsmtp')
+2026-03-14 02:49:07,301 ERROR [app] app:437 - Email sending failed to cubeharry26@gmail.com: (535, b'5.7.8 Username and Password not accepted. For more information, go to\n5.7.8  https://support.google.com/mail/?p=BadCredentials 98e67ed59e1d1-35a02fc9454sm9849845a91.12 - gsmtp')
+2026-03-14 02:51:12,014 ERROR [app] app:437 - Email sending failed to cubeharry26@gmail.com: (535, b'5.7.8 Username and Password not accepted. For more information, go to\n5.7.8  https://support.google.com/mail/?p=BadCredentials d2e1a72fcca58-82a07366123sm6979653b3a.47 - gsmtp')
+2026-03-14 02:51:12,014 ERROR [app] app:437 - Email sending failed to cubeharry26@gmail.com: (535, b'5.7.8 Username and Password not accepted. For more information, go to\n5.7.8  https://support.google.com/mail/?p=BadCredentials d2e1a72fcca58-82a07366123sm6979653b3a.47 - gsmtp')
+2026-03-14 02:56:34,935 ERROR [app] app:437 - Email sending failed to mannu123@gmail.com: (535, b'5.7.8 Username and Password not accepted. For more information, go to\n5.7.8  https://support.google.com/mail/?p=BadCredentials d2e1a72fcca58-82a0725da07sm6790474b3a.19 - gsmtp')
+2026-03-14 02:56:34,935 ERROR [app] app:437 - Email sending failed to mannu123@gmail.com: (535, b'5.7.8 Username and Password not accepted. For more information, go to\n5.7.8  https://support.google.com/mail/?p=BadCredentials d2e1a72fcca58-82a0725da07sm6790474b3a.19 - gsmtp')
+2026-03-14 02:56:34,936 ERROR [app] passforget:110 - Failed to send OTP email to mannu123@gmail.com
+2026-03-14 02:56:34,936 ERROR [app] passforget:110 - Failed to send OTP email to mannu123@gmail.com
+2026-03-14 02:56:44,564 ERROR [app] app:437 - Email sending failed to cubeharry26@gmail.com: (535, b'5.7.8 Username and Password not accepted. For more information, go to\n5.7.8  https://support.google.com/mail/?p=BadCredentials 41be03b00d2f7-c73ebb6474dsm2515300a12.20 - gsmtp')
+2026-03-14 02:56:44,564 ERROR [app] app:437 - Email sending failed to cubeharry26@gmail.com: (535, b'5.7.8 Username and Password not accepted. For more information, go to\n5.7.8  https://support.google.com/mail/?p=BadCredentials 41be03b00d2f7-c73ebb6474dsm2515300a12.20 - gsmtp')
+2026-03-14 02:56:44,564 ERROR [app] passforget:110 - Failed to send OTP email to cubeharry26@gmail.com
+2026-03-14 02:56:44,564 ERROR [app] passforget:110 - Failed to send OTP email to cubeharry26@gmail.com
+2026-03-14 02:56:54,129 ERROR [app] app:437 - Email sending failed to cubeharry26@gmail.com: (535, b'5.7.8 Username and Password not accepted. For more information, go to\n5.7.8  https://support.google.com/mail/?p=BadCredentials d2e1a72fcca58-82a13a2f2d6sm8161737b3a.9 - gsmtp')
+2026-03-14 02:56:54,129 ERROR [app] app:437 - Email sending failed to cubeharry26@gmail.com: (535, b'5.7.8 Username and Password not accepted. For more information, go to\n5.7.8  https://support.google.com/mail/?p=BadCredentials d2e1a72fcca58-82a13a2f2d6sm8161737b3a.9 - gsmtp')
+2026-03-14 02:56:54,130 ERROR [app] passforget:110 - Failed to send OTP email to cubeharry26@gmail.com
+2026-03-14 02:56:54,130 ERROR [app] passforget:110 - Failed to send OTP email to cubeharry26@gmail.com
+2026-03-14 03:01:20,888 ERROR [app] app:437 - Email sending failed to cubeharry26@gmail.com: (535, b'5.7.8 Username and Password not accepted. For more information, go to\n5.7.8  https://support.google.com/mail/?p=BadCredentials d2e1a72fcca58-82a0725e0cdsm6750456b3a.16 - gsmtp')
+2026-03-14 03:01:20,888 ERROR [app] app:437 - Email sending failed to cubeharry26@gmail.com: (535, b'5.7.8 Username and Password not accepted. For more information, go to\n5.7.8  https://support.google.com/mail/?p=BadCredentials d2e1a72fcca58-82a0725e0cdsm6750456b3a.16 - gsmtp')
+2026-03-14 03:04:13,727 ERROR [app] app:437 - Email sending failed to cubeharry26@gmail.com: (535, b'5.7.8 Username and Password not accepted. For more information, go to\n5.7.8  https://support.google.com/mail/?p=BadCredentials d9443c01a7336-2aece858d18sm31008355ad.86 - gsmtp')
+2026-03-14 03:04:13,727 ERROR [app] app:437 - Email sending failed to cubeharry26@gmail.com: (535, b'5.7.8 Username and Password not accepted. For more information, go to\n5.7.8  https://support.google.com/mail/?p=BadCredentials d9443c01a7336-2aece858d18sm31008355ad.86 - gsmtp')
+2026-03-14 03:51:21,260 ERROR [app] app:389 - Transaction rolled back: (1054, "Unknown column 'razorpay_payment_id' in 'field list'")
+2026-03-14 03:51:21,260 ERROR [app] app:389 - Transaction rolled back: (1054, "Unknown column 'razorpay_payment_id' in 'field list'")
+2026-03-14 03:51:21,260 ERROR [app] app:1629 - Razorpay success error: (1054, "Unknown column 'razorpay_payment_id' in 'field list'")
+2026-03-14 03:51:21,260 ERROR [app] app:1629 - Razorpay success error: (1054, "Unknown column 'razorpay_payment_id' in 'field list'")
+2026-03-15 03:01:34,793 ERROR [app] app:389 - Transaction rolled back: (1054, "Unknown column 'razorpay_payment_id' in 'field list'")
+2026-03-15 03:01:34,793 ERROR [app] app:389 - Transaction rolled back: (1054, "Unknown column 'razorpay_payment_id' in 'field list'")
+2026-03-15 03:01:34,793 ERROR [app] app:1629 - Razorpay success error: (1054, "Unknown column 'razorpay_payment_id' in 'field list'")
+2026-03-15 03:01:34,793 ERROR [app] app:1629 - Razorpay success error: (1054, "Unknown column 'razorpay_payment_id' in 'field list'")
+2026-03-17 00:28:35,708 ERROR [app] app:393 - Transaction rolled back: (1054, "Unknown column 'razorpay_payment_id' in 'field list'")
+2026-03-17 00:28:35,708 ERROR [app] app:393 - Transaction rolled back: (1054, "Unknown column 'razorpay_payment_id' in 'field list'")
+2026-03-17 00:28:35,714 ERROR [app] app:1633 - Razorpay success error: (1054, "Unknown column 'razorpay_payment_id' in 'field list'")
+2026-03-17 00:28:35,714 ERROR [app] app:1633 - Razorpay success error: (1054, "Unknown column 'razorpay_payment_id' in 'field list'")
+2026-03-18 11:32:50,653 ERROR [app] app:393 - Transaction rolled back: (1054, "Unknown column 'razorpay_payment_id' in 'field list'")
+2026-03-18 11:32:50,653 ERROR [app] app:393 - Transaction rolled back: (1054, "Unknown column 'razorpay_payment_id' in 'field list'")
+2026-03-18 11:32:50,654 ERROR [app] app:1637 - Razorpay success error: (1054, "Unknown column 'razorpay_payment_id' in 'field list'")
+2026-03-18 11:32:50,654 ERROR [app] app:1637 - Razorpay success error: (1054, "Unknown column 'razorpay_payment_id' in 'field list'")
+2026-03-21 22:28:13,689 ERROR [app] app:1526 - Razorpay order creation error: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+2026-03-21 22:28:13,689 ERROR [app] app:1526 - Razorpay order creation error: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+2026-03-26 21:23:43,035 ERROR [app] app:391 - Transaction rolled back: (1054, "Unknown column 'razorpay_payment_id' in 'field list'")
+2026-03-26 21:23:43,035 ERROR [app] app:391 - Transaction rolled back: (1054, "Unknown column 'razorpay_payment_id' in 'field list'")
+2026-03-26 21:23:43,035 ERROR [app] app:1647 - Razorpay success error: (1054, "Unknown column 'razorpay_payment_id' in 'field list'")
+2026-03-26 21:23:43,035 ERROR [app] app:1647 - Razorpay success error: (1054, "Unknown column 'razorpay_payment_id' in 'field list'")
+2026-03-29 17:07:04,205 ERROR [app] app:391 - Transaction rolled back: (1054, "Unknown column 'razorpay_payment_id' in 'field list'")
+2026-03-29 17:07:04,205 ERROR [app] app:1647 - Razorpay success error: (1054, "Unknown column 'razorpay_payment_id' in 'field list'")
+2026-04-05 04:45:49,952 ERROR [app] app:391 - Transaction rolled back: (1054, "Unknown column 'razorpay_payment_id' in 'field list'")
+2026-04-05 04:45:49,952 ERROR [app] app:391 - Transaction rolled back: (1054, "Unknown column 'razorpay_payment_id' in 'field list'")
+2026-04-05 04:45:49,952 ERROR [app] app:1678 - Razorpay success error: (1054, "Unknown column 'razorpay_payment_id' in 'field list'")
+2026-04-05 04:45:49,952 ERROR [app] app:1678 - Razorpay success error: (1054, "Unknown column 'razorpay_payment_id' in 'field list'")
+2026-04-05 04:47:32,882 ERROR [app] app:391 - Transaction rolled back: (1054, "Unknown column 'razorpay_payment_id' in 'field list'")
+2026-04-05 04:47:32,882 ERROR [app] app:391 - Transaction rolled back: (1054, "Unknown column 'razorpay_payment_id' in 'field list'")
+2026-04-05 04:47:32,885 ERROR [app] app:1678 - Razorpay success error: (1054, "Unknown column 'razorpay_payment_id' in 'field list'")
+2026-04-05 04:47:32,885 ERROR [app] app:1678 - Razorpay success error: (1054, "Unknown column 'razorpay_payment_id' in 'field list'")
+2026-04-05 17:59:49,206 ERROR [app] app:391 - Transaction rolled back: (1062, "Duplicate entry 'ruokcenzzo314@gmail.com' for key 'users.email'")
+2026-04-05 18:01:35,466 ERROR [app] app:391 - Transaction rolled back: (1062, "Duplicate entry 'mrdick6999@gmail.com' for key 'users.email'")
+2026-04-05 18:02:00,206 ERROR [app] app:391 - Transaction rolled back: (1062, "Duplicate entry 'mrdick6999@gmail.com' for key 'users.email'")
+2026-04-05 18:02:16,058 ERROR [app] app:391 - Transaction rolled back: (1062, "Duplicate entry 'ruokcenzzo314@gmail.com' for key 'users.email'")
+2026-04-06 01:36:41,434 ERROR [app] app:1568 - Razorpay order creation error: HTTPSConnectionPool(host='api.razorpay.com', port=443): Max retries exceeded with url: /v1/orders (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x0000020B5C8714C0>: Failed to resolve 'api.razorpay.com' ([Errno 11001] getaddrinfo failed)"))
+2026-04-06 01:36:48,568 ERROR [app] app:1568 - Razorpay order creation error: HTTPSConnectionPool(host='api.razorpay.com', port=443): Max retries exceeded with url: /v1/orders (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x0000020B5DCD04A0>: Failed to resolve 'api.razorpay.com' ([Errno 11001] getaddrinfo failed)"))
+2026-04-06 01:38:01,515 ERROR [app] app:1568 - Razorpay order creation error: HTTPSConnectionPool(host='api.razorpay.com', port=443): Max retries exceeded with url: /v1/orders (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x0000020B5DC134D0>: Failed to resolve 'api.razorpay.com' ([Errno 11001] getaddrinfo failed)"))
+2026-04-06 01:38:22,245 ERROR [app] app:1568 - Razorpay order creation error: HTTPSConnectionPool(host='api.razorpay.com', port=443): Max retries exceeded with url: /v1/orders (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x0000020B5DCFA3F0>: Failed to resolve 'api.razorpay.com' ([Errno 11001] getaddrinfo failed)"))
+2026-04-06 01:38:30,978 ERROR [app] app:1568 - Razorpay order creation error: HTTPSConnectionPool(host='api.razorpay.com', port=443): Max retries exceeded with url: /v1/orders (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x0000020B5DCFB260>: Failed to resolve 'api.razorpay.com' ([Errno 11001] getaddrinfo failed)"))
+2026-04-06 02:13:55,921 ERROR [app] app:391 - Transaction rolled back: (1054, "Unknown column 'razorpay_payment_id' in 'field list'")
+2026-04-06 02:13:55,921 ERROR [app] app:1691 - Razorpay success error: (1054, "Unknown column 'razorpay_payment_id' in 'field list'")
+2026-04-06 02:41:20,259 ERROR [app] app:711 request_id=bg - Migration error: (1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'IF NOT EXISTS razorpay_customer_id VARCHAR(255),\n                          ADD C' at line 1")
+2026-04-06 03:21:16,783 ERROR [app] app:382 - Transaction rolled back: (1054, "Unknown column 'razorpay_payment_id' in 'field list'")
+2026-04-06 03:21:16,783 ERROR [app] app:382 - Transaction rolled back: (1054, "Unknown column 'razorpay_payment_id' in 'field list'")
+2026-04-06 03:21:16,788 ERROR [app] app:1678 - Razorpay success error: (1054, "Unknown column 'razorpay_payment_id' in 'field list'")
+2026-04-06 03:21:16,788 ERROR [app] app:1678 - Razorpay success error: (1054, "Unknown column 'razorpay_payment_id' in 'field list'")
+2026-05-04 12:40:51,365 ERROR [app] app:382 - Transaction rolled back: (1054, "Unknown column 'razorpay_payment_id' in 'field list'")
+2026-05-04 12:40:51,365 ERROR [app] app:382 - Transaction rolled back: (1054, "Unknown column 'razorpay_payment_id' in 'field list'")
+2026-05-04 12:40:51,366 ERROR [app] app:1678 - Razorpay success error: (1054, "Unknown column 'razorpay_payment_id' in 'field list'")
+2026-05-04 12:40:51,366 ERROR [app] app:1678 - Razorpay success error: (1054, "Unknown column 'razorpay_payment_id' in 'field list'")
+2026-05-04 13:29:19,215 ERROR [app] app:1568 - Razorpay order creation error: HTTPSConnectionPool(host='api.razorpay.com', port=443): Max retries exceeded with url: /v1/orders (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x000001C51C973F50>: Failed to resolve 'api.razorpay.com' ([Errno 11001] getaddrinfo failed)"))
+2026-05-04 13:29:28,230 ERROR [app] app:1568 - Razorpay order creation error: HTTPSConnectionPool(host='api.razorpay.com', port=443): Max retries exceeded with url: /v1/orders (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x000001C51CA0D5E0>: Failed to resolve 'api.razorpay.com' ([Errno 11001] getaddrinfo failed)"))
+2026-05-04 13:29:42,535 ERROR [app] app:1568 - Razorpay order creation error: HTTPSConnectionPool(host='api.razorpay.com', port=443): Max retries exceeded with url: /v1/orders (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x000001C51C9E2AE0>: Failed to resolve 'api.razorpay.com' ([Errno 11001] getaddrinfo failed)"))
+2026-05-04 15:17:06,651 ERROR [app] app:382 - Transaction rolled back: (1054, "Unknown column 'razorpay_payment_id' in 'field list'")
+2026-05-04 15:17:06,652 ERROR [app] app:1678 - Razorpay success error: (1054, "Unknown column 'razorpay_payment_id' in 'field list'")
+2026-05-04 15:48:55,992 ERROR [app] app:382 - Transaction rolled back: (1054, "Unknown column 'razorpay_payment_id' in 'field list'")
+2026-05-04 15:48:55,995 ERROR [app] app:1668 - Premium activation error: (1054, "Unknown column 'razorpay_payment_id' in 'field list'")
+Traceback (most recent call last):
+  File "c:\Users\niklesh saroj\OneDrive\Desktop\full web host personal\full web\app.py", line 1645, in razorpay_success
+    cur.execute("""
+  File "C:\Users\niklesh saroj\AppData\Local\Programs\Python\Python312\Lib\site-packages\MySQLdb\cursors.py", line 179, in execute
+    res = self._query(mogrified_query)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\niklesh saroj\AppData\Local\Programs\Python\Python312\Lib\site-packages\MySQLdb\cursors.py", line 330, in _query
+    db.query(q)
+  File "C:\Users\niklesh saroj\AppData\Local\Programs\Python\Python312\Lib\site-packages\MySQLdb\connections.py", line 280, in query
+    _mysql.connection.query(self, query)
+MySQLdb.OperationalError: (1054, "Unknown column 'razorpay_payment_id' in 'field list'")
+2026-05-04 16:08:56,582 ERROR [app] app:382 - Transaction rolled back: (1054, "Unknown column 'razorpay_order_id' in 'field list'")
+2026-05-04 16:08:56,582 ERROR [app] app:1668 - Premium activation error: (1054, "Unknown column 'razorpay_order_id' in 'field list'")
+Traceback (most recent call last):
+  File "c:\Users\niklesh saroj\OneDrive\Desktop\full web host personal\full web\app.py", line 1645, in razorpay_success
+    cur.execute("""
+  File "C:\Users\niklesh saroj\AppData\Local\Programs\Python\Python312\Lib\site-packages\MySQLdb\cursors.py", line 179, in execute
+    res = self._query(mogrified_query)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\niklesh saroj\AppData\Local\Programs\Python\Python312\Lib\site-packages\MySQLdb\cursors.py", line 330, in _query
+    db.query(q)
+  File "C:\Users\niklesh saroj\AppData\Local\Programs\Python\Python312\Lib\site-packages\MySQLdb\connections.py", line 280, in query
+    _mysql.connection.query(self, query)
+MySQLdb.OperationalError: (1054, "Unknown column 'razorpay_order_id' in 'field list'")
+2026-05-04 17:01:42,454 ERROR [app] app:430 - Email sending failed to cubeharry26@gmail.com: Connection unexpectedly closed
+2026-05-04 17:01:42,454 ERROR [app] app:430 - Email sending failed to cubeharry26@gmail.com: Connection unexpectedly closed
+2026-05-08 12:12:38,226 ERROR [app] app:1492 - Razorpay order creation error: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+2026-05-08 12:12:38,226 ERROR [app] app:1492 - Razorpay order creation error: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+2026-05-08 12:47:33,845 ERROR [app] app:953 - Database initialization error: (2005, "Unknown server host 'YOUR_RAILWAY_MYSQL_HOST' (11001)")
+2026-05-08 12:47:33,846 ERROR [app] app:961 - Failed to initialize database: (2005, "Unknown server host 'YOUR_RAILWAY_MYSQL_HOST' (11001)")
+2026-05-08 13:04:53,869 ERROR [app] app:953 - Database initialization error: (2005, "Unknown server host 'YOUR_RAILWAY_MYSQL_HOST' (11001)")
+2026-05-08 13:04:53,869 ERROR [app] app:961 - Failed to initialize database: (2005, "Unknown server host 'YOUR_RAILWAY_MYSQL_HOST' (11001)")
+2026-05-08 13:05:15,733 ERROR [app] app:953 - Database initialization error: (2005, "Unknown server host 'YOUR_RAILWAY_MYSQL_HOST' (11001)")
+2026-05-08 13:05:15,733 ERROR [app] app:961 - Failed to initialize database: (2005, "Unknown server host 'YOUR_RAILWAY_MYSQL_HOST' (11001)")
+2026-05-08 13:10:56,875 ERROR [app] app:1322 - Login query error: (2005, "Unknown server host 'YOUR_RAILWAY_MYSQL_HOST' (11001)")
+2026-05-08 13:11:54,149 ERROR [app] app:971 - Database initialization error: (2005, "Unknown server host 'YOUR_RAILWAY_MYSQL_HOST' (11001)")
+2026-05-08 13:11:54,149 ERROR [app] app:979 - Failed to initialize database: (2005, "Unknown server host 'YOUR_RAILWAY_MYSQL_HOST' (11001)")
+2026-05-08 13:15:56,773 ERROR [app] app:1372 - Login query error: (2005, "Unknown server host 'YOUR_RAILWAY_MYSQL_HOST' (11001)")
+2026-05-08 17:34:51,151 ERROR [app] app:1568 - Razorpay order creation error: HTTPSConnectionPool(host='api.razorpay.com', port=443): Max retries exceeded with url: /v1/orders (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x00000272131D3020>: Failed to resolve 'api.razorpay.com' ([Errno 11001] getaddrinfo failed)"))
+2026-05-08 17:34:51,151 ERROR [app] app:1568 - Razorpay order creation error: HTTPSConnectionPool(host='api.razorpay.com', port=443): Max retries exceeded with url: /v1/orders (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x00000272131D3020>: Failed to resolve 'api.razorpay.com' ([Errno 11001] getaddrinfo failed)"))
+2026-05-08 17:34:58,437 ERROR [app] app:1568 - Razorpay order creation error: HTTPSConnectionPool(host='api.razorpay.com', port=443): Max retries exceeded with url: /v1/orders (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x000002721340FCE0>: Failed to resolve 'api.razorpay.com' ([Errno 11001] getaddrinfo failed)"))
+2026-05-08 17:34:58,437 ERROR [app] app:1568 - Razorpay order creation error: HTTPSConnectionPool(host='api.razorpay.com', port=443): Max retries exceeded with url: /v1/orders (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x000002721340FCE0>: Failed to resolve 'api.razorpay.com' ([Errno 11001] getaddrinfo failed)"))

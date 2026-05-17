@@ -1,0 +1,101 @@
+/* ============================== */
+/* 🌿 AUTH PAGE STYLING (Login/Register) */
+/* ============================== */
+.auth-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 90vh;
+  background: linear-gradient(135deg, #e8f5e9, #ffffff);
+  padding: 40px 20px;
+}
+
+.auth-container h2 {
+  font-size: 28px;
+  color: #333;
+  margin-bottom: 25px;
+  font-weight: 600;
+  text-align: center;
+  position: relative;
+}
+
+/* subtle underline animation */
+.auth-container h2::after {
+  content: "";
+  display: block;
+  width: 50px;
+  height: 3px;
+  background: #4caf50;
+  margin: 10px auto 0;
+  border-radius: 3px;
+}
+
+.auth-container form {
+  background: #ffffff;
+  padding: 40px 30px;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  width: 100%;
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.auth-container form:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.1);
+}
+
+.auth-container input {
+  padding: 12px 16px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  outline: none;
+  font-size: 16px;
+  transition:
+    border-color 0.3s,
+    box-shadow 0.3s;
+}
+
+.auth-container input:focus {
+  border-color: #4caf50;
+  box-shadow: 0 0 6px rgba(76, 175, 80, 0.25);
+}
+
+.auth-container .btn {
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  padding: 12px 16px;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition:
+    background 0.3s,
+    transform 0.2s;
+}
+
+.auth-container .btn:hover {
+  background-color: #45a049;
+  transform: translateY(-2px);
+}
+
+/* ============================== */
+/* 🌙 Responsive Design */
+/* ============================== */
+@media (max-width: 500px) {
+  .auth-container h2 {
+    font-size: 24px;
+  }
+  .auth-container form {
+    padding: 30px 20px;
+  }
+  .auth-container input {
+    font-size: 15px;
+  }
+}

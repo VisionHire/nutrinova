@@ -1,0 +1,1192 @@
+/* ============================== */
+/* 🌿 General Styles (unchanged) */
+/* ============================== */
+
+html {
+  scroll-behavior: smooth;
+}
+
+* {
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  background-color: #ffffff;
+  color: #1a1a1a;
+  line-height: 1.6;
+}
+
+/* ============================== */
+/* 🌿 Navbar (unchanged) */
+/* ============================== */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #ffffff;
+  padding: 16px 50px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  backdrop-filter: blur(10px);
+  background-color: rgba(255, 255, 255, 0.9);
+}
+
+.logo {
+  font-size: 22px;
+  color: #4caf50;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.logo a {
+  text-decoration: none;
+  color: #4caf50;
+}
+
+/* ============================== */
+/* 📱 Navbar Links (unchanged) */
+/* ============================== */
+.nav-links {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  gap: 32px;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links li a {
+  text-decoration: none;
+  color: #4a5568;
+  font-weight: 500;
+  position: relative;
+  transition: color 0.3s ease;
+  padding-bottom: 6px;
+  font-size: 15px;
+}
+
+.nav-links li a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0%;
+  height: 2px;
+  background-color: #4caf50;
+  transition: width 0.2s ease;
+}
+
+.nav-links li a:hover {
+  color: #4caf50;
+}
+
+.nav-links li a:hover::after {
+  width: 100%;
+}
+
+/* ============================== */
+/* 🔽 Dropdown Menu (unchanged) */
+/* ============================== */
+.dropdown {
+  position: relative;
+}
+
+.dropdown-toggle {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.dropdown-toggle::after {
+  content: "▾";
+  font-size: 12px;
+  transition: transform 0.3s ease;
+}
+
+.dropdown.open .dropdown-toggle::after {
+  transform: rotate(180deg);
+}
+
+.dropdown > a::after {
+  content: " ▾";
+  font-size: 12px;
+  transition: transform 0.3s ease;
+}
+
+.dropdown .dropdown-menu.show + a::after,
+.dropdown.open > a::after {
+  transform: rotate(180deg);
+}
+
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  background: white;
+  top: 45px;
+  left: 0;
+  min-width: 220px;
+  border-radius: 12px;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  transform: translateY(10px);
+  transition: all 0.3s ease;
+  z-index: 1000;
+  border: 1px solid #f0f0f0;
+}
+
+.dropdown-menu.show {
+  display: block;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.dropdown-menu li {
+  list-style: none;
+}
+
+.dropdown-menu li a {
+  display: block;
+  padding: 12px 20px;
+  color: #4a5568;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  font-size: 14px;
+}
+
+.dropdown-menu li a:hover {
+  background-color: #f8faf8;
+  color: #4caf50;
+  padding-left: 24px;
+}
+
+/* ============================== */
+/* 🟩 Login Button (unchanged) */
+/* ============================== */
+.login-btn {
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: all 0.3s;
+  font-weight: 500;
+  font-size: 14px;
+  box-shadow: 0 4px 12px rgba(76, 175, 80, 0.2);
+}
+
+.login-btn:hover {
+  background-color: #45a049;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 16px rgba(76, 175, 80, 0.3);
+}
+
+/* ============================== */
+/* 📱 Responsive Navbar (unchanged) */
+/* ============================== */
+.menu-toggle {
+  display: none;
+  font-size: 28px;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    padding: 16px 24px;
+  }
+  .menu-toggle {
+    display: block;
+  }
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    background-color: white;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    padding: 24px 0;
+    text-align: center;
+    box-shadow: 0 20px 30px rgba(0, 0, 0, 0.1);
+    gap: 16px;
+  }
+  .nav-links.show {
+    display: flex;
+  }
+  .nav-links li {
+    margin: 8px 0;
+  }
+  .dropdown-menu {
+    position: static;
+    box-shadow: none;
+    opacity: 1;
+    transform: none;
+    border-radius: 8px;
+    margin-top: 8px;
+  }
+}
+
+/* ============================== */
+/* 🌞 Hero Section (unchanged) */
+/* ============================== */
+.hero {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 80px 80px;
+  max-width: 1280px;
+  margin: 0 auto;
+  flex-wrap: wrap;
+  gap: 40px;
+}
+
+.hero-text {
+  flex: 1;
+  min-width: 400px;
+}
+
+.hero h2 {
+  font-size: 48px;
+  color: #1a1a1a;
+  margin: 0 0 20px 0;
+  line-height: 1.2;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.hero p {
+  font-size: 18px;
+  color: #4a5568;
+  margin: 0 0 32px 0;
+  max-width: 500px;
+}
+
+.cta-btn {
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  padding: 14px 32px;
+  border-radius: 40px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 500;
+  transition: all 0.3s;
+  display: inline-block;
+  text-decoration: none;
+  box-shadow: 0 8px 20px rgba(76, 175, 80, 0.3);
+}
+
+.cta-btn:hover {
+  background-color: #45a049;
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px rgba(76, 175, 80, 0.4);
+}
+
+.hero-image {
+  flex: 1;
+  text-align: center;
+  min-width: 300px;
+}
+
+.hero-image img {
+  max-width: 100%;
+  height: auto;
+  max-height: 400px;
+  object-fit: contain;
+}
+
+@media (max-width: 1024px) {
+  .hero {
+    padding: 60px 40px;
+  }
+  .hero h2 {
+    font-size: 40px;
+  }
+}
+@media (max-width: 768px) {
+  .hero {
+    flex-direction: column-reverse;
+    text-align: center;
+    padding: 40px 24px;
+  }
+  .hero-text {
+    min-width: auto;
+  }
+  .hero p {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .hero-image img {
+    max-height: 300px;
+  }
+}
+@media (max-width: 480px) {
+  .hero h2 {
+    font-size: 32px;
+  }
+  .hero p {
+    font-size: 16px;
+  }
+}
+
+/* ============================== */
+/* 💪 Features Section (unchanged) */
+/* ============================== */
+.features {
+  text-align: center;
+  padding: 100px 24px;
+  background: #f9fafc;
+}
+
+.features h3 {
+  color: #1a1a1a;
+  font-size: 32px;
+  margin-bottom: 16px;
+  font-weight: 700;
+}
+
+.features h3::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 4px;
+  background: #4caf50;
+  margin: 20px auto 0;
+  border-radius: 2px;
+}
+
+.feature-cards {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+  max-width: 1280px;
+  margin: 60px auto 0;
+}
+
+.card {
+  background: white;
+  border-radius: 20px;
+  padding: 32px 24px;
+  width: 280px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
+  transition: all 0.3s;
+  text-align: left;
+  border: 1px solid #f0f0f0;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 30px rgba(0, 0, 0, 0.05);
+  border-color: #e0e0e0;
+}
+
+.card::before {
+  content: "📈";
+  font-size: 32px;
+  display: block;
+  margin-bottom: 20px;
+}
+.card:nth-child(2)::before {
+  content: "📅";
+}
+.card:nth-child(3)::before {
+  content: "🍽️";
+}
+.card:nth-child(4)::before {
+  content: "📊";
+}
+.card:nth-child(5)::before {
+  content: "🧪";
+}
+.card:nth-child(6)::before {
+  content: "🔥";
+}
+.card:nth-child(7)::before {
+  content: "📋";
+}
+
+.card h4 {
+  color: #1a1a1a;
+  font-size: 20px;
+  margin: 0 0 12px 0;
+  font-weight: 600;
+}
+
+.card p {
+  color: #4a5568;
+  font-size: 15px;
+  line-height: 1.6;
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .features {
+    padding: 60px 20px;
+  }
+  .features h3 {
+    font-size: 28px;
+  }
+  .card {
+    width: 100%;
+    max-width: 320px;
+  }
+}
+
+/* ============================== */
+/* 💳 Plans (unchanged) */
+/* ============================== */
+.plans-preview {
+  text-align: center;
+  padding: 100px 24px;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+.plans-preview h3 {
+  color: #1a1a1a;
+  font-size: 32px;
+  margin-bottom: 16px;
+  font-weight: 700;
+}
+.plans-preview > p {
+  color: #4a5568;
+  font-size: 18px;
+  margin-bottom: 60px;
+}
+.plan-cards {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 30px;
+  align-items: stretch;
+}
+.plan-card {
+  background: white;
+  border-radius: 24px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
+  width: 320px;
+  padding: 40px 30px;
+  transition: all 0.3s ease;
+  border: 2px solid #4caf50;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+}
+.plan-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 30px 40px rgba(0, 0, 0, 0.05);
+}
+.plan-card.highlight {
+  background: white;
+  border-radius: 24px;
+  /* box-shadow: 0 10px 30px rgba(76, 175, 80, 0.1); */
+  width: 280px;
+  padding: 40px 30px;
+  transition: all 0.3s ease;
+  /* border: 2px solid #4caf50; */
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+}
+.plan-card.highlight:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 30px 40px rgba(76, 175, 80, 0.15);
+}
+.plan-card h4 {
+  color: #4caf50;
+  font-size: 24px;
+  margin: 0 0 16px 0;
+  font-weight: 600;
+}
+.price {
+  font-size: 32px;
+  color: #1a1a1a;
+  margin: 0 0 24px 0;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+.plan-card ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 32px 0;
+  flex-grow: 1;
+}
+.plan-card ul li {
+  color: #4a5568;
+  padding: 8px 0;
+  font-size: 15px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.plan-card ul li::before {
+  content: "✓";
+  color: #4caf50;
+  font-weight: 600;
+  font-size: 16px;
+}
+.plan-btn {
+  display: inline-block;
+  background-color: #4caf50;
+  color: white;
+  padding: 14px 28px;
+  border-radius: 40px;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 15px;
+  transition: all 0.3s;
+  width: 100%;
+  text-align: center;
+  box-sizing: border-box;
+  border: 2px solid transparent;
+}
+.plan-btn:hover {
+  background-color: #45a049;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(76, 175, 80, 0.3);
+}
+.highlight .plan-btn {
+  background-color: #4caf50;
+  box-shadow: 0 8px 20px rgba(76, 175, 80, 0.3);
+}
+@media (max-width: 1024px) {
+  .plan-card,
+  .plan-card.highlight {
+    width: 280px;
+    padding: 30px 20px;
+  }
+}
+@media (max-width: 768px) {
+  .plans-preview {
+    padding: 60px 20px;
+  }
+  .plan-card,
+  .plan-card.highlight {
+    width: 100%;
+    max-width: 340px;
+  }
+  .plan-card.highlight {
+    transform: scale(1);
+  }
+  .plan-card.highlight:hover,
+  .plan-card:hover {
+    transform: translateY(-8px);
+  }
+}
+
+/* ============================== */
+/* 🌱 Footer (unchanged) */
+/* ============================== */
+.footer {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  background: #f9fafc;
+  padding: 60px 40px;
+  color: #4a5568;
+  border-top: 1px solid #eaeaea;
+}
+.footer-section {
+  flex: 1 1 250px;
+  margin: 20px;
+}
+.footer-section h4 {
+  color: #4caf50;
+  margin-bottom: 20px;
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+.footer-section a {
+  color: #4a5568;
+  text-decoration: none;
+  transition: color 0.3s;
+  display: block;
+  margin-bottom: 10px;
+  font-size: 14px;
+}
+.footer-section a:hover {
+  color: #4caf50;
+}
+@media (max-width: 768px) {
+  .footer {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 40px 20px;
+  }
+  .footer-section {
+    margin: 30px 0;
+  }
+}
+
+/* ============================== */
+/* 🔐 Auth Page Styling (unchanged) */
+/* ============================== */
+.auth-container {
+  max-width: 440px;
+  margin: 100px auto;
+  padding: 48px;
+  background: #ffffff;
+  border-radius: 24px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.02);
+  text-align: center;
+  border: 1px solid #f0f0f0;
+}
+.auth-container h2 {
+  margin-bottom: 32px;
+  color: #1a1a1a;
+  font-size: 32px;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+.auth-container form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.auth-container input {
+  padding: 14px 18px;
+  border: 1.5px solid #eaeaea;
+  border-radius: 12px;
+  font-size: 15px;
+  transition: all 0.3s ease;
+  font-family: "Poppins", sans-serif;
+}
+.auth-container input:focus {
+  border-color: #4caf50;
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(76, 175, 80, 0.1);
+}
+.btn {
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  padding: 14px;
+  border-radius: 12px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  margin-top: 10px;
+}
+.btn:hover {
+  background-color: #45a049;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(76, 175, 80, 0.2);
+}
+.auth-link {
+  margin-top: 24px;
+  font-size: 14px;
+  color: #4a5568;
+}
+.auth-link a {
+  color: #4caf50;
+  text-decoration: none;
+  font-weight: 500;
+}
+.auth-link a:hover {
+  text-decoration: underline;
+}
+@media (max-width: 500px) {
+  .auth-container {
+    margin: 60px 20px;
+    padding: 32px 20px;
+  }
+}
+
+/* ==========================================
+   🌙 Floating Dark Mode Toggle (unchanged)
+   ========================================== */
+.theme-toggle {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  background: #4caf50;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 52px;
+  height: 52px;
+  font-size: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 2000;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+  transition: all 0.4s ease;
+}
+.theme-toggle:hover {
+  background: #388e3c;
+  transform: scale(1.1) rotate(8deg);
+  box-shadow: 0 0 12px rgba(76, 175, 80, 0.4);
+}
+.theme-toggle.active {
+  animation: togglePulse 0.6s ease-out;
+}
+@keyframes togglePulse {
+  0% {
+    box-shadow: 0 0 0 rgba(76, 175, 80, 0.6);
+    transform: scale(1);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(76, 175, 80, 0.8);
+    transform: scale(1.15);
+  }
+  100% {
+    box-shadow: 0 0 0 rgba(76, 175, 80, 0);
+    transform: scale(1);
+  }
+}
+@media (max-width: 768px) {
+  .theme-toggle {
+    bottom: 18px;
+    right: 18px;
+    width: 46px;
+    height: 46px;
+    font-size: 20px;
+  }
+}
+@media (max-width: 480px) {
+  .theme-toggle {
+    bottom: 15px;
+    right: 15px;
+    width: 42px;
+    height: 42px;
+    font-size: 18px;
+  }
+}
+
+/* ============================================
+   🌑 ULTIMATE DARK MODE – FORCES EVERYTHING TO #1e293b (FINAL FIX FOR CALORIE TRACKER, LOGIN & TABLE CARDS)
+   ============================================ */
+
+/* Base: force dark background on body and all elements */
+body.dark-mode,
+body.dark-mode * {
+  background-color: #1e293b !important;
+  color: #e2e8f0 !important;
+  border-color: #334155 !important;
+}
+
+/* Exceptions for better readability (links, headings, buttons) */
+body.dark-mode a,
+body.dark-mode a * {
+  color: #4ade80 !important;
+  background-color: transparent !important;
+}
+body.dark-mode h1,
+body.dark-mode h2,
+body.dark-mode h3,
+body.dark-mode h4,
+body.dark-mode h5,
+body.dark-mode h6 {
+  color: #ffffff !important;
+  background-color: transparent !important;
+}
+
+body.dark-mode .nutrient-table th {
+  background-color: #334155 !important;
+  color: #ffffff !important;
+}
+
+/* Table text */
+body.dark-mode .nutrient-table td {
+  color: #cbd5e1 !important;
+}
+
+body.dark-mode button,
+body.dark-mode .btn,
+body.dark-mode .login-btn,
+body.dark-mode .cta-btn,
+body.dark-mode .plan-btn {
+  background-color: #334155 !important;
+  color: #ffffff !important;
+}
+body.dark-mode button:hover,
+body.dark-mode .btn:hover,
+body.dark-mode .login-btn:hover,
+body.dark-mode .cta-btn:hover,
+body.dark-mode .plan-btn:hover {
+  background-color: #475569 !important;
+}
+body.dark-mode .btn-accept {
+  background-color: #059669 !important;
+}
+body.dark-mode .btn-deny {
+  background-color: #dc2626 !important;
+}
+body.dark-mode .btn-delete {
+  background-color: #ea580c !important;
+}
+body.dark-mode button[type="submit"],
+body.dark-mode .cta-btn,
+body.dark-mode .plan-btn {
+  background-color: #2ecc71 !important;
+}
+body.dark-mode .status-good {
+  color: #4ade80 !important;
+  background-color: transparent !important;
+}
+body.dark-mode .status-low {
+  color: #f97316 !important;
+  background-color: transparent !important;
+}
+body.dark-mode input,
+body.dark-mode select,
+body.dark-mode textarea {
+  background-color: #334155 !important;
+  border-color: #475569 !important;
+}
+body.dark-mode input::placeholder,
+body.dark-mode textarea::placeholder {
+  color: #94a3b8 !important;
+}
+
+/* Force all containers – including calorie tracker specific classes */
+body.dark-mode .navbar,
+body.dark-mode .footer,
+body.dark-mode .card,
+body.dark-mode .plan-card,
+body.dark-mode .progress-item,
+body.dark-mode .profile-card,
+body.dark-mode .planned-item,
+body.dark-mode .food-item,
+body.dark-mode .suggestion-card,
+body.dark-mode .chart-container,
+body.dark-mode .improvement-container,
+body.dark-mode .nutrient-table,
+body.dark-mode .nutrient-table tr,
+body.dark-mode .nutrient-table td,
+body.dark-mode .nutrient-table th,
+body.dark-mode .container,
+body.dark-mode .auth-container,
+body.dark-mode .auth-container form,
+body.dark-mode .calorie-tracker-container,
+body.dark-mode .calorie-tracker-container *,
+body.dark-mode .tracker-header,
+body.dark-mode .tracker-header *,
+body.dark-mode .goal-input,
+body.dark-mode .goal-input *,
+body.dark-mode .tracker-form,
+body.dark-mode .tracker-form *,
+body.dark-mode .input-wrapper,
+body.dark-mode .input-wrapper *,
+body.dark-mode .suggestions-box,
+body.dark-mode .suggestions-box *,
+body.dark-mode #foodList,
+body.dark-mode #foodList *,
+body.dark-mode #foodList li,
+body.dark-mode .progress-container,
+body.dark-mode .progress-container *,
+body.dark-mode .progress-ring,
+body.dark-mode .progress-ring *,
+body.dark-mode .charts,
+body.dark-mode .charts *,
+body.dark-mode .chart-card,
+body.dark-mode .chart-card *,
+body.dark-mode svg,
+body.dark-mode svg *,
+body.dark-mode circle,
+body.dark-mode main,
+body.dark-mode div,
+body.dark-mode section,
+body.dark-mode article,
+body.dark-mode .wrapper,
+body.dark-mode .content,
+body.dark-mode .dashboard,
+body.dark-mode .tracker,
+body.dark-mode .food-list,
+body.dark-mode .add-food-form,
+body.dark-mode .food-items-list,
+body.dark-mode .food-item-row,
+body.dark-mode [class*="calorie"],
+body.dark-mode [class*="tracker"],
+body.dark-mode [class*="dashboard"] {
+  background-color: #1e293b !important;
+  background: #1e293b !important;
+}
+
+/* Keep progress ring circles transparent (only the stroke should be visible) */
+body.dark-mode .progress-ring circle {
+  background-color: transparent !important;
+  fill: none !important;
+}
+body.dark-mode .progress-ring circle.bg {
+  stroke: #334155 !important;
+}
+body.dark-mode .progress-ring circle.progress {
+  stroke: #2ecc71 !important;
+}
+
+/* Override any inline style that might set background white */
+body.dark-mode [style*="background-color: #fff"],
+body.dark-mode [style*="background: #fff"],
+body.dark-mode [style*="background-color: white"],
+body.dark-mode [style*="background: white"],
+body.dark-mode [style*="background-color: rgb(255,255,255)"],
+body.dark-mode [style*="background-color: #ffffff"],
+body.dark-mode [style*="background"] {
+  background-color: #1e293b !important;
+  background-image: none !important;
+}
+
+/* Progress bar backgrounds */
+body.dark-mode .progress-bar-bg {
+  background-color: #334155 !important;
+}
+body.dark-mode .progress-bar-fill {
+  background-color: #2ecc71 !important;
+}
+
+/* 🔥 FIX: Daily Targets Table – Mobile Card Layout (no white backgrounds) */
+@media (max-width: 768px) {
+  body.dark-mode .nutrient-table,
+  body.dark-mode .nutrient-table thead,
+  body.dark-mode .nutrient-table tbody,
+  body.dark-mode .nutrient-table tr,
+  body.dark-mode .nutrient-table th,
+  body.dark-mode .nutrient-table td {
+    display: block;
+  }
+  body.dark-mode .nutrient-table thead {
+    display: none;
+  }
+  body.dark-mode .nutrient-table tr {
+    background-color: #1e293b !important;
+    margin-bottom: 1rem;
+    padding: 1rem;
+    border-radius: 0.75rem;
+    border: 1px solid #334155;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  }
+  body.dark-mode .nutrient-table td {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #334155;
+    font-size: 0.85rem;
+  }
+  body.dark-mode .nutrient-table td:last-child {
+    border-bottom: none;
+  }
+  body.dark-mode .nutrient-table td::before {
+    content: attr(data-label);
+    font-weight: 600;
+    color: #f1f5f9;
+    margin-right: 1rem;
+    flex: 1;
+  }
+  body.dark-mode .status-good,
+  body.dark-mode .status-low {
+    text-align: right;
+    white-space: nowrap;
+  }
+}
+
+/* Login page – remove gradient and force solid dark */
+body.dark-mode .auth-container {
+  background: #0f172a !important;
+  background-image: none !important;
+}
+body.dark-mode .auth-container input {
+  background: #334155 !important;
+}
+body.dark-mode .auth-container .btn {
+  background: #2ecc71 !important;
+}
+body.dark-mode .auth-container a {
+  color: #4ade80 !important;
+}
+
+/* Suggestion boxes (autocomplete) */
+body.dark-mode .autocomplete-suggestions,
+body.dark-mode .food-suggestions,
+body.dark-mode .dropdown-suggestions,
+body.dark-mode .ui-autocomplete,
+body.dark-mode .suggestions-box,
+body.dark-mode [class*="suggestion"],
+body.dark-mode [class*="autocomplete"] {
+  background-color: #1e293b !important;
+  border: 1px solid #334155 !important;
+}
+body.dark-mode .autocomplete-suggestions div,
+body.dark-mode .food-suggestions div,
+body.dark-mode .dropdown-suggestions div,
+body.dark-mode .ui-menu-item,
+body.dark-mode .suggestions-box div {
+  background-color: #1e293b !important;
+  color: #cbd5e1 !important;
+}
+body.dark-mode .autocomplete-suggestions div:hover,
+body.dark-mode .food-suggestions div:hover,
+body.dark-mode .dropdown-suggestions div:hover,
+body.dark-mode .ui-menu-item:hover,
+body.dark-mode .suggestions-box div:hover {
+  background-color: #334155 !important;
+  color: #ffffff !important;
+}
+
+/* Override any inline styles */
+body.dark-mode [style*="background-color:"],
+body.dark-mode [style*="background:"] {
+  background-color: #1e293b !important;
+}
+body.dark-mode [style*="color:"] {
+  color: #e2e8f0 !important;
+}
+
+/* Brand text */
+body.dark-mode .brand-text {
+  color: #4ade80 !important;
+}
+
+/* ============================== */
+/* 🌟 Navbar Logo & Brand (unchanged) */
+/* ============================== */
+.nav-logo {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 10px;
+}
+.brand-text {
+  font-size: 18px;
+  font-weight: 600;
+  color: rgb(14, 168, 14);
+}
+.brand-logo {
+  display: flex;
+  align-items: center;
+}
+a {
+  text-decoration: none;
+}
+.stat-card p {
+  font-style: italic;
+}
+
+/* ==========================================
+   🔧 FINAL FIX: Nutrition Guide Page – Proper Table Headers (No Broken Layout)
+   ========================================== */
+
+/* Force guide page tables to use normal table layout with visible headers */
+.nutrition-info-page .nutrient-table {
+  display: table !important;
+  width: 100% !important;
+  border-collapse: collapse !important;
+}
+
+.nutrition-info-page .nutrient-table thead {
+  display: table-header-group !important;
+}
+
+.nutrition-info-page .nutrient-table tbody {
+  display: table-row-group !important;
+}
+
+.nutrition-info-page .nutrient-table tr {
+  display: table-row !important;
+}
+
+.nutrition-info-page .nutrient-table th,
+.nutrition-info-page .nutrient-table td {
+  display: table-cell !important;
+  padding: 0.75rem !important;
+  text-align: left !important;
+  vertical-align: top !important;
+  border-bottom: 1px solid #e2e8f0 !important;
+}
+
+.nutrition-info-page .nutrient-table th {
+  background: #f1f5f9 !important;
+  font-weight: 600 !important;
+  color: #1e293b !important;
+}
+
+/* Ensure the wrapper allows horizontal scroll on mobile */
+.nutrition-info-page .table-wrapper {
+  overflow-x: auto !important;
+  -webkit-overflow-scrolling: touch !important;
+}
+
+/* Dark mode adjustments */
+body.dark-mode .nutrition-info-page .nutrient-table th {
+  background: #334155 !important;
+  color: #ffffff !important;
+}
+
+body.dark-mode .nutrition-info-page .nutrient-table td {
+  color: #cbd5e1 !important;
+  border-bottom-color: #334155 !important;
+}
+
+/* ==========================================
+   🚨 EMERGENCY FIX: Dark Mode Table Headers Always Visible
+   ========================================== */
+
+body.dark-mode .nutrition-info-page .nutrient-table th,
+body.dark-mode .nutrition-info-page .nutrient-table th * {
+  background-color: #2d3a4a !important;
+  color: #ffffff !important;
+  font-weight: 700 !important;
+  text-shadow: none !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+/* ==========================================
+   🚨 ULTIMATE FIX: Prevent card layout on Nutrition Guide page in dark mode (mobile)
+   ========================================== */
+@media (max-width: 768px) {
+  body.dark-mode .nutrition-info-page .nutrient-table,
+  body.dark-mode .nutrition-info-page .nutrient-table thead,
+  body.dark-mode .nutrition-info-page .nutrient-table tbody,
+  body.dark-mode .nutrition-info-page .nutrient-table tr,
+  body.dark-mode .nutrition-info-page .nutrient-table th,
+  body.dark-mode .nutrition-info-page .nutrient-table td {
+    display: table !important;
+  }
+  body.dark-mode .nutrition-info-page .nutrient-table thead {
+    display: table-header-group !important;
+  }
+  body.dark-mode .nutrition-info-page .nutrient-table tr {
+    display: table-row !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    border: none !important;
+    box-shadow: none !important;
+    background: transparent !important;
+  }
+  body.dark-mode .nutrition-info-page .nutrient-table th,
+  body.dark-mode .nutrition-info-page .nutrient-table td {
+    display: table-cell !important;
+    padding: 0.75rem !important;
+    border-bottom: 1px solid #334155 !important;
+  }
+  body.dark-mode .nutrition-info-page .nutrient-table td::before {
+    content: none !important;
+  }
+}
+
+/* ==========================================
+   🎯 FINAL FORCE: Nutrition Guide Table Headers – Pure White Text & Visible Background
+   ========================================== */
+body.dark-mode .nutrition-info-page .nutrient-table th,
+body.dark-mode .nutrition-info-page .nutrient-table th * {
+  color: #ffffff !important;
+  background-color: #2d3a4a !important;
+  font-weight: 700 !important;
+  text-shadow: none !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}

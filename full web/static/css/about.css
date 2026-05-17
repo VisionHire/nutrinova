@@ -1,0 +1,103 @@
+/* ========== ABOUT PAGE SPECIFIC STYLES ========== */
+.hero {
+  overflow-x: hidden;
+  width: 100%;
+  max-width: 100%;
+  padding: 1rem;
+  box-sizing: border-box;
+}
+
+.hero-text {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 0.5rem;
+  box-sizing: border-box;
+}
+
+/* Prevent long words/URLs from causing horizontal scroll */
+.hero-text p,
+.hero-text li,
+.hero-text h3,
+.hero-text h4 {
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+/* Headings */
+.hero-text h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #1a2c2e;
+}
+
+.hero-text h3 {
+  font-size: 1.5rem;
+  margin: 1.2rem 0 0.5rem 0;
+  color: #1e4a3b;
+}
+
+.hero-text h4 {
+  font-size: 1.2rem;
+  margin: 1rem 0 0.5rem 0;
+  color: #2d6a4f;
+}
+
+/* Paragraphs */
+.hero-text p {
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+  color: #2d3e40;
+}
+
+/* Lists */
+.hero-text ul {
+  margin: 0.5rem 0 1rem 1.5rem;
+  padding-left: 0.2rem;
+}
+
+.hero-text li {
+  margin-bottom: 0.5rem;
+  line-height: 1.5;
+}
+
+.hero-text b {
+  font-weight: 600;
+  color: #1e6b4c;
+}
+
+/* ========== RESPONSIVE BREAKPOINTS ========== */
+@media (max-width: 768px) {
+  .hero {
+    padding: 0.5rem;
+  }
+  .hero-text {
+    padding: 0 0.25rem;
+  }
+  .hero-text h2 {
+    font-size: 1.6rem;
+  }
+  .hero-text h3 {
+    font-size: 1.3rem;
+  }
+  .hero-text p,
+  .hero-text li {
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-text h2 {
+    font-size: 1.4rem;
+  }
+  .hero-text h3 {
+    font-size: 1.2rem;
+  }
+  .hero-text p,
+  .hero-text li {
+    font-size: 0.9rem;
+  }
+  .hero-text ul {
+    margin-left: 1rem;
+  }
+}

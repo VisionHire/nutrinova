@@ -1,0 +1,1049 @@
+{% extends "base.html" %} {% block title %}Nutrition Information System |
+NutriNova{% endblock %} {% block body_class %}nutrition-info-page{% endblock %}
+{% block extra_css %}
+<style>
+  .nutrition-info-page .content-wrapper {
+    max-width: 1280px;
+    margin: 0 auto;
+    background: #f5f7fb;
+    padding: 0;
+  }
+  .nutrition-info-page .content-container {
+    background: white;
+    border-radius: 0 0 1rem 1rem;
+    padding: 1.5rem;
+    margin-top: 0;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  }
+  .nutrition-info-page h1 {
+    font-size: 2rem;
+    font-weight: 600;
+    border-bottom: 3px solid #2ecc71;
+    padding-bottom: 0.75rem;
+    margin-bottom: 1.5rem;
+  }
+  .nutrition-info-page h2 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    border-left: 4px solid #2ecc71;
+    padding-left: 1rem;
+  }
+  .nutrition-info-page h3 {
+    font-size: 1.25rem;
+    font-weight: 500;
+    margin: 1.5rem 0 0.75rem;
+    color: #1e293b;
+  }
+  .nutrition-info-page .info-card {
+    background: white;
+    border: 1px solid #e2e8f0;
+    border-radius: 1rem;
+    padding: 1.25rem;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s;
+  }
+  .nutrition-info-page .info-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+  }
+  .nutrition-info-page .table-wrapper {
+    overflow-x: auto;
+    margin: 1rem 0;
+  }
+  .nutrition-info-page .nutrient-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.85rem;
+    background: white;
+    border-radius: 0.75rem;
+    overflow: hidden;
+  }
+  .nutrition-info-page .nutrient-table th,
+  .nutrition-info-page .nutrient-table td {
+    padding: 0.75rem;
+    text-align: left;
+    border-bottom: 1px solid #e2e8f0;
+  }
+  .nutrition-info-page .nutrient-table th {
+    background: #f1f5f9;
+    font-weight: 600;
+    color: #1e293b;
+  }
+  .nutrition-info-page .back-to-top {
+    position: fixed;
+    bottom: 20rem;
+    right: 1rem;
+    background: #2ecc71;
+    color: white;
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    opacity: 0;
+    transition: opacity 0.3s;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+  }
+  .nutrition-info-page .back-to-top.show {
+    opacity: 1;
+  }
+  @media (max-width: 768px) {
+    .nutrition-info-page .content-container {
+      padding: 1rem;
+    }
+    .nutrition-info-page h1 {
+      font-size: 1.6rem;
+    }
+    .nutrition-info-page h2 {
+      font-size: 1.3rem;
+    }
+    .nutrition-info-page .nutrient-table {
+      font-size: 0.75rem;
+    }
+    .nutrition-info-page .nutrient-table th,
+    .nutrition-info-page .nutrient-table td {
+      padding: 0.5rem;
+    }
+  }
+</style>
+{% endblock %} {% block content %}
+<div class="content-wrapper">
+  <div class="content-container">
+    <h1>📚 NutriNova: Comprehensive Nutrition Information System</h1>
+    <p class="lead">
+      Welcome to NutriNova's comprehensive guide to nutrition! Understanding
+      what you eat is the first step towards a healthier, more energetic life.
+      This system provides clear, accurate, and easy‑to‑understand information
+      about the essential nutrients your body needs, how they function, and how
+      to meet your daily requirements.
+    </p>
+
+    <h2>1. Understanding Nutrition</h2>
+    <div class="info-card">
+      <p>
+        Nutrition is the study of how food and drink affect our bodies. It's
+        about taking in food and using it for growth, metabolism, and repair. A
+        balanced diet provides the right mix of macronutrients (carbohydrates,
+        proteins, fats, fiber, and water) and micronutrients (vitamins and
+        minerals) to keep your body functioning optimally. Every bite you take
+        contributes to your overall health and well‑being.
+      </p>
+    </div>
+
+    <h2>2. Macronutrients</h2>
+    <p>
+      Macronutrients are the nutrients your body needs in large amounts to
+      provide energy, support growth, and maintain overall health. They are the
+      building blocks of your diet.
+    </p>
+
+    <div class="info-card">
+      <h3>Carbohydrates – Your Body's Main Energy Source</h3>
+      <div class="table-wrapper">
+        <table class="nutrient-table">
+          <thead>
+            <tr>
+              <th>Function</th>
+              <th>Food Sources</th>
+              <th>Deficiency Symptoms</th>
+              <th>Excess Effects</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Provides energy, spares protein, supports brain function.</td>
+              <td>
+                Whole grains (oats, brown rice), fruits, vegetables, legumes.
+              </td>
+              <td>Fatigue, brain fog, decreased physical performance.</td>
+              <td>
+                Weight gain, insulin resistance, increased risk of Type 2
+                Diabetes.
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="info-card">
+      <h3>Protein – The Building Blocks of Life</h3>
+      <div class="table-wrapper">
+        <table class="nutrient-table">
+          <thead>
+            <tr>
+              <th>Function</th>
+              <th>Food Sources</th>
+              <th>Deficiency Symptoms</th>
+              <th>Excess Effects</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                Tissue repair, muscle growth, hormone production, immune
+                function.
+              </td>
+              <td>Chicken, fish, eggs, tofu, beans, nuts, dairy products.</td>
+              <td>Muscle wasting, weakened immunity, slow wound healing.</td>
+              <td>Kidney strain (in predisposed individuals), dehydration.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="info-card">
+      <h3>Fats – Essential for Health and Absorption</h3>
+      <div class="table-wrapper">
+        <table class="nutrient-table">
+          <thead>
+            <tr>
+              <th>Fat Type</th>
+              <th>Role and Health Impact</th>
+              <th>Best Food Sources</th>
+              <th>Deficiency Symptoms</th>
+              <th>Excess Effects</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Unsaturated Fats</td>
+              <td>Heart‑healthy; lowers "bad" LDL cholesterol.</td>
+              <td>Olive oil, avocados, nuts (almonds, walnuts), seeds.</td>
+              <td>Dry skin, hair loss, impaired hormone production.</td>
+              <td>
+                Weight gain, increased risk of heart disease (if from unhealthy
+                sources).
+              </td>
+            </tr>
+            <tr>
+              <td>Omega‑3 Fatty Acids</td>
+              <td>Supports brain health, reduces inflammation.</td>
+              <td>
+                Fatty fish (salmon, mackerel), flaxseeds, chia seeds, walnuts.
+              </td>
+              <td>Dry skin, poor concentration, mood changes.</td>
+              <td>Increased bleeding risk (at very high doses).</td>
+            </tr>
+            <tr>
+              <td>Omega‑6 Fatty Acids</td>
+              <td>Supports skin health, metabolism, reproductive system.</td>
+              <td>
+                Sunflower seeds, corn oil, soybean oil, evening primrose oil.
+              </td>
+              <td>Dry skin, hair loss, impaired wound healing.</td>
+              <td>Increased inflammation (if excess relative to Omega‑3).</td>
+            </tr>
+            <tr>
+              <td>Saturated Fats</td>
+              <td>
+                Essential in small amounts; provides energy and structural
+                integrity.
+              </td>
+              <td>Butter, coconut oil, fatty meats, full‑fat dairy.</td>
+              <td>Vitamin deficiencies (A, D, E, K), dry skin.</td>
+              <td>
+                Increased "bad" LDL cholesterol, higher risk of heart disease.
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="info-card">
+      <h3>Fiber – The Digestive Aid</h3>
+      <div class="table-wrapper">
+        <table class="nutrient-table">
+          <thead>
+            <tr>
+              <th>Function</th>
+              <th>Food Sources</th>
+              <th>Deficiency Symptoms</th>
+              <th>Excess Effects</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                Improves digestion, prevents constipation, regulates blood
+                sugar, lowers cholesterol.
+              </td>
+              <td>
+                Oats, lentils, berries, broccoli, whole‑wheat bread, brown rice.
+              </td>
+              <td>
+                Constipation, irregular bowel movements, increased risk of heart
+                disease.
+              </td>
+              <td>
+                Bloating, gas, abdominal cramping, reduced nutrient absorption.
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="info-card">
+      <h3>Water – The Foundation of Life</h3>
+      <div class="table-wrapper">
+        <table class="nutrient-table">
+          <thead>
+            <tr>
+              <th>Function</th>
+              <th>Food Sources</th>
+              <th>Deficiency Symptoms</th>
+              <th>Excess Effects</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                Hydration, temperature control, nutrient transport, waste
+                removal.
+              </td>
+              <td>
+                Plain water, herbal teas, water‑rich fruits (watermelon,
+                cucumber), vegetables.
+              </td>
+              <td>Dehydration, headaches, fatigue, dry skin, dizziness.</td>
+              <td>
+                Hyponatremia (water intoxication), though rare, can be
+                dangerous.
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <h2>3. Micronutrients</h2>
+    <p>
+      Micronutrients, including vitamins and minerals, are essential for good
+      health, even though they are needed in smaller quantities than
+      macronutrients. They play crucial roles in energy production, immune
+      support, bone health, and nerve function.
+    </p>
+
+    <h3>Vitamins (A, B Complex, C, D, E, K)</h3>
+    <div class="table-wrapper">
+      <table class="nutrient-table">
+        <thead>
+          <tr>
+            <th>Vitamin</th>
+            <th>Function in Body</th>
+            <th>Best Food Sources</th>
+            <th>Deficiency Symptoms</th>
+            <th>Special Notes</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Vitamin A (Retinol)</td>
+            <td>Vision, immune function, cell growth, skin health.</td>
+            <td>Carrots, sweet potatoes, spinach, kale, liver, eggs, dairy.</td>
+            <td>Night blindness, dry eyes, impaired immunity.</td>
+            <td>Can be toxic in very high doses.</td>
+          </tr>
+          <tr>
+            <td>Vitamin B1 (Thiamine)</td>
+            <td>Converts food into energy, nerve function.</td>
+            <td>Whole grains, pork, fish, legumes, nuts, seeds.</td>
+            <td>Beriberi, fatigue, muscle weakness.</td>
+            <td>Alcoholism can lead to deficiency.</td>
+          </tr>
+          <tr>
+            <td>Vitamin B2 (Riboflavin)</td>
+            <td>Energy production, cell growth, metabolism.</td>
+            <td>Dairy, eggs, lean meats, leafy greens.</td>
+            <td>Cracks at mouth corners, sore throat, skin rashes.</td>
+            <td>Sensitive to light.</td>
+          </tr>
+          <tr>
+            <td>Vitamin B3 (Niacin)</td>
+            <td>Energy metabolism, DNA repair, antioxidant.</td>
+            <td>Meat, poultry, fish, peanuts, mushrooms.</td>
+            <td>Pellagra (dermatitis, diarrhea, dementia).</td>
+            <td>High doses cause flushing.</td>
+          </tr>
+          <tr>
+            <td>Vitamin B5 (Pantothenic Acid)</td>
+            <td>Energy production, hormone synthesis.</td>
+            <td>Meat, poultry, fish, whole grains, avocados.</td>
+            <td>Rare – fatigue, irritability.</td>
+            <td>Widely available.</td>
+          </tr>
+          <tr>
+            <td>Vitamin B6 (Pyridoxine)</td>
+            <td>Protein metabolism, red blood cells, neurotransmitters.</td>
+            <td>Chickpeas, salmon, chicken, potatoes, bananas.</td>
+            <td>Anemia, depression, confusion.</td>
+            <td>Important during pregnancy.</td>
+          </tr>
+          <tr>
+            <td>Vitamin B7 (Biotin)</td>
+            <td>Metabolism of carbs, fats, proteins; hair, skin, nails.</td>
+            <td>Eggs, nuts, seeds, sweet potatoes, liver.</td>
+            <td>Hair loss, skin rashes, brittle nails.</td>
+            <td>Deficiency is rare.</td>
+          </tr>
+          <tr>
+            <td>Vitamin B9 (Folate)</td>
+            <td>
+              DNA synthesis, cell growth, red blood cells; crucial in pregnancy.
+            </td>
+            <td>Leafy greens, legumes, fortified grains, liver.</td>
+            <td>Anemia, fatigue, birth defects.</td>
+            <td>Folic acid is synthetic form.</td>
+          </tr>
+          <tr>
+            <td>Vitamin B12 (Cobalamin)</td>
+            <td>Nerve function, red blood cells, DNA synthesis.</td>
+            <td>Animal products (meat, fish, dairy, eggs), fortified foods.</td>
+            <td>Megaloblastic anemia, nerve damage, fatigue.</td>
+            <td>Vegans often need supplement.</td>
+          </tr>
+          <tr>
+            <td>Vitamin C (Ascorbic Acid)</td>
+            <td>
+              Antioxidant, collagen synthesis, immune function, iron absorption.
+            </td>
+            <td>Citrus fruits, berries, bell peppers, broccoli, kiwi.</td>
+            <td>Scurvy, gum bleeding, poor wound healing.</td>
+            <td>Water‑soluble, excess excreted.</td>
+          </tr>
+          <tr>
+            <td>Vitamin D (Calciferol)</td>
+            <td>Bone health, calcium absorption, immune function.</td>
+            <td>Sunlight, fatty fish, fortified milk, eggs.</td>
+            <td>Rickets (children), osteomalacia (adults), weak bones.</td>
+            <td>Many people deficient.</td>
+          </tr>
+          <tr>
+            <td>Vitamin E (Tocopherol)</td>
+            <td>Powerful antioxidant, protects cells, immune support.</td>
+            <td>Nuts, seeds, vegetable oils, leafy greens.</td>
+            <td>Nerve damage, muscle weakness, vision problems.</td>
+            <td>Fat‑soluble, stored in body.</td>
+          </tr>
+          <tr>
+            <td>Vitamin K (Phylloquinone)</td>
+            <td>Blood clotting, bone health.</td>
+            <td>Leafy greens (kale, spinach), broccoli, Brussels sprouts.</td>
+            <td>Bleeding disorders, easy bruising.</td>
+            <td>Newborns receive a shot.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3>Minerals (Calcium, Iron, Magnesium, Zinc, etc.)</h3>
+    <div class="table-wrapper">
+      <table class="nutrient-table">
+        <thead>
+          <tr>
+            <th>Mineral</th>
+            <th>Function in Body</th>
+            <th>Best Food Sources</th>
+            <th>Deficiency Symptoms</th>
+            <th>Special Notes</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Calcium</td>
+            <td>
+              Bone and teeth formation, muscle contraction, nerve function,
+              blood clotting.
+            </td>
+            <td>Dairy, leafy greens, fortified plant milks, tofu.</td>
+            <td>Osteoporosis, muscle cramps, irregular heartbeat.</td>
+            <td>Vitamin D is essential for absorption.</td>
+          </tr>
+          <tr>
+            <td>Iron</td>
+            <td>
+              Oxygen transport (hemoglobin), energy production, immune function.
+            </td>
+            <td>
+              Red meat, poultry, fish, beans, lentils, spinach, fortified
+              cereals.
+            </td>
+            <td>Anemia (fatigue, weakness, pale skin), impaired cognition.</td>
+            <td>Vitamin C enhances non‑heme iron absorption.</td>
+          </tr>
+          <tr>
+            <td>Magnesium</td>
+            <td>
+              Muscle and nerve function, blood glucose control, blood pressure,
+              bone health.
+            </td>
+            <td>
+              Leafy greens, nuts, seeds, legumes, whole grains, dark chocolate.
+            </td>
+            <td>Muscle cramps, fatigue, irregular heartbeat, anxiety.</td>
+            <td>Many people don’t get enough.</td>
+          </tr>
+          <tr>
+            <td>Zinc</td>
+            <td>
+              Immune function, wound healing, DNA synthesis, taste and smell.
+            </td>
+            <td>Oysters, red meat, poultry, beans, nuts, fortified cereals.</td>
+            <td>
+              Impaired immunity, poor wound healing, hair loss, loss of
+              taste/smell.
+            </td>
+            <td>Vegetarians may need more.</td>
+          </tr>
+          <tr>
+            <td>Potassium</td>
+            <td>
+              Fluid balance, nerve signals, muscle contractions, blood pressure
+              regulation.
+            </td>
+            <td>
+              Fruits (bananas, oranges), vegetables (potatoes, spinach),
+              legumes.
+            </td>
+            <td>Muscle weakness, cramps, fatigue, irregular heartbeat.</td>
+            <td>Important for heart health.</td>
+          </tr>
+          <tr>
+            <td>Sodium</td>
+            <td>Fluid balance, nerve impulses, muscle function.</td>
+            <td>Table salt, processed foods, cured meats.</td>
+            <td>Rare – muscle cramps, nausea, dizziness.</td>
+            <td>Excess linked to high blood pressure.</td>
+          </tr>
+          <tr>
+            <td>Phosphorus</td>
+            <td>
+              Bone and teeth formation, energy metabolism, DNA/RNA synthesis.
+            </td>
+            <td>Dairy, meat, fish, poultry, nuts, legumes.</td>
+            <td>Rare – muscle weakness, bone pain.</td>
+            <td>Found in many foods.</td>
+          </tr>
+          <tr>
+            <td>Iodine</td>
+            <td>
+              Thyroid hormone production (regulates metabolism and growth).
+            </td>
+            <td>Iodized salt, seafood, dairy, seaweed.</td>
+            <td>Goiter, hypothyroidism, developmental problems in children.</td>
+            <td>Crucial during pregnancy.</td>
+          </tr>
+          <tr>
+            <td>Selenium</td>
+            <td>Antioxidant, thyroid hormone metabolism, immune function.</td>
+            <td>Brazil nuts, seafood, organ meats, whole grains.</td>
+            <td>Muscle pain, weakness, hair loss.</td>
+            <td>Important for thyroid health.</td>
+          </tr>
+          <tr>
+            <td>Copper</td>
+            <td>
+              Energy production, iron metabolism, connective tissue formation.
+            </td>
+            <td>Organ meats, shellfish, nuts, seeds, whole grains.</td>
+            <td>Anemia, bone abnormalities, impaired immunity.</td>
+            <td>Balance with zinc important.</td>
+          </tr>
+          <tr>
+            <td>Manganese</td>
+            <td>
+              Bone formation, metabolism of amino acids, cholesterol,
+              carbohydrates.
+            </td>
+            <td>Whole grains, nuts, leafy greens, tea.</td>
+            <td>Impaired growth, skeletal abnormalities.</td>
+            <td>Excess can be neurotoxic.</td>
+          </tr>
+          <tr>
+            <td>Chromium</td>
+            <td>
+              Enhances insulin action, involved in carb/fat/protein metabolism.
+            </td>
+            <td>Broccoli, grape juice, whole grains, lean meats.</td>
+            <td>Impaired glucose tolerance, weight loss.</td>
+            <td>Evidence for supplementation is mixed.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h2>4. Daily Nutritional Requirements</h2>
+    <p>
+      These tables consolidate the daily requirements for key macronutrients and
+      micronutrients. General guidelines – individual needs vary based on
+      activity, health status, etc.
+    </p>
+
+    <h3>A. Age‑Wise Daily Requirements (General Averages)</h3>
+    <div class="table-wrapper">
+      <table class="nutrient-table">
+        <thead>
+          <tr>
+            <th>Nutrient</th>
+            <th>0-5 Years</th>
+            <th>6-12 Years</th>
+            <th>13-18 Years</th>
+            <th>19-40 Years</th>
+            <th>40+ Years</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Calories (kcal)</td>
+            <td>1000-1400</td>
+            <td>1600-2200</td>
+            <td>2000-3200</td>
+            <td>2000-3000</td>
+            <td>1800-2600</td>
+          </tr>
+          <tr>
+            <td>Protein (g)</td>
+            <td>13-19</td>
+            <td>28-34</td>
+            <td>46-52</td>
+            <td>46-56</td>
+            <td>46-56</td>
+          </tr>
+          <tr>
+            <td>Total Fat (% of calories)</td>
+            <td>30-40%</td>
+            <td>25-35%</td>
+            <td>25-35%</td>
+            <td>20-35%</td>
+            <td>20-35%</td>
+          </tr>
+          <tr>
+            <td>Carbohydrates (% of calories)</td>
+            <td>45-65%</td>
+            <td>45-65%</td>
+            <td>45-65%</td>
+            <td>45-65%</td>
+            <td>45-65%</td>
+          </tr>
+          <tr>
+            <td>Fiber (g)</td>
+            <td>15-19</td>
+            <td>21-25</td>
+            <td>25-38</td>
+            <td>25-38</td>
+            <td>21-30</td>
+          </tr>
+          <tr>
+            <td>Water (L)</td>
+            <td>1.0-1.5</td>
+            <td>1.7-2.4</td>
+            <td>2.1-3.3</td>
+            <td>2.7-3.7</td>
+            <td>2.5-3.5</td>
+          </tr>
+          <tr>
+            <td>Vitamin A (mcg RAE)</td>
+            <td>300-400</td>
+            <td>400-600</td>
+            <td>700-900</td>
+            <td>700-900</td>
+            <td>700-900</td>
+          </tr>
+          <tr>
+            <td>Vitamin C (mg)</td>
+            <td>15-25</td>
+            <td>45</td>
+            <td>65-75</td>
+            <td>75-90</td>
+            <td>75-90</td>
+          </tr>
+          <tr>
+            <td>Vitamin D (IU)</td>
+            <td>400</td>
+            <td>600</td>
+            <td>600</td>
+            <td>600</td>
+            <td>800</td>
+          </tr>
+          <tr>
+            <td>Calcium (mg)</td>
+            <td>200-700</td>
+            <td>1000-1300</td>
+            <td>1300</td>
+            <td>1000</td>
+            <td>1000-1200</td>
+          </tr>
+          <tr>
+            <td>Iron (mg)</td>
+            <td>7-11</td>
+            <td>8</td>
+            <td>11-15</td>
+            <td>8-18</td>
+            <td>8</td>
+          </tr>
+          <tr>
+            <td>Magnesium (mg)</td>
+            <td>80-130</td>
+            <td>240</td>
+            <td>360-410</td>
+            <td>310-420</td>
+            <td>320-420</td>
+          </tr>
+          <tr>
+            <td>Zinc (mg)</td>
+            <td>2-3</td>
+            <td>5-8</td>
+            <td>9-11</td>
+            <td>8-11</td>
+            <td>8-11</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3>
+      B. Male vs. Female Daily Requirements (19-40 Years, Moderate Activity)
+    </h3>
+    <div class="table-wrapper">
+      <table class="nutrient-table">
+        <thead>
+          <tr>
+            <th>Nutrient</th>
+            <th>Male (19-40 Years)</th>
+            <th>Female (19-40 Years)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Calories (kcal)</td>
+            <td>2400-3000</td>
+            <td>2000-2400</td>
+          </tr>
+          <tr>
+            <td>Protein (g)</td>
+            <td>56</td>
+            <td>46</td>
+          </tr>
+          <tr>
+            <td>Total Fat (% of calories)</td>
+            <td>20-35%</td>
+            <td>20-35%</td>
+          </tr>
+          <tr>
+            <td>Carbohydrates (% of calories)</td>
+            <td>45-65%</td>
+            <td>45-65%</td>
+          </tr>
+          <tr>
+            <td>Fiber (g)</td>
+            <td>38</td>
+            <td>25</td>
+          </tr>
+          <tr>
+            <td>Water (L)</td>
+            <td>3.7</td>
+            <td>2.7</td>
+          </tr>
+          <tr>
+            <td>Vitamin A (mcg RAE)</td>
+            <td>900</td>
+            <td>700</td>
+          </tr>
+          <tr>
+            <td>Vitamin C (mg)</td>
+            <td>90</td>
+            <td>75</td>
+          </tr>
+          <tr>
+            <td>Vitamin D (IU)</td>
+            <td>600</td>
+            <td>600</td>
+          </tr>
+          <tr>
+            <td>Calcium (mg)</td>
+            <td>1000</td>
+            <td>1000</td>
+          </tr>
+          <tr>
+            <td>Iron (mg)</td>
+            <td>8</td>
+            <td>18</td>
+          </tr>
+          <tr>
+            <td>Magnesium (mg)</td>
+            <td>400-420</td>
+            <td>310-320</td>
+          </tr>
+          <tr>
+            <td>Zinc (mg)</td>
+            <td>11</td>
+            <td>8</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h2>5. Special Health Conditions</h2>
+
+    <div class="info-card">
+      <h3>A. Pregnancy Nutrition</h3>
+      <p>
+        During pregnancy, nutritional requirements increase. Below are
+        trimester‑wise needs and key nutrients.
+      </p>
+      <div class="table-wrapper">
+        <table class="nutrient-table">
+          <thead>
+            <tr>
+              <th>Trimester</th>
+              <th>Caloric Needs (Additional)</th>
+              <th>Key Nutrients & Focus</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>First Trimester (Weeks 1-12)</td>
+              <td>
+                No additional calories typically needed. Focus on nutrient‑dense
+                foods.
+              </td>
+              <td>Folic Acid (600 mcg), Iron, Protein.</td>
+            </tr>
+            <tr>
+              <td>Second Trimester (Weeks 13-27)</td>
+              <td>Approximately +340 kcal/day</td>
+              <td>
+                Iron (27 mg), Calcium (1000 mg), Vitamin D, Omega‑3s (DHA).
+              </td>
+            </tr>
+            <tr>
+              <td>Third Trimester (Weeks 28-40)</td>
+              <td>+450 kcal/day (approx)</td>
+              <td>
+                Continued Iron, Calcium, Vitamin D, Omega‑3s, Fiber, Protein.
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p>
+        <strong>Daily Requirements During Pregnancy (RDA)</strong> – Always
+        consult a healthcare provider.
+      </p>
+      <div class="table-wrapper">
+        <table class="nutrient-table">
+          <thead>
+            <tr>
+              <th>Nutrient</th>
+              <th>Non-Pregnant Female</th>
+              <th>Pregnant Female</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Calories (kcal)</td>
+              <td>~2000</td>
+              <td>~2000-2500 (varies by trimester)</td>
+            </tr>
+            <tr>
+              <td>Protein (g)</td>
+              <td>46</td>
+              <td>71</td>
+            </tr>
+            <tr>
+              <td>Iron (mg)</td>
+              <td>18</td>
+              <td>27</td>
+            </tr>
+            <tr>
+              <td>Calcium (mg)</td>
+              <td>1000</td>
+              <td>1000 (absorption increases)</td>
+            </tr>
+            <tr>
+              <td>Folic Acid (DFE)</td>
+              <td>400 mcg</td>
+              <td>600 mcg</td>
+            </tr>
+            <tr>
+              <td>Vitamin D (IU)</td>
+              <td>600</td>
+              <td>600</td>
+            </tr>
+            <tr>
+              <td>Iodine (mcg)</td>
+              <td>150</td>
+              <td>220</td>
+            </tr>
+            <tr>
+              <td>Choline (mg)</td>
+              <td>425</td>
+              <td>450</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="info-card">
+      <h3>B. Menstrual / Period Health</h3>
+      <div class="table-wrapper">
+        <table class="nutrient-table">
+          <thead>
+            <tr>
+              <th>Nutrient</th>
+              <th>Importance for Menstrual Health</th>
+              <th>Food Sources to Include</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Iron</td>
+              <td>Replenishes iron lost during bleeding.</td>
+              <td>
+                Red meat, poultry, fish, lentils, spinach, fortified cereals.
+              </td>
+            </tr>
+            <tr>
+              <td>Magnesium</td>
+              <td>Helps relax muscles, reduces cramps, improves mood.</td>
+              <td>Leafy greens, nuts, seeds, dark chocolate, avocados.</td>
+            </tr>
+            <tr>
+              <td>Omega‑3 Fatty Acids</td>
+              <td>Anti‑inflammatory, reduces menstrual pain.</td>
+              <td>Fatty fish, flaxseeds, chia seeds, walnuts.</td>
+            </tr>
+            <tr>
+              <td>B Vitamins (especially B6)</td>
+              <td>Supports hormone regulation, alleviates PMS.</td>
+              <td>Chicken, fish, potatoes, bananas, chickpeas.</td>
+            </tr>
+            <tr>
+              <td>Hydration (Water)</td>
+              <td>Reduces bloating and headaches.</td>
+              <td>Water, herbal teas, water‑rich fruits and vegetables.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p>
+        <strong>Foods to include:</strong> Whole grains, fruits, vegetables,
+        lean proteins, healthy fats. <strong>Avoid/limit:</strong> Highly
+        processed foods, excessive sugar, high sodium, excess caffeine and
+        alcohol.
+      </p>
+    </div>
+
+    <div class="info-card">
+      <h3>C. Common Health Conditions</h3>
+      <h4>1. Weight Loss</h4>
+      <p>
+        <strong>Important Nutrients:</strong> Protein, Fiber, Water.
+        <strong>Focus:</strong> High protein for satiety, high fiber for
+        fullness, adequate hydration.
+        <strong>Simple Diet Suggestions:</strong> Lean proteins, non‑starchy
+        vegetables, whole grains in moderation, healthy fats. Limit processed
+        foods and sugary drinks.
+      </p>
+      <h4>2. Weight Gain</h4>
+      <p>
+        <strong>Important Nutrients:</strong> Protein, Complex Carbohydrates,
+        Healthy Fats. <strong>Focus:</strong> Sufficient protein for muscle
+        repair, complex carbs for energy, healthy fats for calories.
+        <strong>Suggestions:</strong> Larger portions of lean meats, eggs,
+        dairy, nuts, seeds, avocados, whole grains. Include healthy snacks
+        between meals.
+      </p>
+      <h4>3. Muscle Building</h4>
+      <p>
+        <strong>Important Nutrients:</strong> Protein, Carbohydrates.
+        <strong>Focus:</strong> High protein intake (1.6-2.2g/kg body weight),
+        sufficient carbs to fuel workouts. <strong>Suggestions:</strong> Protein
+        with every meal (chicken, whey, tofu) plus complex carbs (brown rice,
+        oats, sweet potatoes).
+      </p>
+      <h4>4. Diabetes (Type 2)</h4>
+      <p>
+        <strong>Important Nutrients:</strong> Fiber, Complex Carbohydrates,
+        Healthy Fats. <strong>Focus:</strong> Consistent carb intake from
+        complex sources, high fiber to slow glucose absorption.
+        <strong>Suggestions:</strong> Non‑starchy vegetables, whole grains, lean
+        proteins, healthy fats. Monitor portion sizes. Limit sugary drinks and
+        refined carbs.
+      </p>
+      <h4>5. PCOS (Polycystic Ovary Syndrome)</h4>
+      <p>
+        <strong>Important Nutrients:</strong> Fiber, Lean Protein, Healthy Fats.
+        <strong>Focus:</strong> Low glycemic index carbs, adequate fiber to
+        improve insulin sensitivity. <strong>Suggestions:</strong> Whole
+        unprocessed foods, vegetables, fruits, lean proteins, healthy fats
+        (avocado, nuts, olive oil). Limit refined sugars and processed foods.
+      </p>
+      <h4>6. Thyroid Conditions (Hypothyroidism)</h4>
+      <p>
+        <strong>Important Nutrients:</strong> Iodine, Selenium, Zinc, Iron.
+        <strong>Focus:</strong> Sufficient iodine, selenium and zinc for thyroid
+        enzyme function, iron to prevent anemia.
+        <strong>Suggestions:</strong> Iodized salt, seafood, Brazil nuts
+        (selenium), lean meats, legumes. Avoid excessive raw cruciferous
+        vegetables without cooking.
+      </p>
+    </div>
+
+    <h2>6. Additional Features & Suggestions</h2>
+    <div class="info-card">
+      <ul style="margin-left: 1.5rem">
+        <li><strong>BMI Calculator</strong> – quick health indicator.</li>
+        <li>
+          <strong>Daily Intake Calculator</strong> – personalized calorie and
+          macronutrient recommendations.
+        </li>
+        <li>
+          <strong>Personalized Diet Suggestions / Meal Planner</strong> – sample
+          meal plans based on user goals.
+        </li>
+        <li>
+          <strong>Food Database with Nutrient Lookup</strong> – search foods and
+          view nutritional content.
+        </li>
+        <li>
+          <strong>Recipe Database</strong> – curated recipes with nutritional
+          info.
+        </li>
+        <li>
+          <strong>Progress Tracker</strong> – log food intake, activity,
+          measurements over time.
+        </li>
+        <li>
+          <strong>Educational Blog / Articles</strong> – regular nutrition tips
+          and breakthroughs.
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div id="backToTop" class="back-to-top">↑</div>
+{% endblock %} {% block extra_js %}
+<script>
+  // Back to top button
+  const backBtn = document.getElementById("backToTop");
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > 300) backBtn.classList.add("show");
+    else backBtn.classList.remove("show");
+  });
+  backBtn.addEventListener("click", () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  });
+</script>
+{% endblock %}

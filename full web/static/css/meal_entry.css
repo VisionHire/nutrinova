@@ -1,0 +1,374 @@
+body {
+  font-family: "Poppins", sans-serif;
+  background: #f8fafb;
+  color: #333;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; /* ✅ FIX */
+}
+
+*, *::before, *::after {
+  box-sizing: inherit; /* ✅ FIX: ensures consistent sizing */
+}
+
+.meal-entry-container {
+  max-width: 720px;
+  margin: 60px auto;
+  padding: 0 20px;
+  text-align: center;
+}
+
+.page-title {
+  font-weight: 600;
+  color: #256f47;
+  font-size: 1.9rem;
+  margin-bottom: 25px;
+}
+
+.meal-card {
+  background: #fff;
+  border-radius: 14px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  padding: 30px;
+  transition: 0.3s ease;
+}
+
+.form-group {
+  text-align: left;
+  margin-bottom: 20px;
+}
+
+.label {
+  font-weight: 500;
+  margin-bottom: 6px;
+  display: block;
+}
+
+.input-select,
+.input-text {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  transition: 0.2s ease;
+  outline: none;
+}
+
+.input-select:focus,
+.input-text:focus {
+  border-color: #3bb273;
+  box-shadow: 0 0 0 2px rgba(59, 178, 115, 0.25);
+}
+
+.items-list {
+  margin-top: 10px;
+}
+
+.item-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 12px;
+  flex-wrap: wrap;
+  justify-content: flex-start; /* ✅ FIX: align naturally, not centered */
+  animation: fadeIn 0.3s ease;
+}
+
+.item-row input {
+  flex: 1;
+  min-width: 0; /* ✅ FIX: allow shrinking */
+  max-width: 100%; /* ✅ FIX: never exceed container */
+}
+
+/* ✅ FIX: ensure item-row children never exceed container on small screens */
+.item-row > * {
+  flex: 1 1 100%;
+  max-width: 100%;
+}
+
+.btn-remove {
+  background: #ff4d4f;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 12px;
+  cursor: pointer;
+  transition: 0.3s;
+  flex: 0 0 auto;
+}
+
+.btn-remove:hover {
+  background: #e63a3a;
+}
+
+.btn-row {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
+  margin-top: 25px;
+}
+
+button {
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.btn-primary,
+.btn-success,
+.btn-secondary,
+.btn-outline,
+.btn-danger {
+  border: none;
+  border-radius: 10px;
+  padding: 10px 20px;
+  font-weight: 500;
+  font-size: 0.95rem;
+}
+
+.btn-primary {
+  background: #3bb273;
+  color: #fff;
+}
+
+.btn-success {
+  background: #256f47;
+  color: #fff;
+}
+
+.btn-secondary {
+  background: #edf2f7;
+  color: #2c7a4b;
+}
+
+.btn-outline {
+  background: #fff;
+  color: #3bb273;
+  border: 1px solid #3bb273;
+}
+
+.btn-danger {
+  background: #ff4d4f;
+  color: #fff;
+}
+
+.btn-primary:hover,
+.btn-success:hover,
+.btn-secondary:hover,
+.btn-outline:hover,
+.btn-danger:hover {
+  transform: translateY(-2px);
+  opacity: 0.9;
+}
+
+.saved-meals-section {
+  margin-top: 30px;
+}
+
+.saved-meals {
+  display: none;
+  margin-top: 12px;
+  animation: slideDown 0.3s ease;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Toast Notification */
+.toast-alert {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #2c7a4b;
+  color: white;
+  padding: 10px 18px;
+  border-radius: 8px;
+  font-weight: 500;
+  opacity: 0;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  z-index: 99999;
+}
+.toast-alert.show {
+  opacity: 1;
+  transform: translate(-50%, 0);
+}
+.toast-alert.warning {
+  background: #ffb74d;
+  color: #000;
+}
+.toast-alert.error {
+  background: #f44336;
+}
+
+/* ✅ FIX: More aggressive mobile-friendly scaling */
+@media (max-width: 600px) {
+  .meal-card {
+    padding: 18px;
+  }
+
+  .item-row {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 8px;
+  }
+
+  .item-row input,
+  .item-row button {
+    width: 100%;
+    min-width: unset;
+  }
+
+  .btn-row {
+    flex-direction: column;
+  }
+
+  .input-select,
+  .input-text {
+    font-size: 0.9rem;
+  }
+}
+
+.hidden {
+  display: none;
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: all 0.3s ease;
+}
+
+.visible {
+  display: block;
+  opacity: 1;
+  transform: translateY(0);
+  transition: all 0.3s ease;
+}
+
+.saved-meals {
+  display: none;
+  background: #f8fdf8;
+  border: 1px solid #d3e8d3;
+  border-radius: 10px;
+  padding: 15px;
+  margin-top: 10px;
+  text-align: left;
+  animation: slideDown 0.3s ease;
+}
+
+.saved-meal-entry {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+  border-bottom: 1px solid #eee;
+}
+
+.saved-meal-entry:last-child {
+  border-bottom: none;
+}
+
+.meal-entry-head {
+  font-weight: 500;
+}
+
+.empty-msg {
+  color: #888;
+  text-align: center;
+}
+
+.toast-alert {
+  z-index: 99999 !important;
+}
+
+/* ============================================
+   🌿 FIX: Floating Suggestion Box (No Push Down)
+   ============================================ */
+.item-row {
+  position: relative; /* ✅ Make input the anchor for dropdown */
+}
+
+.suggestion-box {
+  position: absolute;
+  top: 105%; /* ✅ Appear just below the input */
+  left: 0;
+  right: 0;
+  width: auto;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+  margin-top: 2px;
+  max-height: 220px;
+  overflow-y: auto;
+  z-index: 9999;
+  animation: fadeIn 0.25s ease-out;
+}
+
+.suggestion-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 14px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: #2f3e46;
+  border-bottom: 1px solid #f2f5f3;
+  cursor: pointer;
+  transition: background 0.25s ease, transform 0.1s ease;
+}
+
+.suggestion-item:last-child {
+  border-bottom: none;
+}
+
+.suggestion-item:hover {
+  background: #e9f8ef;
+  transform: translateX(3px);
+}
+
+.suggestion-item::before {
+  content: "🍎";
+  font-size: 1rem;
+  opacity: 0.8;
+}
+
+.suggestion-box::-webkit-scrollbar {
+  width: 6px;
+}
+.suggestion-box::-webkit-scrollbar-thumb {
+  background-color: #b0c4b1;
+  border-radius: 10px;
+}
+.suggestion-box::-webkit-scrollbar-thumb:hover {
+  background-color: #88b09e;
+}
+
+/* ✅ Responsive fine-tune */
+@media (max-width: 600px) {
+  .suggestion-box {
+    font-size: 0.9rem;
+    max-height: 180px;
+  }
+  .suggestion-item {
+    padding: 8px 12px;
+  }
+}

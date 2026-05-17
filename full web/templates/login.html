@@ -1,0 +1,34 @@
+{% extends "base.html" %} {% block title %}Login | NutriNova Account{% endblock
+%} {% block meta_description %} Login to your NutriNova account to track
+calories, analyze food nutrition, plan meals, and monitor your daily nutrition
+progress. {% endblock %} {% block meta_keywords %} nutrinova login, nutrition
+tracker login, calorie tracker account login, nutrinova user login {% endblock
+%} {% block extra_css %}
+
+<link
+  rel="stylesheet"
+  href="{{ url_for('static', filename='css/auth.css') }}"
+/>
+{% endblock %} {% block content %}
+
+<section class="auth-container">
+  <h2>Login</h2>
+
+  <form method="post">
+    <input type="hidden" name="csrf_token" value="{{ csrf_token() }}" />
+
+    <input required name="email" placeholder="Email" type="email" />
+    <input required name="password" placeholder="Password" type="password" />
+
+    <button class="btn">Login</button>
+  </form>
+
+  <p class="auth-link">
+    New user? <a href="{{ url_for('register') }}">Register here</a>
+  </p>
+
+  <p class="auth-link">
+    <a href="{{ url_for('passforget.forgot_password') }}">Forgot password?</a>
+  </p>
+</section>
+{% endblock %}

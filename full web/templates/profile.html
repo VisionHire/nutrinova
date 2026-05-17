@@ -1,0 +1,75 @@
+{% extends "base.html" %} {% block title %}Your Profile | NutriTrack{% endblock
+%} {% block extra_css %}
+<link
+  rel="stylesheet"
+  href="{{ url_for('static', filename='css/profile.css') }}"
+/>
+{% endblock %} {% block content %}
+<section class="profile-container">
+  <div class="profile-header">
+    <h2>Hello, {{ current_user.name }} 👋</h2>
+    <span class="membership-badge {{ current_user.membership | lower }}">
+      {{ current_user.membership }} Member
+    </span>
+  </div>
+
+  <div class="profile-stats">
+    <div class="stat-card">
+      <h3 class="pro">Nutrition Dashboard</h3>
+      <p>
+        Your Personalized Nutrition Hub, Track your daily targets and stay in
+        control.
+      </p>
+      <a href="{{ url_for('nutrition.dashboard') }}" class="stat-btn">Open</a>
+    </div>
+    <div class="stat-card">
+      <h3>Meal Planner</h3>
+      <p>
+        "Plan Smart. Eat Better." Organize your meals and track only what you
+        actually eat.
+      </p>
+      <a href="{{ url_for('meal_planner') }}" class="stat-btn">Open</a>
+    </div>
+    <div class="stat-card">
+      <h3>Meal Entry</h3>
+      <p>
+        Log What You Eat, Add meals with weight for accurate tracking and future
+        reports.
+      </p>
+      <a href="{{ url_for('meal_entry') }}" class="stat-btn">Open</a>
+    </div>
+
+    <div class="stat-card">
+      <h3>Nutrition Report</h3>
+      <p>
+        "Your Diet, Simplified" Generate and download detailed nutrition
+        insights instantly.
+      </p>
+      <a href="{{ url_for('nutrition_report') }}" class="stat-btn">Open</a>
+    </div>
+    <div class="stat-card">
+      <h3>Nutrients Analyzer</h3>
+      <p>Know Your Food, Explore nutrients, vitamins, and minerals per 100g.</p>
+      <a href="{{ url_for('nutrition_analyzer') }}" class="stat-btn">Open</a>
+    </div>
+
+    <div class="stat-card">
+      <h3>Calorie Tracker</h3>
+      <p>
+        “Stay Within Your Goal” Track calories with real-time updates and 7-day
+        progress.
+      </p>
+      <a href="{{ url_for('calorie_tracker') }}" class="stat-btn">Open</a>
+    </div>
+  </div>
+
+  {% if current_user.membership == "Free" %}
+  <div class="upgrade-box">
+    <p>Unlock full features & better nutrition insights.</p>
+    <a href="{{ url_for('plans') }}" class="upgrade-btn">Upgrade to Premium</a>
+  </div>
+  {% endif %}
+</section>
+{% endblock %} {% block extra_js %}
+<script src="{{ url_for('static', filename='js/profile.js') }}"></script>
+{% endblock %}

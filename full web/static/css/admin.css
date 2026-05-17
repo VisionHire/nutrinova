@@ -1,0 +1,206 @@
+/* ========= Base ========= */
+body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  background: #eef3f7;
+  color: #222;
+}
+
+/* ========= Navbar ========= */
+.admin-navbar {
+  background: #2e8b57;
+  color: #fff;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.15);
+}
+
+.admin-navbar h1 {
+  font-size: 22px;
+  font-weight: 600;
+}
+
+/* ========= Buttons ========= */
+.btn {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: 0.25s ease;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  opacity: 0.9;
+}
+
+.logout {
+  background: #ff4d4d;
+  color: #fff;
+}
+
+.add {
+  background: #2e8b57;
+  color: #fff;
+}
+
+.delete {
+  background: #e74c3c;
+  color: #fff;
+}
+
+.edit {
+  background: #3498db;
+  color: white;
+  margin-right: 6px;
+}
+
+/* ========= Page Layout ========= */
+.dashboard-container {
+  padding: 2rem;
+  max-width: 1200px;
+  margin: auto;
+}
+
+/* ========= Stats Cards ========= */
+.stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+.card {
+  background: white;
+  border-radius: 12px;
+  padding: 1.5rem;
+  text-align: center;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.09);
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+}
+
+/* ========= User Table ========= */
+.user-table,
+.food-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1.5rem;
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.08);
+}
+
+.user-table th, .food-table th {
+  background: #2e8b57;
+  color: white;
+  padding: 14px;
+  font-weight: 500;
+  text-align: center;
+}
+
+.user-table td, .food-table td {
+  padding: 12px;
+  border-bottom: 1px solid #eee;
+  text-align: center;
+}
+
+.user-table tr:hover,
+.food-table tr:hover {
+  background: #f3faf3;
+}
+
+/* ========= Form ========= */
+.food-form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 1.2rem;
+  background: white;
+  padding: 1rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.08);
+}
+
+.food-form input, .food-form textarea {
+  flex: 1 1 200px;
+  padding: 10px;
+  border: 1px solid #bbb;
+  border-radius: 6px;
+  font-size: 14px;
+  transition: 0.25s;
+}
+
+.food-form input:focus,
+.food-form textarea:focus {
+  border-color: #2e8b57;
+  outline: none;
+  box-shadow: 0 0 6px rgba(46, 139, 87, 0.35);
+}
+
+/* ========= Modal ========= */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 100;
+  left: 0; top: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.55);
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background: white;
+  padding: 25px;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 450px;
+  box-shadow: 0 4px 18px rgba(0,0,0,0.25);
+  animation: fadeIn 0.25s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+.close {
+  float: right;
+  font-size: 26px;
+  cursor: pointer;
+  color: #e74c3c;
+  margin-top: -5px;
+}
+
+.modal input, .modal textarea {
+  width: 100%;
+  margin: 8px 0;
+  padding: 10px;
+  border: 1px solid #bbb;
+  border-radius: 6px;
+}
+
+/* ========= Chart (centered) ========= */
+.chart-container {
+  display: flex;
+  justify-content: center;
+  padding-top: 1rem;
+}
+
+#membershipChart {
+  max-width: 200px;
+}
+
+#ancorr{
+  text-decoration: none;
+  color: white;
+  cursor: pointer;
+}

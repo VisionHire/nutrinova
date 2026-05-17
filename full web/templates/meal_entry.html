@@ -1,0 +1,75 @@
+{% extends "base.html" %} {% block title %}Meal Entry | NutriNova{% endblock %}
+{% block meta_description %} Log your meals with NutriNova Meal Entry. Add food
+items with weight, track nutrition intake, and save meals to monitor your daily
+diet and calorie consumption. {% endblock %} {% block meta_keywords %} meal
+entry nutrinova, food meal tracker, nutrition meal logger, calorie meal tracker,
+nutrinova meal tracking {% endblock %} {% block extra_css %}
+
+<link
+  href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap"
+  rel="stylesheet"
+/>
+<link
+  rel="stylesheet"
+  href="{{ url_for('static', filename='css/meal_entry.css') }}"
+/>
+{% endblock %} {% block content %}
+
+<div class="meal-entry-container">
+  <h2 class="page-title">🥗 NutriNova — Meal Entry</h2>
+
+  <div class="meal-card">
+    <form id="itemForm">
+      <div class="form-group">
+        <label for="mealType" class="label">Meal Type</label>
+        <select id="mealType" class="input-select">
+          <option>Breakfast</option>
+          <option>Lunch</option>
+          <option>Dinner</option>
+          <option>Snacks</option>
+          <option>Other</option>
+        </select>
+      </div>
+
+      <div id="itemContainer" class="items-list">
+        <div class="item-row">
+          <input
+            type="text"
+            name="item_name[]"
+            class="input-text"
+            placeholder="Enter food item"
+            required
+          />
+          <input
+            type="number"
+            name="item_weight[]"
+            class="input-text"
+            placeholder="Weight (g)"
+            required
+          />
+          <button type="button" class="btn-remove">✕</button>
+        </div>
+      </div>
+
+      <div class="btn-row">
+        <button type="button" id="addItem" class="btn-primary">
+          ➕ Add Food Item
+        </button>
+        <button type="button" id="saveMealBtn" class="btn-success">
+          💾 Save Meal
+        </button>
+      </div>
+    </form>
+
+    <div class="saved-meals-section">
+      <button type="button" id="toggleSavedMeals" class="btn-secondary">
+        📂 Show Saved Meals (Last 30 Days)
+      </button>
+      <div id="savedMealsContainer" class="saved-meals"></div>
+    </div>
+  </div>
+</div>
+
+<script src="{{ url_for('static', filename='js/meal_entry.js') }}"></script>
+
+{% endblock %}

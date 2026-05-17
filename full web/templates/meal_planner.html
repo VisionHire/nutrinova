@@ -1,0 +1,80 @@
+{% extends "base.html" %} {% block title %}Meal Planner | NutriNova{% endblock
+%} {% block meta_description %} Plan and organize your daily meals with
+NutriNova Meal Planner. Add foods, track calories automatically based on weight,
+and manage your daily nutrition intake easily. {% endblock %} {% block
+meta_keywords %} meal planner nutrinova, daily meal planner, calorie meal
+planner, food meal planning tool, nutrition meal planner {% endblock %} {% block
+extra_css %}
+<link
+  rel="stylesheet"
+  href="{{ url_for('static', filename='css/meal-planner.css') }}"
+/>
+{% endblock %} {% block content %}
+<section class="meal-planner-container">
+  <h2>🥗 Meal Planner</h2>
+  <p class="subtext">
+    Nutrition values are based on 100 g of food and update automatically when
+    the weight changes.
+  </p>
+  <p class="subtext">Plan, track, and manage your daily meals easily.</p>
+
+  <div class="meal-form">
+    <select id="mealType">
+      <option value="Breakfast">Breakfast</option>
+      <option value="Lunch">Lunch</option>
+      <option value="Dinner">Dinner</option>
+      <option value="Snacks">Snacks</option>
+    </select>
+
+    <div class="input-wrapper">
+      <input
+        id="foodName"
+        placeholder="Enter food name (e.g., Banana)"
+        autocomplete="off"
+      />
+      <div id="mealSuggestionsBox" class="suggestions-box"></div>
+    </div>
+
+    <div class="calorie-weight-group">
+      <input
+        id="weightInput"
+        placeholder="Enter weight"
+        type="number"
+        min="1"
+        step="1"
+        required
+      />
+      <select id="unitSelect" class="unit-dropdown">
+        <option value="g">grams (g)</option>
+        <option value="kg">kilograms (kg)</option>
+        <option value="oz">ounces (oz)</option>
+        <option value="lb">pounds (lb)</option>
+      </select>
+    </div>
+
+    <button id="addMealBtn" class="button-green">➕ Add Meal</button>
+  </div>
+
+  <h3>📅 Today's Meal Log</h3>
+  <table id="mealTable" class="meal-log-table">
+    <thead>
+      <tr>
+        <th>Meal</th>
+        <th>Food</th>
+        <th>Calories</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+
+  <div class="tracker-link">
+    <p>Want to see your progress and past meal history?</p>
+    <a href="{{ url_for('meal_tracker') }}" class="button-green tracker-btn">
+      📊 View Meal Tracker
+    </a>
+  </div>
+</section>
+{% endblock %} {% block extra_js %}
+<script src="{{ url_for('static', filename='js/meal_planner.js') }}"></script>
+{% endblock %}

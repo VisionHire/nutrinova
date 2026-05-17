@@ -1,0 +1,50 @@
+{% extends "base.html" %} {% block title %}Meal Tracker | NutriNova{% endblock
+%} {% block meta_description %} Review and monitor your daily meal history with
+NutriNova Meal Tracker. View logged meals, analyze calorie intake, and track
+your nutrition progress over time. {% endblock %} {% block meta_keywords %} meal
+tracker nutrinova, daily meal log tracker, food calorie tracker, nutrition meal
+history, nutrinova meal tracking {% endblock %} {% block extra_css %}
+
+<link
+  rel="stylesheet"
+  href="{{ url_for('static', filename='css/meal-tracker.css') }}"
+/>
+{% endblock %} {% block content %}
+
+<section class="meal-tracker-container">
+  <h2>🍽️ Meal Tracker</h2>
+  <p class="subtitle">Review your daily meal logs and calorie summary.</p>
+
+  <div class="date-filter">
+    <label for="filterDate">Select Date:</label>
+    <input type="date" id="filterDate" />
+    <button class="btn-green" onclick="loadMeals()">Search</button>
+  </div>
+
+  <div id="mealSummary">
+    <h3>Meals</h3>
+    <table id="mealTable">
+      <thead>
+        <tr>
+          <th>Meal Type</th>
+          <th>Food Name</th>
+          <th>Calories (kcal)</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+    <p class="total">Total Calories: <span id="totalCalories">0</span> kcal</p>
+  </div>
+
+  <canvas id="mealChart"></canvas>
+</section>
+{% endblock %} {% block extra_js %}
+
+<script
+  src="https://cdn.jsdelivr.net/npm/chart.js/dist/chart.umd.min.js"
+  defer
+></script>
+
+<script src="{{ url_for('static', filename='js/meal-tracker.js') }}"></script>
+
+{% endblock %}

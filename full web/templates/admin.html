@@ -1,0 +1,271 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin Dashboard | NutriTrack</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/admin.css') }}"
+    />
+    <meta name="csrf-token" content="{{ csrf_token() }}" />
+  </head>
+  <body>
+    <nav class="admin-navbar">
+      <h1><a id="ancorr" href="{{ url_for('index') }}">NutriTrack Admin</a></h1>
+      <div class="nav-actions">
+        <a href="{{ url_for('logout') }}" class="btn logout">Logout</a>
+      </div>
+    </nav>
+
+    <section class="dashboard-container">
+      <div class="stats">
+        <div class="card">
+          <h3>Total Users</h3>
+          <p>{{ total_users }}</p>
+        </div>
+        <div class="card">
+          <h3>Premium Users</h3>
+          <p>{{ premium_users }}</p>
+        </div>
+        <div class="card">
+          <h3>Free Users</h3>
+          <p>{{ free_users }}</p>
+        </div>
+      </div>
+
+      <h2>User Management</h2>
+
+      <input
+        type="text"
+        id="userSearch"
+        placeholder="Search users by name or email..."
+        style="
+          width: 100%;
+          max-width: 400px;
+          padding: 10px;
+          margin: 10px 0 20px;
+          border: 1.5px solid #ccc;
+          border-radius: 6px;
+          font-size: 14px;
+        "
+      />
+
+      <table class="user-table">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Membership</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for u in users %}
+          <tr>
+            <td>{{ u.name }}</td>
+            <td>{{ u.email }}</td>
+            <td>{{ u.membership }}</td>
+            <td>
+              {% if u.membership == "Free" %}
+              <form
+                method="POST"
+                action="{{ url_for('admin_user_upgrade', user_id=u.id) }}"
+              >
+                <input
+                  type="hidden"
+                  name="csrf_token"
+                  value="{{ csrf_token() }}"
+                />
+                <button class="btn add">Approve Premium</button>
+              </form>
+              {% else %} ✅ Premium {% endif %}
+            </td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+
+      <hr />
+
+      <h2>Manage Foods</h2>
+
+      <form
+        class="food-form"
+        action="{{ url_for('admin_food_add') }}"
+        method="POST"
+      >
+        <input type="hidden" name="csrf_token" value="{{ csrf_token() }}" />
+
+        <input type="text" name="name" placeholder="Food Name" required />
+        <input
+          type="number"
+          step="0.1"
+          name="calories"
+          placeholder="Calories (kcal)"
+        />
+        <input
+          type="number"
+          step="0.1"
+          name="protein"
+          placeholder="Protein (g)"
+        />
+        <input
+          type="number"
+          step="0.1"
+          name="carbohydrates"
+          placeholder="Carbs (g)"
+        />
+        <input type="number" step="0.1" name="fats" placeholder="Fats (g)" />
+
+        <!-- Extra Macros -->
+        <input
+          type="number"
+          step="0.01"
+          name="saturated_fats"
+          placeholder="Saturated fats (g)"
+        />
+        <input
+          type="number"
+          step="0.01"
+          name="omega_3"
+          placeholder="Omega-3 (g)"
+        />
+        <input
+          type="number"
+          step="0.01"
+          name="omega_6"
+          placeholder="Omega-6 (g)"
+        />
+        <input type="number" step="0.01" name="fiber" placeholder="Fiber (g)" />
+        <input type="number" step="0.01" name="water" placeholder="Water (g)" />
+
+        <textarea
+          name="vitamins"
+          placeholder='{"vitamin_a": 10, "vitamin_c": 2}'
+        ></textarea>
+        <textarea
+          name="minerals"
+          placeholder='{"iron": 1.2, "zinc": 0.5}'
+        ></textarea>
+        <button type="submit" class="btn add">Add Food</button>
+      </form>
+
+      <table class="food-table">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Calories</th>
+            <th>Protein</th>
+            <th>Carbs</th>
+            <th>Fats</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for food in foods %}
+          <tr
+            data-id="{{ food.id }}"
+            data-name="{{ food.name }}"
+            data-calories="{{ food.calories }}"
+            data-protein="{{ food.protein }}"
+            data-carbs="{{ food.carbohydrates }}"
+            data-fats="{{ food.fats }}"
+            data-vitamins="{{ food.vitamins | tojson }}"
+            data-minerals="{{ food.minerals | tojson }}"
+          >
+            <td>{{ food.name }}</td>
+            <td>{{ food.calories }}</td>
+            <td>{{ food.protein }}</td>
+            <td>{{ food.carbohydrates }}</td>
+            <td>{{ food.fats }}</td>
+            <td>
+              <button class="btn edit" onclick="openEditModal(this)">
+                Edit
+              </button>
+              <form
+                action="{{ url_for('admin_food_delete', food_id=food.id) }}"
+                method="POST"
+                style="display: inline"
+              >
+                <input
+                  type="hidden"
+                  name="csrf_token"
+                  value="{{ csrf_token() }}"
+                />
+                <button
+                  class="btn delete"
+                  onclick="return confirm('Delete this item?');"
+                >
+                  Delete
+                </button>
+              </form>
+            </td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </section>
+
+    <div id="editModal" class="modal">
+      <div class="modal-content">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <h3>Edit Food</h3>
+        <form id="editForm" method="POST">
+          <input type="hidden" name="csrf_token" value="{{ csrf_token() }}" />
+          <input type="text" name="name" id="editName" required />
+          <input type="number" step="0.1" name="calories" id="editCalories" />
+          <input type="number" step="0.1" name="protein" id="editProtein" />
+          <input type="number" step="0.1" name="carbohydrates" id="editCarbs" />
+          <input type="number" step="0.1" name="fats" id="editFats" />
+
+          <input
+            type="number"
+            step="0.01"
+            name="saturated_fats"
+            id="editSaturated"
+          />
+          <input type="number" step="0.01" name="omega_3" id="editOmega3" />
+          <input type="number" step="0.01" name="omega_6" id="editOmega6" />
+          <input type="number" step="0.01" name="fiber" id="editFiber" />
+          <input type="number" step="0.01" name="water" id="editWater" />
+
+          <textarea name="vitamins" id="editVitamins"></textarea>
+          <textarea name="minerals" id="editMinerals"></textarea>
+          <button type="submit" class="btn add">Save Changes</button>
+        </form>
+      </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/admin.js') }}"></script>
+
+    <script>
+      document
+        .querySelector(".food-form")
+        .addEventListener("submit", async (e) => {
+          e.preventDefault();
+          const formData = new FormData(e.target);
+          const csrfToken = document
+            .querySelector('meta[name="csrf-token"]')
+            .getAttribute("content");
+          formData.append("csrf_token", csrfToken);
+
+          const res = await fetch("{{ url_for('admin_food_add') }}", {
+            method: "POST",
+            body: formData,
+            headers: {
+              "X-Requested-With": "XMLHttpRequest",
+              "X-CSRFToken": csrfToken,
+            },
+          });
+
+          const data = await res.json();
+          if (data.status === "success") {
+            location.reload();
+          } else {
+            alert(data.message || "❌ Failed to add food.");
+          }
+        });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,121 @@
+.profile-container {
+  max-width: 600px; /* ✅ narrower width for vertical layout */
+  margin: 60px auto;
+  padding: 20px;
+  font-family: "Poppins", sans-serif;
+}
+
+/* Header */
+.profile-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.profile-header h2 {
+  font-size: 32px;
+  font-weight: 600;
+  color: #2e7d32;
+}
+
+.membership-badge {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+/* Badge color based on membership */
+.membership-badge.premium {
+  background: #ffe082;
+  color: #7b4f00;
+}
+
+.membership-badge.free {
+  background: #e0e0e0;
+  color: #555;
+}
+
+/* ===========================
+   Stats Cards (Vertical Stack)
+   =========================== */
+.profile-stats {
+  display: flex;
+  flex-direction: column; /* ✅ stack boxes vertically */
+  align-items: center;
+  gap: 25px; /* ✅ space between each box */
+}
+
+.stat-card {
+  width: 100%;
+  padding: 25px;
+  background: #ffffff;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 5px 12px rgba(0, 0, 0, 0.08);
+  transition:
+    transform 0.3s,
+    box-shadow 0.3s;
+}
+
+.stat-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+.stat-card h3 {
+  color: #4caf50;
+  font-size: 22px;
+  margin-bottom: 8px;
+}
+
+.stat-card p {
+  color: #555;
+  font-size: 14px;
+  margin-bottom: 12px;
+}
+
+.stat-btn {
+  display: inline-block;
+  margin-top: 12px;
+  padding: 8px 14px;
+  border-radius: 6px;
+  background: #4caf50;
+  color: white;
+  font-size: 14px;
+  text-decoration: none;
+  transition: background 0.3s;
+}
+
+.stat-btn:hover {
+  background: #45a047;
+}
+
+/* ===========================
+   Upgrade Box
+   =========================== */
+.upgrade-box {
+  margin-top: 40px;
+  padding: 18px;
+  background: #fff8e1;
+  border-left: 4px solid #ffb300;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.upgrade-btn {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 8px 18px;
+  background: #ffb300;
+  color: white;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: background 0.3s;
+}
+
+.upgrade-btn:hover {
+  background: #ff9800;
+}

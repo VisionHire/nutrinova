@@ -1,0 +1,144 @@
+{% extends 'base.html' %} {% block title %}NutriNova | Home{% endblock %} {%
+block meta_description %} NutriNova is a powerful nutrition tracking web app to
+monitor calories, analyze food nutrients, plan meals, and understand
+macronutrients and micronutrients for healthier living. {% endblock %} {% block
+meta_keywords %} nutrition tracker, calorie tracker, food nutrition analyzer,
+meal planner, nutrition report, healthy eating tracker, NutriNova {% endblock %}
+{% block extra_css %}
+<link
+  rel="stylesheet"
+  href="{{ url_for('static', filename='css/style.css') }}"
+/>
+{% endblock %} {% block content %}
+
+<section class="hero">
+  <div class="hero-text">
+    <h2>Track Your Nutrition,<br />Achieve Your Goals</h2>
+    <p>
+      NutriNova gives you the tools to track calories, plan meals, and
+      understand your nutrition habits in one place.
+    </p>
+    <a href="{{ url_for('plans') }}" class="cta-btn"
+      >Start Your Nutrition Journey</a
+    >
+  </div>
+  <div class="hero-image">
+    <picture>
+      <source
+        srcset="{{ url_for('static', filename='data/logo.webp') }}"
+        type="image/webp"
+      />
+      <img
+        src="{{ url_for('static', filename='data/logo.png') }}"
+        alt="Logo"
+        width="455"
+        height="303"
+        loading="lazy"
+      />
+    </picture>
+  </div>
+</section>
+
+<section class="features">
+  <h3>Everything you need to succeed</h3>
+  <div class="feature-cards">
+    <div class="card">
+      <h4>Nutrition Dashboard</h4>
+      <p>
+        Provide a few details to set up your profile and receive personalized
+        nutrition recommendations.
+      </p>
+    </div>
+
+    <div class="card">
+      <h4>Meal Planner</h4>
+      <p>
+        Add foods and portions to plan meals and track daily calories in your
+        Meal Tracker.
+      </p>
+    </div>
+
+    <div class="card">
+      <h4>Meal Entry</h4>
+      <p>
+        Add the foods you eat with their weight to log your meals and track your
+        nutrition.
+      </p>
+    </div>
+
+    <div class="card">
+      <h4>Detailed Reports</h4>
+      <p>
+        Generate comprehensive nutrition breakdowns and downloadable PDF reports
+        instantly.
+      </p>
+    </div>
+
+    <div class="card">
+      <h4>Nutrition Analyzer</h4>
+      <p>
+        Instantly analyze any food and see its calories, macros, vitamins, and
+        minerals per 100g.
+      </p>
+    </div>
+
+    <div class="card">
+      <h4>Calorie Tracking</h4>
+      <p>
+        Set your daily calorie goal and monitor your intake from your meals. You
+        can also quickly check calories of foods based on 100g values.
+      </p>
+    </div>
+
+    <div class="card">
+      <h4>How NutriNova Works</h4>
+      <p>
+        Learn how NutriNova analyzes food nutrition and helps track your daily
+        diet.
+        <a href="{{ url_for('how_it_works') }}">How NutriNova works</a>
+      </p>
+    </div>
+  </div>
+</section>
+
+<section class="plans-preview">
+  <h3>Simple, transparent pricing</h3>
+  <p>Choose the plan that fits your lifestyle</p>
+
+  <div class="plan-cards">
+    <div class="plan-card">
+      <h4>Monthly</h4>
+      <p class="price">
+        ₹199 <span style="font-size: 16px; color: #4a5568">/mo</span>
+      </p>
+
+      <ul>
+        <li>Complete nutrition database</li>
+        <li>Daily tracking tools</li>
+        <li>Basic analytics & reports</li>
+        <li>Email support</li>
+      </ul>
+
+      <a href="{{ url_for('plans') }}" class="plan-btn">Start Monthly Plan</a>
+    </div>
+
+    <div class="plan-card highlight">
+      <h4>Annual</h4>
+      <p class="price">
+        ₹1699 <span style="font-size: 16px; color: #4a5568">/yr</span>
+      </p>
+
+      <ul>
+        <li>Everything in Monthly</li>
+        <li>Priority 24/7 support</li>
+        <li>Advanced report analytics</li>
+        <li>Custom meal planning</li>
+        <li>Save 29% annually</li>
+      </ul>
+
+      <a href="{{ url_for('plans') }}" class="plan-btn">Choose Annual Plan</a>
+    </div>
+  </div>
+</section>
+
+{% endblock %}

@@ -1,0 +1,309 @@
+/* 🥗 Modern Meal Tracker — unified with Meal Planner */
+:root {
+  --green: #4caf50;
+  --green-dark: #388e3c;
+  --bg: #f7fdf8;
+  --text: #333;
+  --card-bg: rgba(255, 255, 255, 0.85);
+  --shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  --radius: 14px;
+  --transition: all 0.3s ease;
+}
+
+body {
+  background: linear-gradient(135deg, #e8f5e9, #f1f8e9);
+  font-family: "Poppins", sans-serif;
+  color: var(--text);
+  min-height: 100vh;
+}
+
+/* 🌿 Main Container */
+.meal-tracker-container {
+  max-width: 900px;
+  margin: 50px auto;
+  padding: 40px;
+  background: var(--card-bg);
+  backdrop-filter: blur(10px);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  transition: var(--transition);
+  animation: fadeIn 0.4s ease;
+}
+
+.meal-tracker-container:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.1);
+}
+
+/* 🏷️ Header */
+.meal-tracker-container h2 {
+  text-align: center;
+  color: var(--green-dark);
+  font-weight: 600;
+  font-size: 28px;
+  margin-bottom: 5px;
+}
+
+.subtitle {
+  text-align: center;
+  color: #666;
+  font-size: 15px;
+  margin-bottom: 25px;
+}
+
+/* 📅 Date Filter */
+.date-filter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 25px;
+  flex-wrap: wrap;
+}
+
+.date-filter label {
+  font-weight: 500;
+  color: #444;
+}
+
+.date-filter input[type="date"] {
+  padding: 10px 14px;
+  border: 1.5px solid #ccc;
+  border-radius: 10px;
+  font-size: 15px;
+  color: #333;
+  background: #fff;
+  transition: var(--transition);
+  cursor: pointer;
+}
+
+.date-filter input[type="date"]:hover,
+.date-filter input[type="date"]:focus {
+  border-color: var(--green);
+  box-shadow: 0 0 6px rgba(76, 175, 80, 0.25);
+  outline: none;
+}
+
+/* 🟩 Buttons */
+.btn-green {
+  background: var(--green);
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  transition: var(--transition);
+  box-shadow: 0 3px 8px rgba(46, 139, 87, 0.25);
+}
+
+.btn-green:hover {
+  background: var(--green-dark);
+  box-shadow: 0 5px 12px rgba(46, 139, 87, 0.35);
+  transform: translateY(-2px);
+}
+
+/* 🍽️ Table */
+#mealTable {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+#mealTable thead {
+  background: var(--green);
+  color: #fff;
+}
+
+#mealTable th,
+#mealTable td {
+  padding: 14px 10px;
+  text-align: center;
+  font-size: 15px;
+}
+
+#mealTable tbody tr {
+  background: #fff;
+  border-bottom: 1px solid #eee;
+  transition: var(--transition);
+}
+
+#mealTable tbody tr:nth-child(even) {
+  background: #f8fdf9;
+}
+
+#mealTable tbody tr:hover {
+  background: #f4fdf5;
+}
+
+/* 🔢 Total Calories */
+.total {
+  text-align: right;
+  font-weight: 600;
+  color: #444;
+  margin-top: 15px;
+  font-size: 16px;
+}
+
+.total span {
+  color: var(--green-dark);
+  font-weight: 700;
+}
+
+/* 📊 Chart */
+canvas {
+  margin-top: 35px;
+  width: 100%;
+  max-height: 350px;
+  border-radius: 12px;
+  background: #fff;
+  padding: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s ease-in-out;
+}
+
+canvas:hover {
+  transform: scale(1.02);
+}
+
+/* 🌈 Fade-in Animation */
+.fade-in {
+  animation: fadeIn 0.4s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 📱 Responsive */
+@media (max-width: 768px) {
+  .meal-tracker-container {
+    padding: 25px 18px;
+    margin: 30px 15px;
+  }
+
+  #mealTable th,
+  #mealTable td {
+    font-size: 14px;
+    padding: 10px;
+  }
+
+  .btn-green {
+    padding: 8px 16px;
+    font-size: 14px;
+  }
+
+  .date-filter {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  canvas {
+    max-height: 280px;
+  }
+}
+
+/* 🧭 FIXED: Suggestion Dropdown Positioning */
+.input-wrapper {
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.suggestions-box {
+  position: absolute;
+  top: calc(100% + 5px); /* stays right below input */
+  left: 0;
+  width: 100%;
+  display: none;
+  background: #fff;
+  border-radius: 8px;
+  border: 1px solid #c8e6c9;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+  max-height: 200px;
+  overflow-y: auto;
+  z-index: 10000; /* ensures always on top */
+  padding: 2px 0;
+}
+
+.suggestions-box div {
+  padding: 10px 14px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.suggestions-box div:hover {
+  background: #e8f5e9;
+}
+
+/* 🗑️ Delete Button */
+.delete-btn {
+  background: #f44336;
+  color: #fff;
+  border: none;
+  padding: 6px 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.delete-btn:hover {
+  background: #d32f2f;
+}
+
+.meal-form {
+  position: relative;
+  overflow: visible;
+}
+
+/* 🌿 UI FIX: prevent table stretching from long food names */
+
+#mealTable {
+  table-layout: fixed;
+  width: 100%;
+}
+
+/* Allow food name column to wrap instead of stretching */
+#mealTable th:nth-child(2),
+#mealTable td:nth-child(2) {
+  word-break: break-word;
+  overflow-wrap: break-word;
+}
+
+/* Balance column widths */
+#mealTable th:nth-child(1),
+#mealTable td:nth-child(1) {
+  width: 25%;
+}
+
+#mealTable th:nth-child(2),
+#mealTable td:nth-child(2) {
+  width: 45%;
+}
+
+#mealTable th:nth-child(3),
+#mealTable td:nth-child(3) {
+  width: 30%;
+}
+
+/* Mobile improvement */
+@media (max-width: 600px) {
+  #mealTable th,
+  #mealTable td {
+    font-size: 14px;
+    padding: 10px 6px;
+  }
+}
