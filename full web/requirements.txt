@@ -11,3 +11,4 @@ gevent==24.2.1
 redis==5.0.7
 razorpay==1.4.2
 mysqlclient==2.2.4
+Pillow==10.4.0
