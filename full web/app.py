@@ -1236,6 +1236,16 @@ def verify_razorpay_payment(order_id: str, payment_id: str, signature: str) -> b
 # PUBLIC ROUTES
 # --------------------------------------------------
 
+@app.route("/testdb")
+def testdb():
+    try:
+        cur = mysql.connection.cursor()
+        cur.execute("SELECT 1")
+        return "DB Connected"
+    except Exception as e:
+        return str(e)
+
+
 @app.route("/")
 def index():
     return render_template("index.html")
