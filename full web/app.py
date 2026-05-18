@@ -804,12 +804,14 @@ def add_security_headers(response):
         )
         response.headers['Content-Security-Policy'] = (
     "default-src 'self'; "
+
     "script-src 'self' 'unsafe-inline' 'unsafe-eval' "
     "https://cdn.jsdelivr.net "
     "https://code.jquery.com "
     "https://checkout.razorpay.com "
+    "https://cdn.razorpay.com "
     "https://static.cloudflareinsights.com; "
-    
+
     "style-src 'self' 'unsafe-inline' "
     "https://cdn.jsdelivr.net "
     "https://fonts.googleapis.com; "
@@ -818,11 +820,14 @@ def add_security_headers(response):
 
     "img-src 'self' data: https:; "
 
-    "frame-src 'self' https://checkout.razorpay.com; "
+    "frame-src 'self' "
+    "https://checkout.razorpay.com "
+    "https://api.razorpay.com; "
 
     "connect-src 'self' "
     "https://api.razorpay.com "
-    "https://checkout.razorpay.com; "
+    "https://checkout.razorpay.com "
+    "https://cdn.razorpay.com; "
 )
     
     return response
