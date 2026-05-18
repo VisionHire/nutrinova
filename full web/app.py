@@ -1274,7 +1274,7 @@ def createadmin():
     """, (
         "admin",
         "admin@gmail.com",
-        generate_password_hash("wuqteh@@@-Cujwoz-3&&&goxdu@&&"),
+        generate_password_hash("DJFHGVNcndjn123675&&"),
         1
     ))
 
