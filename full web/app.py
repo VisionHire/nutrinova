@@ -1262,21 +1262,6 @@ def verify_razorpay_payment(order_id: str, payment_id: str, signature: str) -> b
 # PUBLIC ROUTES
 # -------------------------------------------------- 
 
-@app.route("/testdb")
-def testdb():
-    try:
-        cur = mysql.connection.cursor()
-        cur.execute("SELECT DATABASE()")
-        db = cur.fetchone()
-
-        cur.execute("SELECT COUNT(*) FROM users")
-        users = cur.fetchone()
-
-        return f"DB: {db}, Users: {users}"
-
-    except Exception as e:
-        return str(e)
-
 @app.route("/")
 def index():
     return render_template("index.html")
