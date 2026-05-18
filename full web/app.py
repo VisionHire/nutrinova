@@ -1262,6 +1262,26 @@ def verify_razorpay_payment(order_id: str, payment_id: str, signature: str) -> b
 # PUBLIC ROUTES
 # --------------------------------------------------
 
+@app.route("/createadmin")
+def createadmin():
+    from werkzeug.security import generate_password_hash
+
+    cur = mysql.connection.cursor()
+
+    cur.execute("""
+        INSERT INTO users (username, email, password, is_admin)
+        VALUES (%s, %s, %s, %s)
+    """, (
+        "admin",
+        "admin@gmail.com",
+        generate_password_hash("wuqteh@@@-Cujwoz-3&&&goxdu@&&"),
+        1
+    ))
+
+    mysql.connection.commit()
+
+    return "Admin Created"
+
 @app.route("/testdb")
 def testdb():
     try:
