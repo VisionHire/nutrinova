@@ -52,7 +52,7 @@ from convert_image import convert_images_if_needed
 
 from nutrition_dashboard import nutrition_bp
 
-from flask_mail import Mail, Message 
+from flask_mail import Mail, Message
 
 # --------------------------------------------------
 # LOAD .env (single, clean block)
@@ -74,6 +74,8 @@ from razorpay.errors import SignatureVerificationError
 # --------------------------------------------------
 
 app = Flask(__name__, instance_relative_config=True)
+
+mail = Mail(app)
 
 app.register_blueprint(passforget)
 
@@ -1262,15 +1264,16 @@ def verify_razorpay_payment(order_id: str, payment_id: str, signature: str) -> b
 
 # --------------------------------------------------
 # PUBLIC ROUTES
-# -------------------------------------------------- 
-
-@app.route("/testmail")
+# --------------------------------------------------
+# 
+# @app.route("/testmail")
 def testmail():
     try:
         msg = Message(
             "Test Email",
-            recipients=["yourgmail@gmail.com"]
+            recipients=["supportnutri@gmail.com"]
         )
+
         msg.body = "NutriNova email working"
 
         mail.send(msg)
@@ -1278,7 +1281,7 @@ def testmail():
         return "Email Sent"
 
     except Exception as e:
-        return str(e)
+        return str(e) 
 
 @app.route("/")
 def index():
