@@ -52,6 +52,8 @@ from convert_image import convert_images_if_needed
 
 from nutrition_dashboard import nutrition_bp
 
+from flask_mail import Mail, Message 
+
 # --------------------------------------------------
 # LOAD .env (single, clean block)
 # --------------------------------------------------
