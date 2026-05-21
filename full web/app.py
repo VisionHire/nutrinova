@@ -1262,6 +1262,22 @@ def verify_razorpay_payment(order_id: str, payment_id: str, signature: str) -> b
 # PUBLIC ROUTES
 # -------------------------------------------------- 
 
+@app.route("/testmail")
+def testmail():
+    try:
+        msg = Message(
+            "Test Email",
+            recipients=["yourgmail@gmail.com"]
+        )
+        msg.body = "NutriNova email working"
+
+        mail.send(msg)
+
+        return "Email Sent"
+
+    except Exception as e:
+        return str(e)
+
 @app.route("/")
 def index():
     return render_template("index.html")
