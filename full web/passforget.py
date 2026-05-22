@@ -108,26 +108,27 @@ def forgot_password():
             email_sent = send_email(
                 email,
                 "Password Reset OTP",
-                f'''Your OTP for password reset is: {otp}
+                f"""Your OTP for password reset is: {otp}
 
             This OTP will expire in {OTP_EXPIRY_MINUTES} minutes.
             If you didn't request this, please ignore this email.
-            '''
+            """
             )
 
-            current_app.logger.info(f"send_email result: {email_sent}")
+            print("EMAIL SENT VALUE =", email_sent)
 
-            if email_sent is False:
-                current_app.logger.error(f"Failed to send OTP email to {email}")
+            if email_sent != True:
                 flash("Failed to send OTP email. Please try again.", "danger")
                 return render_template("forgot_password.html", email=email)
 
-            current_app.logger.info(f"OTP email sent successfully to {email}")
-
             # Store ONLY password reset data in session
             session["reset_email"] = email
-            session['otp_id'] = otp_id
-            session['otp_generated_at'] = datetime.now(timezone.utc).isoformat()
+            session["otp_id"] = otp_id
+            session["otp_generated_at"] = datetime.now().isoformat()
+
+            flash("OTP sent to your email", "success")
+
+            return redirect(url_for("passforget.verify_otp", new=1))
             
             current_app.logger.info(f"Session data set - email: {email}, otp_id: {otp_id}")
             current_app.logger.info(f"Full session: {dict(session)}")

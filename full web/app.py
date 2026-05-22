@@ -1263,26 +1263,6 @@ def verify_razorpay_payment(order_id: str, payment_id: str, signature: str) -> b
 # PUBLIC ROUTES
 # -------------------------------------------------- 
 
-@app.route("/checkresettable")
-def checkresettable():
-    from app import get_cursor
-
-    try:
-        with get_cursor() as cur:
-            cur.execute("DESCRIBE password_resets")
-            columns = cur.fetchall()
-
-            cur.execute("SELECT COUNT(*) as total FROM password_resets")
-            total = cur.fetchone()
-
-        return {
-            "columns": columns,
-            "total_rows": total
-        }
-
-    except Exception as e:
-        return str(e)
-
 @app.route("/testresend")
 def testresend():
     result = send_email(
