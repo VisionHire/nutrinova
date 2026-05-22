@@ -418,7 +418,49 @@ def send_email(to_email, subject, body_text):
                 "from": "NutriNova <support@nutrinova.in>",
                 "to": [to_email],
                 "subject": subject,
-                "text": body_text
+                "html": f"""
+<div style="font-family: Arial, sans-serif; padding: 30px; background:#f8f9fa;">
+
+    <div style="text-align:center; margin-bottom:30px;">
+
+        <img
+            src="https://nutrinova.in/static/data/favicon2.png"
+            alt="NutriNova Logo"
+            width="80"
+            style="vertical-align:middle;"
+        >
+
+        <h1 style="
+            display:inline-block;
+            margin-left:12px;
+            color:#2E8B57;
+            font-size:32px;
+            vertical-align:middle;
+        ">
+            NutriNova
+        </h1>
+
+    </div>
+
+    <div style="
+        background:white;
+        padding:25px;
+        border-radius:12px;
+        box-shadow:0 2px 10px rgba(0,0,0,0.08);
+    ">
+
+        <h2 style="color:#333;">
+            Password Reset OTP
+        </h2>
+
+        <p style="font-size:16px; color:#555; line-height:1.7;">
+            {body_text.replace(chr(10), '<br>')}
+        </p>
+
+    </div>
+
+</div>
+"""
             },
             timeout=10
         )
