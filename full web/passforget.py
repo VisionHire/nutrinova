@@ -106,6 +106,7 @@ def forgot_password():
 
             # Send email
             email_sent = send_email(
+                current_app.logger.info(f"send_email result: {email_sent}"),
                 email,
                 "Password Reset OTP",
                 f'''Your OTP for password reset is: {otp}
@@ -372,6 +373,7 @@ def resend_otp():
 
         # Send email
         email_sent = send_email(
+            current_app.logger.info(f"send_email result: {email_sent}"),
             email,
             "New Password Reset OTP",
             f'''Your new OTP for password reset is: {otp}
