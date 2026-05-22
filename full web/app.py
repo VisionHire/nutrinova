@@ -415,7 +415,7 @@ def send_email(to_email, subject, body_text):
                 "Content-Type": "application/json"
             },
             json={
-                "from": "onboarding@resend.dev",
+                "from": "NutriNova <support@nutrinova.in>",
                 "to": [to_email],
                 "subject": subject,
                 "text": body_text
