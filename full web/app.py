@@ -399,64 +399,37 @@ def transaction():
 
 import os
 import requests
-from flask import current_app
 
 def send_email(to_email, subject, body_text):
-    """
-    Send email using Resend API
-    """
-
     try:
-        api_key = os.environ.get("RESEND_API_KEY")
+        api_key = os.getenv("RESEND_API_KEY")
 
         if not api_key:
-            current_app.logger.error("RESEND_API_KEY not found")
+            print("RESEND_API_KEY missing")
             return False
 
-        url = "https://api.resend.com/emails"
-
-        payload = {
-            "from": "NutriNova <onboarding@resend.dev>",
-            "to": [to_email],
-            "subject": subject,
-            "text": body_text,
-            "html": body_text.replace("\n", "<br>")
-        }
-
-        headers = {
-            "Authorization": f"Bearer {api_key}",
-            "Content-Type": "application/json"
-        }
-
         response = requests.post(
-            url,
-            json=payload,
-            headers=headers,
+            "https://api.resend.com/emails",
+            headers={
+                "Authorization": f"Bearer {api_key}",
+                "Content-Type": "application/json"
+            },
+            json={
+                "from": "onboarding@resend.dev",
+                "to": [to_email],
+                "subject": subject,
+                "text": body_text
+            },
             timeout=10
         )
 
-        current_app.logger.info(
-            f"Resend response: {response.status_code} - {response.text}"
-        )
+        print("STATUS:", response.status_code)
+        print("BODY:", response.text)
 
-        if response.status_code in [200, 201]:
-            current_app.logger.info(
-                f"Email sent successfully to {to_email}"
-            )
-            return True
-
-        current_app.logger.error(
-            f"Resend API Error: {response.status_code} - {response.text}"
-        )
-
-        return False
-
-    except requests.exceptions.Timeout:
-        current_app.logger.error("Resend timeout error")
-        return False
+        return response.status_code in [200, 201]
 
     except Exception as e:
-        current_app.logger.error(f"Email sending failed: {str(e)}")
+        print("EMAIL ERROR:", str(e))
         return False
 
 # --------------------------------------------------
