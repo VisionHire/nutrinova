@@ -1290,6 +1290,16 @@ def verify_razorpay_payment(order_id: str, payment_id: str, signature: str) -> b
 # PUBLIC ROUTES
 # -------------------------------------------------- 
 
+@app.route("/testresend")
+def testresend():
+    result = send_email(
+        "supportnutri@gmail.com",
+        "Test Email",
+        "Resend working"
+    )
+
+    return str(result)
+
 @app.route("/")
 def index():
     return render_template("index.html")
