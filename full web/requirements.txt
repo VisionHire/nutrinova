@@ -13,5 +13,5 @@ mysqlclient==2.2.4
 Pillow==10.4.0
 setuptools==75.1.0
 redis==5.0.7
-Flask-Mail==0.10.0
-email-validator==2.2.0
+requests>=2.31.0
+resend==2.4.0

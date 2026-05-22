@@ -395,41 +395,68 @@ def transaction():
     return TransactionContext(mysql.connection)
 
 
-import smtplib
-from email.mime.text import MIMEText
+# In app.py - replace your current send_email with this
+
 import os
+import requests
+from flask import current_app
 
-def send_email(to_email, subject, body):
+def send_email(to_email, subject, body_text):
     """
-    Send email with proper error handling and return boolean status
+    Send email using Resend API (replaces SMTP).
+    Returns True if successful, False otherwise.
     """
-    smtp_server = os.getenv("MAIL_SERVER")
-    smtp_port = int(os.getenv("MAIL_PORT", 587))
-    smtp_user = os.getenv("MAIL_USERNAME")
-    smtp_password = os.getenv("MAIL_PASSWORD")
-    mail_from = os.getenv("MAIL_FROM")
-
-    # Validate configuration
-    if not all([smtp_server, smtp_user, smtp_password, mail_from]):
-        app.logger.error("Email configuration incomplete. Check MAIL_* environment variables.")
-        return False
-
-    msg = MIMEText(body)
-    msg["Subject"] = subject
-    msg["From"] = mail_from
-    msg["To"] = to_email
-
     try:
-        with smtplib.SMTP(smtp_server, smtp_port) as server:
-            server.starttls()
-            server.login(smtp_user, smtp_password)
-            server.send_message(msg)
-        app.logger.info(f"Email sent successfully to {to_email}")
-        return True
-    except Exception as e:
-        app.logger.error(f"Email sending failed to {to_email}: {e}")
-        return False
+        api_key = os.environ.get('RESEND_API_KEY')
+        if not api_key:
+            current_app.logger.error("RESEND_API_KEY environment variable not set")
+            # In development, still show OTP in logs / flash
+            if current_app.config.get('DEBUG', False):
+                current_app.logger.info(f"DEV MODE - Email would be sent to {to_email}")
+                current_app.logger.info(f"DEV MODE - Email body:\n{body_text}")
+                return True
+            return False
 
+        url = "https://api.resend.com/emails"
+        from_email = os.environ.get('RESEND_FROM_EMAIL', 'onboarding@resend.dev')
+
+        payload = {
+            "from": from_email,
+            "to": [to_email],
+            "subject": subject,
+            "text": body_text,
+            "html": body_text.replace('\n', '<br>')
+        }
+
+        headers = {
+            "Authorization": f"Bearer {api_key}",
+            "Content-Type": "application/json"
+        }
+
+        response = requests.post(url, json=payload, headers=headers, timeout=10)
+
+        if response.status_code == 200:
+            current_app.logger.info(f"Password reset OTP sent successfully to {to_email}")
+            return True
+        else:
+            current_app.logger.error(f"Resend API error {response.status_code}: {response.text}")
+            # Fallback for development
+            if current_app.config.get('DEBUG', False):
+                current_app.logger.info(f"DEV MODE - Email would be sent to {to_email}")
+                current_app.logger.info(f"DEV MODE - Email body:\n{body_text}")
+                return True
+            return False
+
+    except requests.exceptions.Timeout:
+        current_app.logger.error("Resend API timeout")
+        if current_app.config.get('DEBUG', False):
+            return True
+        return False
+    except Exception as e:
+        current_app.logger.error(f"Unexpected error sending email: {e}")
+        if current_app.config.get('DEBUG', False):
+            return True
+        return False
 
 # --------------------------------------------------
 # JSON CACHING SYSTEM (PERFORMANCE IMPROVEMENT)
