@@ -106,24 +106,23 @@ def forgot_password():
 
             # Send email
             email_sent = send_email(
-                current_app.logger.info(f"send_email result: {email_sent}"),
                 email,
                 "Password Reset OTP",
                 f'''Your OTP for password reset is: {otp}
-                
-This OTP will expire in {OTP_EXPIRY_MINUTES} minutes.
-If you didn't request this, please ignore this email.
-'''
+
+            This OTP will expire in {OTP_EXPIRY_MINUTES} minutes.
+            If you didn't request this, please ignore this email.
+            '''
             )
 
-            if not email_sent:
-                if current_app.config.get('DEBUG', False):
-                    flash(f'DEV MODE - OTP is: {otp}', 'warning')
-                    current_app.logger.info(f"DEV MODE - Showing OTP: {otp}")
-                else:
-                    current_app.logger.error(f"Failed to send OTP email to {email}")
-                    flash("Failed to send OTP email. Please try again.", "danger")
-                    return render_template("forgot_password.html", email=email)
+            current_app.logger.info(f"send_email result: {email_sent}")
+
+            if email_sent is False:
+                current_app.logger.error(f"Failed to send OTP email to {email}")
+                flash("Failed to send OTP email. Please try again.", "danger")
+                return render_template("forgot_password.html", email=email)
+
+            current_app.logger.info(f"OTP email sent successfully to {email}")
 
             # Store ONLY password reset data in session
             session["reset_email"] = email
@@ -373,24 +372,23 @@ def resend_otp():
 
         # Send email
         email_sent = send_email(
-            current_app.logger.info(f"send_email result: {email_sent}"),
             email,
             "New Password Reset OTP",
             f'''Your new OTP for password reset is: {otp}
-            
-This OTP will expire in {OTP_EXPIRY_MINUTES} minutes.
-If you didn't request this, please ignore this email.
-'''
+
+        This OTP will expire in {OTP_EXPIRY_MINUTES} minutes.
+        If you didn't request this, please ignore this email.
+        '''
         )
 
-        if not email_sent:
-            if current_app.config.get('DEBUG', False):
-                flash(f'DEV MODE - New OTP is: {otp}', 'warning')
-                current_app.logger.info(f"DEV MODE - Showing new OTP: {otp}")
-            else:
-                current_app.logger.error(f"Failed to send resend OTP email to {email}")
-                flash("Failed to send OTP email. Please try again.", "danger")
-                return redirect(url_for("passforget.verify_otp"))
+        current_app.logger.info(f"send_email result: {email_sent}")
+
+        if email_sent is False:
+            current_app.logger.error(f"Failed to send resend OTP email to {email}")
+            flash("Failed to send OTP email. Please try again.", "danger")
+            return redirect(url_for("passforget.verify_otp"))
+
+        current_app.logger.info(f"Resend OTP email sent successfully to {email}")
 
         # Update session with new OTP info
         session['otp_id'] = otp_id
