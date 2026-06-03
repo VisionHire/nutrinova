@@ -1,5 +1,10 @@
 {% extends "base.html" %} {% block title %}NutriNova Blog – Evidence‑Based
-Nutrition for India{% endblock %} {% block content %}
+Nutrition for India{% endblock %} {% block content %} {% block extra_css %}
+<link
+  rel="stylesheet"
+  href="{{ url_for('static', filename='css/index_blog.css') }}"
+/>
+{% endblock %}
 <div class="blog-list-container">
   <h1>NutriNova Blog</h1>
   <p>Practical, research‑backed nutrition tips for everyday Indian meals.</p>
