@@ -449,16 +449,30 @@
     </p>
     <ul>
       <li>
-        <strong>BMI Calculator</strong> — Find out your Body Mass Index and what
-        it means for your health.
+        <strong
+          ><a href="{{ url_for('nutrition.dashboard') }}"
+            >Personal Dashboard</a
+          ></strong
+        >
+        — Provides personalized nutrition recommendation based on user profile.
       </li>
       <li>
-        <strong>Calorie Calculator</strong> — Get your personalised daily
-        calorie target based on your body and goals.
+        <strong
+          ><a href="{{ url_for('meal_planner') }}"
+            >Meal Planner & Entry</a
+          ></strong
+        >
+        — Allow user to input exact food item and portion weights to track daily
+        calories.
       </li>
       <li>
-        <strong>Meal Planner</strong> — Build a balanced Indian diet plan with
-        the right foods for your lifestyle.
+        <strong
+          ><a href="{{ url_for('nutrition_analyzer') }}"
+            >Nutrition Analyzer</a
+          ></strong
+        >
+        — Instantly breaks down macronutrients, vitamins, and minerals per 100g
+        of any logged food.
       </li>
     </ul>
 
@@ -481,7 +495,7 @@
   </article>
 </div>
 
-<a href="#" class="back-to-top">↑ Back to top</a>
+<a href="#" class="back-to-top">↑</a>
 {% endblock %} {% block extra_js %}
 <script src="{{ url_for('static', filename='js/blog.js') }}"></script>
 {% endblock %}
