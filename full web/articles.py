@@ -7,7 +7,7 @@ articles = [
     "date": "2026-06-01",            # Today’s date – change as needed
     "modified": "2026-06-03",
     "description": "Find out how many calories are in one roti, its full nutritional value, and whether roti is good for weight loss. Your complete Indian diet guide.",
-    "image": "/static/images/blog/roti-calories.jpg",   # Place an image here
+    "image": "/static/data/roti.jpg",   # Place an image here
     "tags": ["calories", "roti", "indian-diet", "weight-loss"],
     "faq": [
         {"question": "How many calories are in 2 rotis?", "answer": "Two medium plain wheat rotis (without ghee) contain approximately 140–160 calories. With ghee, 220–260 calories."},
