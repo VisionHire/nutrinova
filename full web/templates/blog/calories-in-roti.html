@@ -1,5 +1,4 @@
-{% extends "base.html" %} {% from "macros/affiliate.html" import product_box,
-disclosure %} {% block extra_css %}
+{% extends "base.html" %} {% block extra_css %}
 <link
   rel="stylesheet"
   href="{{ url_for('static', filename='css/blog.css') }}"
@@ -21,12 +20,7 @@ disclosure %} {% block extra_css %}
     <h1>{{ article.title }}</h1>
     <div class="post-meta">Published: {{ article.date }} • 📖 6 min read</div>
 
-    <!-- AFFILIATE BOX example (place after intro) -->
-    {{ product_box( name="Whole Wheat Atta (Organic, 5kg)",
-    link="https://amzn.to/your-affiliate-link",
-    image="/static/images/blog/atta-product.jpg", price="299" ) }}
-
-    <!-- YOUR ORIGINAL ARTICLE CONTENT (converted to HTML) -->
+    <!-- Your original article content -->
     <p>
       If you eat roti every day — and most Indians do — you have probably
       wondered: <em>How many calories are in roti?</em> Whether you are trying
@@ -145,9 +139,7 @@ disclosure %} {% block extra_css %}
     <h3>Protein</h3>
     <p>Whole wheat roti provides a moderate amount of plant-based protein...</p>
 
-    <!-- Continue with the rest of your article content – exactly as you wrote.
-             I’m truncating here for brevity, but you copy the entire article text. 
-             Make sure to keep all headings (h2, h3) so the TOC works. -->
+    <!-- Add the rest of your article content here (the full text from your markdown) -->
 
     <h2>Is Roti Good for Weight Loss?</h2>
     <p>Yes — roti can absolutely be part of a weight loss diet...</p>
@@ -165,18 +157,17 @@ disclosure %} {% block extra_css %}
     <p>Roti is suitable for most people...</p>
 
     <h2>Frequently Asked Questions</h2>
-    <!-- The FAQ accordion will be generated automatically from article.faq.
-             So you don’t need to write the questions here again. 
-             But keep the section heading for context. -->
     <div class="faq-section">
-      <!-- JS will insert accordion items here -->
+      {% for item in article.faq %}
+      <div class="faq-item">
+        <div class="faq-question">{{ item.question }}</div>
+        <div class="faq-answer">{{ item.answer }}</div>
+      </div>
+      {% endfor %}
     </div>
 
     <h2>Conclusion</h2>
     <p>Understanding the calories in roti is a simple but powerful step...</p>
-
-    <!-- Affiliate disclosure at the end -->
-    {{ disclosure() }}
 
     <!-- Share buttons -->
     <div class="share-buttons">
