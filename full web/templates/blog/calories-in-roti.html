@@ -18,6 +18,15 @@
     <h1>{{ article.title }}</h1>
     <div class="post-meta">Published: {{ article.date }} • 📖 9 min read</div>
 
+    {% if article.image %}
+    <div class="article-image">
+      <img
+        src="{{ url_for('static', filename=article.image) }}"
+        alt="{{ article.title }}"
+      />
+    </div>
+    {% endif %}
+
     <p>
       If you eat roti every day — and most Indians do — you have probably
       wondered: <em>How many calories are in roti?</em> Whether you are trying
