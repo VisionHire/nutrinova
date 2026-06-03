@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="csrf-token" content="{{ csrf_token() }}" />
 
-    <!-- ========== DEFAULT TITLE & META (for non-blog pages) ========== -->
     {% if not article %}
     <title>
       {% block title %}NutriNova | Personalized Nutrition Tracker, Meal Planner
@@ -44,10 +43,7 @@
       content="{{ url_for('static', filename='data/favicon2.webp') }}"
     />
     <link rel="canonical" href="{{ request.base_url }}" />
-    {% endif %}
-
-    <!-- ========== BLOG-SPECIFIC META (only when article exists) ========== -->
-    {% if article %}
+    {% endif %} {% if article %}
     <title>{{ article.title }} | NutriNova Blog</title>
     <meta name="description" content="{{ article.description }}" />
     <meta name="keywords" content="{{ article.tags | join(', ') }}" />
@@ -79,8 +75,6 @@
       content="NutriNova Nutrition Tracking Dashboard"
     />
 
-    <!-- ========== SCHEMA.ORG MARKUP ========== -->
-    <!-- Main site WebApplication schema (only on non-blog pages) -->
     {% if not article %}
     <script type="application/ld+json">
       {
@@ -106,10 +100,7 @@
         ]
       }
     </script>
-    {% endif %}
-
-    <!-- BlogPosting Schema (only for articles) -->
-    {% if article %}
+    {% endif %} {% if article %}
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -132,7 +123,6 @@
       }
     </script>
 
-    <!-- BreadcrumbList Schema (for blog posts) -->
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -160,7 +150,6 @@
       }
     </script>
 
-    <!-- FAQ Schema (if article has FAQ items) -->
     {% if article.faq and article.faq|length > 0 %}
     <script type="application/ld+json">
       {
@@ -216,7 +205,6 @@
       "
     />
 
-    <!-- Blog-specific CSS (only loaded on blog pages) -->
     {% if article %}
     <link
       rel="stylesheet"
@@ -345,7 +333,6 @@
       defer
     ></script>
 
-    <!-- Blog-specific JS (only on blog pages) -->
     {% if article %}
     <script src="{{ url_for('static', filename='js/blog.js') }}" defer></script>
     {% endif %} {% block extra_js %}{% endblock %}
