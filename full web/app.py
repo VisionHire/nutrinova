@@ -1337,6 +1337,23 @@ def sitemap():
 def nutrition_info():
     return render_template('nutrition_system_info.html')
 
+from articles import get_all_articles, get_article_by_slug
+
+# Your existing routes (home, about, etc.) stay untouched.
+
+@app.route('/blog')
+def blog_index():
+    articles = get_all_articles()
+    return render_template('blog_index.html', articles=articles)
+
+@app.route('/blog/<slug>')
+def blog_post(slug):
+    article = get_article_by_slug(slug)
+    if not article:
+        abort(404)
+    # The template name matches the slug: calories-in-roti.html
+    return render_template(f'blog/{slug}.html', article=article)
+
 # --------------------------------------------------
 # AUTH ROUTES (IMPROVED) - FIXED REDIRECTS
 # --------------------------------------------------

@@ -1,0 +1,471 @@
+/* ============================================
+   RESET & BASE (blog pages only)
+   ============================================ */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family:
+    "Inter",
+    system-ui,
+    -apple-system,
+    sans-serif;
+  line-height: 1.6;
+  background: #fefefe;
+  color: #1a1a1a;
+  scroll-behavior: smooth;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+/* ============================================
+   READING PROGRESS BAR
+   ============================================ */
+.progress-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: #e0e0e0;
+  z-index: 1000;
+}
+
+.progress-bar {
+  height: 4px;
+  background: #4caf50;
+  width: 0%;
+  transition: width 0.1s ease;
+}
+
+/* ============================================
+   STICKY TABLE OF CONTENTS
+   ============================================ */
+.toc {
+  position: sticky;
+  top: 2rem;
+  background: #f9fafb;
+  padding: 1rem;
+  border-radius: 12px;
+  margin-bottom: 2rem;
+  border: 1px solid #e5e7eb;
+}
+
+.toc h3 {
+  margin-bottom: 0.75rem;
+  font-size: 1.1rem;
+}
+
+.toc ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.toc li {
+  margin-bottom: 0.5rem;
+}
+
+.toc a {
+  text-decoration: none;
+  color: #2c3e66;
+  font-size: 0.9rem;
+  display: inline-block;
+  transition: color 0.2s;
+}
+
+.toc a:hover {
+  color: #4caf50;
+}
+
+/* Desktop: two-column layout */
+@media (min-width: 992px) {
+  .article-wrapper {
+    display: flex;
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 1.5rem;
+  }
+  .toc {
+    flex: 0 0 260px;
+    top: 80px;
+    align-self: start;
+  }
+  .article-content {
+    flex: 1;
+  }
+}
+
+/* Mobile: TOC becomes inline */
+@media (max-width: 768px) {
+  .toc {
+    position: static;
+    margin-bottom: 1.5rem;
+  }
+  .article-wrapper {
+    padding: 0 1rem;
+  }
+}
+
+/* ============================================
+   ARTICLE CONTENT TYPOGRAPHY
+   ============================================ */
+.article-content {
+  font-size: 1.05rem;
+}
+
+.article-content h1 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+  line-height: 1.3;
+}
+
+.article-content h2 {
+  font-size: 1.5rem;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  padding-bottom: 0.3rem;
+  border-bottom: 2px solid #e5e7eb;
+}
+
+.article-content h3 {
+  font-size: 1.25rem;
+  margin-top: 1.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.article-content p {
+  margin-bottom: 1.25rem;
+}
+
+.article-content ul,
+.article-content ol {
+  margin: 1rem 0 1.5rem 1.5rem;
+}
+
+.article-content li {
+  margin-bottom: 0.5rem;
+}
+
+.article-content blockquote {
+  border-left: 4px solid #4caf50;
+  background: #f9fafb;
+  padding: 1rem 1.5rem;
+  margin: 1.5rem 0;
+  font-style: italic;
+  border-radius: 0 8px 8px 0;
+}
+
+.article-content img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 12px;
+  margin: 1rem 0;
+}
+
+.article-content table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.5rem 0;
+  font-size: 0.9rem;
+  overflow-x: auto;
+  display: block;
+}
+
+.article-content th,
+.article-content td {
+  border: 1px solid #ddd;
+  padding: 0.75rem;
+  text-align: left;
+}
+
+.article-content th {
+  background: #f3f4f6;
+  font-weight: 600;
+}
+
+.article-content code {
+  background: #f3f4f6;
+  padding: 0.2rem 0.4rem;
+  border-radius: 6px;
+  font-size: 0.9em;
+}
+
+.post-meta {
+  color: #6b7280;
+  margin-bottom: 1.5rem;
+  font-size: 0.85rem;
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+/* ============================================
+   FAQ ACCORDION
+   ============================================ */
+.faq-section {
+  margin: 2rem 0;
+}
+
+.faq-item {
+  border: 1px solid #e5e7eb;
+  margin-bottom: 0.5rem;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.faq-question {
+  background: #f9fafb;
+  padding: 1rem;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background 0.2s;
+}
+
+.faq-question:hover {
+  background: #f3f4f6;
+}
+
+.faq-answer {
+  padding: 0 1rem;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+  background: white;
+}
+
+.faq-answer p {
+  margin: 1rem 0;
+}
+
+/* ============================================
+   SHARE BUTTONS
+   ============================================ */
+.share-buttons {
+  display: flex;
+  gap: 0.75rem;
+  margin: 2rem 0;
+  flex-wrap: wrap;
+}
+
+.share-btn {
+  background: #eef2ff;
+  padding: 0.5rem 1rem;
+  border-radius: 999px;
+  text-decoration: none;
+  color: #1f2937;
+  font-size: 0.9rem;
+  transition:
+    background 0.2s,
+    transform 0.1s;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.share-btn:hover {
+  background: #e0e7ff;
+  transform: translateY(-2px);
+}
+
+/* ============================================
+   BACK TO TOP BUTTON
+   ============================================ */
+.back-to-top {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  background: #4caf50;
+  color: white;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  opacity: 0;
+  transition:
+    opacity 0.2s,
+    background 0.2s;
+  z-index: 999;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.back-to-top:hover {
+  background: #3e8e41;
+}
+
+/* ============================================
+   AFFILIATE BOXES
+   ============================================ */
+.affiliate-box {
+  background: #fef9e3;
+  border-left: 5px solid #ffb347;
+  padding: 1rem;
+  border-radius: 12px;
+  margin: 1.5rem 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  align-items: center;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.affiliate-box img {
+  width: 80px;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+.affiliate-box a {
+  color: #ff8c00;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.affiliate-box a:hover {
+  text-decoration: underline;
+}
+
+.affiliate-disclosure {
+  font-size: 0.75rem;
+  color: #6b7280;
+  margin: 1rem 0;
+  text-align: center;
+}
+
+/* ============================================
+   AD CONTAINERS (empty until AdSense approval)
+   ============================================ */
+.ad-container {
+  text-align: center;
+  margin: 1.5rem 0;
+  background: #f9f9f9;
+  padding: 1rem;
+  border-radius: 8px;
+  min-height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px dashed #d1d5db;
+  font-size: 0.8rem;
+  color: #9ca3af;
+}
+
+/* After AdSense approval, remove the dashed border and placeholder text */
+.ad-container ins {
+  display: block;
+}
+
+/* ============================================
+   RELATED ARTICLES (optional)
+   ============================================ */
+.related-articles {
+  margin: 2rem 0;
+  padding-top: 1rem;
+  border-top: 1px solid #e5e7eb;
+}
+
+.related-articles h3 {
+  margin-bottom: 1rem;
+}
+
+.related-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 1rem;
+}
+
+.related-card {
+  background: #f9fafb;
+  padding: 1rem;
+  border-radius: 8px;
+  text-decoration: none;
+  color: #1a1a1a;
+  transition:
+    transform 0.2s,
+    box-shadow 0.2s;
+}
+
+.related-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.related-card h4 {
+  margin-bottom: 0.5rem;
+}
+
+/* ============================================
+   BLOG INDEX PAGE STYLES
+   ============================================ */
+.blog-list-container {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+.blog-preview {
+  margin-bottom: 2.5rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.blog-preview h2 {
+  margin-bottom: 0.5rem;
+}
+
+.blog-preview h2 a {
+  text-decoration: none;
+  color: #1a1a1a;
+}
+
+.blog-preview h2 a:hover {
+  color: #4caf50;
+}
+
+.blog-preview .post-meta {
+  margin-bottom: 0.75rem;
+}
+
+.read-more {
+  display: inline-block;
+  margin-top: 0.5rem;
+  color: #4caf50;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.read-more:hover {
+  text-decoration: underline;
+}
+
+/* ============================================
+   MOBILE OVERRIDES
+   ============================================ */
+@media (max-width: 640px) {
+  .article-content h1 {
+    font-size: 1.75rem;
+  }
+  .article-content h2 {
+    font-size: 1.35rem;
+  }
+  .article-content table {
+    font-size: 0.8rem;
+  }
+  .share-buttons {
+    gap: 0.5rem;
+  }
+  .share-btn {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.8rem;
+  }
+}

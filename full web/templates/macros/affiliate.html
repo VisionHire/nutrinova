@@ -1,0 +1,11 @@
+{% macro product_box(name, link, image, price) %}
+<div class="affiliate-box">
+  <img src="{{ image }}" width="80" alt="{{ name }}" />
+  <div>
+    <strong>{{ name }}</strong> – ₹{{ price }}<br />
+    <a href="{{ link }}" target="_blank" rel="nofollow sponsored"
+      >Buy on Amazon →</a
+    >
+  </div>
+</div>
+{% endmacro %}
