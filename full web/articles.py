@@ -4,8 +4,8 @@ articles = [
 {
     "slug": "calories-in-roti",
     "title": "Calories in Roti: Complete Nutrition Guide",
-    "date": "2025-02-15",            # Today’s date – change as needed
-    "modified": "2025-02-15",
+    "date": "2026-06-01",            # Today’s date – change as needed
+    "modified": "2026-06-03",
     "description": "Find out how many calories are in one roti, its full nutritional value, and whether roti is good for weight loss. Your complete Indian diet guide.",
     "image": "/static/images/blog/roti-calories.jpg",   # Place an image here
     "tags": ["calories", "roti", "indian-diet", "weight-loss"],
