@@ -4,13 +4,11 @@
   href="{{ url_for('static', filename='css/blog.css') }}"
 />
 {% endblock %} {% block content %}
-<!-- Reading progress bar -->
 <div class="progress-container">
   <div class="progress-bar"></div>
 </div>
 
 <div class="article-wrapper">
-  <!-- Sticky Table of Contents (auto-filled by JS) -->
   <aside class="toc">
     <h3>📑 On this page</h3>
     <ul></ul>
@@ -20,7 +18,6 @@
     <h1>{{ article.title }}</h1>
     <div class="post-meta">Published: {{ article.date }} • 📖 9 min read</div>
 
-    <!-- ========== FULL ARTICLE CONTENT ========== -->
     <p>
       If you eat roti every day — and most Indians do — you have probably
       wondered: <em>How many calories are in roti?</em> Whether you are trying
@@ -486,7 +483,6 @@
       professional for personalised guidance.
     </blockquote>
 
-    <!-- Share buttons -->
     <div class="share-buttons">
       <a href="#" class="share-btn share-twitter">🐦 Share on X</a>
       <a href="#" class="share-btn share-facebook">📘 Share on Facebook</a>
